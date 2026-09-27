@@ -1,0 +1,388 @@
+sweep start 19:55:43 UTC (on box)
+warmup: 1 request(s), discarded…
+
+=== concurrency 16 — 16 requests ===
+  [s 1.t0] ttft=0.39s   total=   6.1s  out= 175 prompt= 63680 (cached      0)   30.7 tok/s  tool_call steps=  65 think=  52
+  [s 1.t1] ttft=0.57s   total=   9.2s  out= 544 prompt= 64613 (cached      0)   63.1 tok/s  tool_call steps= 196 think= 162
+  [s 1.t2] ttft=0.79s   total=   5.5s  out= 367 prompt= 65180 (cached      0)   78.0 tok/s  tool_call steps= 140 think=  90
+  [s 2.t0] ttft=0.82s   total=  20.5s  out=1069 prompt= 63684 (cached      0)   54.2 tok/s  tool_call steps= 414 think= 370
+  [s 2.t1] ttft=0.41s   total=   5.1s  out= 429 prompt= 64863 (cached      0)   91.7 tok/s  tool_call steps= 184 think= 179
+  [s 2.t2] ttft=0.53s   total=   3.7s  out= 281 prompt= 66428 (cached      0)   88.0 tok/s  tool_call steps= 113 think=  94
+  [s 3.t0] ttft=2.87s   total=   5.0s  out= 137 prompt= 65995 (cached      0)   63.7 tok/s  tool_call steps=  42 think=  33
+  [s 3.t1] ttft=0.46s   total=   2.4s  out= 124 prompt= 66753 (cached      0)   63.2 tok/s  tool_call steps=  37 think=  29
+  [s 3.t2] ttft=0.66s   total=   5.7s  out= 293 prompt= 68601 (cached      0)   57.8 tok/s  tool_call steps=  99 think=  75
+  [s 4.t0] ttft=2.86s   total=   7.4s  out= 274 prompt= 65549 (cached      0)   60.8 tok/s  tool_call steps=  90 think=  66
+  [s 4.t1] ttft=0.32s   total=   7.9s  out= 400 prompt= 65896 (cached      0)   52.8 tok/s  tool_call steps= 164 think= 138
+  [s 4.t2] ttft=1.35s   total=   6.5s  out= 485 prompt= 73272 (cached      0)   93.5 tok/s  tool_call steps= 179 think= 137
+  [s 5.t0] ttft=2.40s   total=  10.0s  out= 334 prompt= 65399 (cached      0)   43.7 tok/s  tool_call steps= 136 think= 106
+  [s 5.t1] ttft=0.37s   total=   3.1s  out= 140 prompt= 65980 (cached      0)   51.0 tok/s  tool_call steps=  58 think=  40
+  [s 5.t2] ttft=0.40s   total=   2.5s  out= 175 prompt= 66674 (cached      0)   84.5 tok/s  tool_call steps=  61 think=  57
+  [s 6.t0] ttft=1.75s   total=   8.9s  out= 330 prompt= 63891 (cached      0)   45.7 tok/s  tool_call steps= 117 think=  94
+  [s 6.t1] ttft=0.62s   total=   2.1s  out=  92 prompt= 64382 (cached      0)   60.3 tok/s  tool_call steps=  36 think=  33
+  [s 6.t2] ttft=0.32s   total=   3.2s  out= 164 prompt= 65048 (cached      0)   56.1 tok/s  tool_call steps=  64 think=  50
+  [s 7.t0] ttft=2.39s   total=   7.7s  out= 247 prompt= 63647 (cached      0)   45.9 tok/s  tool_call steps= 100 think=  85
+  [s 7.t1] ttft=0.48s   total=   3.4s  out= 132 prompt= 64520 (cached      0)   44.7 tok/s  tool_call steps=  57 think=  53
+  [s 7.t2] ttft=0.79s   total=   5.4s  out= 260 prompt= 66831 (cached      0)   56.1 tok/s  tool_call steps= 104 think=  86
+  [s 8.t0] ttft=2.39s   total=   6.0s  out= 174 prompt= 64130 (cached      0)   47.8 tok/s  tool_call steps=  56 think=  36
+  [s 8.t1] ttft=0.51s   total=   2.7s  out= 141 prompt= 65875 (cached      0)   65.0 tok/s  tool_call steps=  43 think=  21
+  [s 8.t2] ttft=0.96s   total=   6.0s  out= 327 prompt= 69532 (cached      0)   64.9 tok/s  tool_call steps= 121 think=  87
+  [s 9.t0] ttft=3.06s   total=   5.1s  out= 139 prompt= 65387 (cached      0)   67.7 tok/s  tool_call steps=  45 think=  32
+  [s 9.t1] ttft=0.61s   total=   8.8s  out= 423 prompt= 66423 (cached      0)   51.7 tok/s  tool_call steps= 167 think= 154
+  [s 9.t2] ttft=0.38s   total=   3.8s  out= 240 prompt= 67226 (cached      0)   69.4 tok/s  tool_call steps=  79 think=  58
+  [s10.t0] ttft=3.52s   total=  18.8s  out= 907 prompt= 66501 (cached      0)   59.4 tok/s  tool_call steps= 354 think= 323
+  [s10.t1] ttft=0.78s   total=  13.3s  out=1299 prompt= 69465 (cached      0)  103.3 tok/s  tool_call steps= 541 think= 522
+  [s10.t2] ttft=0.38s   total=   8.3s  out=1346 prompt= 70350 (cached      0)  169.2 tok/s  tool_call steps= 542 think= 505
+  [s11.t0] ttft=3.69s   total=  16.7s  out= 684 prompt= 67236 (cached      0)   52.4 tok/s  tool_call steps= 283 think= 266
+  [s11.t1] ttft=0.57s   total=   2.3s  out= 189 prompt= 69271 (cached      0)  106.1 tok/s  tool_call steps=  67 think=  51
+  [s11.t2] ttft=0.57s   total=   2.5s  out= 227 prompt= 70425 (cached      0)  115.3 tok/s  tool_call steps=  77 think=  56
+  [s12.t0] ttft=2.83s   total=   5.0s  out= 131 prompt= 63549 (cached      0)   59.2 tok/s  tool_call steps=  45 think=  32
+  [s12.t1] ttft=0.96s   total=   3.1s  out= 123 prompt= 67559 (cached      0)   57.3 tok/s  tool_call steps=  43 think=  39
+  [s12.t2] ttft=0.51s   total=   4.7s  out= 228 prompt= 69815 (cached      0)   53.7 tok/s  tool_call steps=  82 think=  60
+  [s13.t0] ttft=2.83s   total=   8.6s  out= 278 prompt= 63848 (cached      0)   47.7 tok/s  tool_call steps= 109 think= 105
+  [s13.t1] ttft=0.42s   total=   2.6s  out= 143 prompt= 64611 (cached      0)   64.4 tok/s  tool_call steps=  43 think=  16
+  [s13.t2] ttft=0.61s   total=   2.2s  out= 100 prompt= 65579 (cached      0)   61.0 tok/s  tool_call steps=  37 think=  32
+  [s14.t0] ttft=2.82s   total=  13.0s  out= 478 prompt= 63936 (cached      0)   47.0 tok/s  tool_call steps= 201 think= 182
+  [s14.t1] ttft=0.41s   total=   2.1s  out= 173 prompt= 64537 (cached      0)  101.7 tok/s  tool_call steps=  52 think=  27
+  [s14.t2] ttft=0.65s   total=   3.6s  out= 242 prompt= 66691 (cached      0)   82.9 tok/s  tool_call steps=  79 think=  58
+  [s15.t0] ttft=3.79s   total=  10.2s  out= 342 prompt= 67084 (cached      0)   53.3 tok/s  tool_call steps= 134 think= 112
+  [s15.t1] ttft=0.44s   total=   2.3s  out= 150 prompt= 67857 (cached      0)   81.6 tok/s  tool_call steps=  41 think=  16
+  [s15.t2] ttft=0.39s   total=   7.7s  out= 507 prompt= 68638 (cached      0)   69.2 tok/s  tool_call steps= 197 think= 161
+  [s16.t0] ttft=3.79s   total=  22.2s  out=1174 prompt= 67036 (cached      0)   63.8 tok/s  tool_call steps= 479 think= 436
+  [s16.t1] ttft=1.59s   total=   4.7s  out= 390 prompt= 77439 (cached      0)  123.8 tok/s  tool_call steps= 151 think= 123
+  [s16.t2] ttft=1.44s   total=   4.2s  out= 404 prompt= 86918 (cached      0)  147.3 tok/s  tool_call steps= 161 think= 157
+--- c=16: 48/48 ok, ttft p50 0.66s p95 3.69s, 62.81 tok/s per req, 430.0 tok/s aggregate, wall 40.5s, accept 2.75 tok/step
+    shape: out p50 274 p95 1174, tool_call 100%, reasoning 85% of steps, finish {'tool_calls': 48}  (production: gen mean 535, ~80% tool calls, ~half reasoning)
+    accept per position: 70% / 49% / 35%  (production 71 / 53 / 42%), uncached/req 3390, prefill 3308 tok/s
+    server[48 req]: TTFT 1.27s (queue 0.00s + prefill 1.02s), decode 5.42s, 62.49 tok/s/req, 430.04 tok/s total, cache hit 94.94%, preempt 0, accept 2.55
+
+=== concurrency 24 — 24 requests ===
+  [s17.t0] ttft=4.35s   total=   9.3s  out= 206 prompt= 66141 (cached      0)   41.3 tok/s  tool_call steps=  76 think=  57
+  [s17.t1] ttft=0.70s   total=   5.9s  out= 217 prompt= 69422 (cached      0)   41.2 tok/s  tool_call steps=  68 think=  44
+  [s17.t2] ttft=0.92s   total=  18.2s  out= 878 prompt= 73340 (cached      0)   50.6 tok/s  tool_call steps= 350 think= 313
+  [s18.t0] ttft=0.98s   total=  13.9s  out= 366 prompt= 64102 (cached      0)   28.2 tok/s  tool_call steps= 143 think= 139
+  [s18.t1] ttft=0.28s   total=  15.2s  out= 661 prompt= 64539 (cached      0)   44.1 tok/s  tool_call steps= 271 think= 244
+  [s18.t2] ttft=0.49s   total=   8.3s  out= 613 prompt= 65311 (cached      0)   78.6 tok/s  tool_call steps= 256 think= 216
+  [s19.t0] ttft=0.47s   total=  15.6s  out= 445 prompt= 63860 (cached      0)   29.4 tok/s  tool_call steps= 170 think= 136
+  [s19.t1] ttft=0.70s   total=   3.4s  out= 114 prompt= 64558 (cached      0)   41.3 tok/s  tool_call steps=  41 think=  37
+  [s19.t2] ttft=0.78s   total=   4.4s  out= 153 prompt= 67280 (cached      0)   41.8 tok/s  tool_call steps=  50 think=  32
+  [s20.t0] ttft=1.31s   total=  15.4s  out= 485 prompt= 63551 (cached      0)   34.4 tok/s  tool_call steps= 160 think= 100
+  [s20.t1] ttft=0.66s   total=  17.6s  out= 843 prompt= 64816 (cached      0)   49.6 tok/s  tool_call steps= 340 think= 313
+  [s20.t2] ttft=0.41s   total=   8.6s  out=1092 prompt= 65277 (cached      0)  133.5 tok/s  tool_call steps= 422 think= 375
+  [s21.t0] ttft=2.75s   total=  10.0s  out= 240 prompt= 64780 (cached      0)   32.9 tok/s  tool_call steps=  89 think=  57
+  [s21.t1] ttft=0.44s   total=   4.9s  out= 161 prompt= 65496 (cached      0)   35.8 tok/s  tool_call steps=  54 think=  38
+  [s21.t2] ttft=0.42s   total=   9.0s  out= 314 prompt= 66197 (cached      0)   36.3 tok/s  tool_call steps= 122 think= 109
+  [s22.t0] ttft=4.35s   total=  24.0s  out= 785 prompt= 65497 (cached      0)   39.9 tok/s  tool_call steps= 289 think= 259
+  [s22.t1] ttft=0.42s   total=   5.2s  out= 323 prompt= 66438 (cached      0)   67.4 tok/s  tool_call steps= 117 think=  84
+  [s22.t2] ttft=0.90s   total=   2.9s  out= 175 prompt= 69219 (cached      0)   89.0 tok/s  tool_call steps=  51 think=  27
+  [s23.t0] ttft=3.58s   total=  10.1s  out= 238 prompt= 65546 (cached      0)   36.5 tok/s  tool_call steps=  89 think=  60
+  [s23.t1] ttft=0.69s   total=   4.2s  out= 117 prompt= 67484 (cached      0)   32.7 tok/s  tool_call steps=  43 think=  39
+  [s23.t2] ttft=0.34s   total=   3.9s  out= 152 prompt= 68181 (cached      0)   41.8 tok/s  tool_call steps=  51 think=  35
+  [s24.t0] ttft=2.74s   total=  28.6s  out= 974 prompt= 63717 (cached      0)   37.7 tok/s  tool_call steps= 403 think= 358
+  [s24.t1] ttft=0.39s   total=   3.9s  out= 237 prompt= 64395 (cached      0)   67.3 tok/s  tool_call steps=  86 think=  52
+  [s24.t2] ttft=0.41s   total=   2.2s  out= 142 prompt= 65315 (cached      0)   81.1 tok/s  tool_call steps=  48 think=  28
+  [s25.t0] ttft=0.96s   total=  10.5s  out= 273 prompt= 64015 (cached      0)   28.4 tok/s  tool_call steps= 100 think=  61
+  [s25.t1] ttft=1.05s   total=   7.1s  out= 262 prompt= 67407 (cached      0)   43.2 tok/s  tool_call steps=  92 think=  68
+  [s25.t2] ttft=1.55s   total=  10.8s  out= 456 prompt= 75567 (cached      0)   49.1 tok/s  tool_call steps= 182 think= 141
+  [s26.t0] ttft=2.73s   total=  13.3s  out= 339 prompt= 64131 (cached      0)   32.0 tok/s  tool_call steps= 128 think=  99
+  [s26.t1] ttft=0.32s   total=   7.2s  out= 258 prompt= 64553 (cached      0)   37.3 tok/s  tool_call steps=  98 think=  81
+  [s26.t2] ttft=0.46s   total=  10.0s  out= 487 prompt= 65577 (cached      0)   50.8 tok/s  tool_call steps= 204 think= 183
+  [s27.t0] ttft=4.99s   total=  11.8s  out= 312 prompt= 66175 (cached      0)   46.0 tok/s  tool_call steps= 106 think=  84
+  [s27.t1] ttft=1.13s   total=   4.8s  out= 170 prompt= 69702 (cached      0)   46.5 tok/s  tool_call steps=  52 think=  26
+  [s27.t2] ttft=0.55s   total=   3.3s  out= 102 prompt= 70391 (cached      0)   36.8 tok/s  tool_call steps=  35 think=  31
+  [s28.t0] ttft=4.68s   total=  10.5s  out= 282 prompt= 65762 (cached      0)   48.0 tok/s  tool_call steps=  93 think=  62
+  [s28.t1] ttft=0.85s   total=  11.2s  out= 377 prompt= 68856 (cached      0)   36.3 tok/s  tool_call steps= 147 think= 124
+  [s28.t2] ttft=0.85s   total=   8.5s  out= 405 prompt= 69690 (cached      0)   53.1 tok/s  tool_call steps= 173 think= 169
+  [s29.t0] ttft=4.32s   total=  32.0s  out=1223 prompt= 65059 (cached      0)   44.1 tok/s  tool_call steps= 486 think= 444
+  [s29.t1] ttft=0.34s   total=   1.8s  out= 115 prompt= 65877 (cached      0)   78.2 tok/s  tool_call steps=  42 think=  33
+  [s29.t2] ttft=0.52s   total=   4.0s  out= 370 prompt= 67958 (cached      0)  106.8 tok/s  tool_call steps= 156 think= 144
+  [s30.t0] ttft=4.67s   total=   7.9s  out= 148 prompt= 64313 (cached      0)   46.1 tok/s  tool_call steps=  55 think=  42
+  [s30.t1] ttft=0.58s   total=  13.6s  out= 430 prompt= 66696 (cached      0)   33.0 tok/s  tool_call steps= 180 think= 163
+  [s30.t2] ttft=1.56s   total=  17.3s  out=1117 prompt= 74399 (cached      0)   71.0 tok/s  tool_call steps= 490 think= 485
+  [s31.t0] ttft=3.55s   total=  20.5s  out= 589 prompt= 64086 (cached      0)   34.7 tok/s  tool_call steps= 236 think= 223
+  [s31.t1] ttft=0.91s   total=   5.7s  out= 235 prompt= 67647 (cached      0)   49.3 tok/s  tool_call steps=  92 think=  75
+  [s31.t2] ttft=0.33s   total=   4.0s  out= 227 prompt= 68271 (cached      0)   62.1 tok/s  tool_call steps=  82 think=  56
+  [s32.t0] ttft=4.31s   total=   8.1s  out= 182 prompt= 64093 (cached      0)   48.0 tok/s  tool_call steps=  61 think=  41
+  [s32.t1] ttft=1.03s   total=   5.2s  out= 136 prompt= 69825 (cached      0)   32.2 tok/s  tool_call steps=  53 think=  48
+  [s32.t2] ttft=0.67s   total=   4.6s  out= 200 prompt= 70957 (cached      0)   50.2 tok/s  tool_call steps=  64 think=  40
+  [s33.t0] ttft=4.97s   total=   7.2s  out= 141 prompt= 65410 (cached      0)   63.5 tok/s  tool_call steps=  43 think=  22
+  [s33.t1] ttft=0.61s   total=   7.2s  out= 229 prompt= 67713 (cached      0)   34.6 tok/s  tool_call steps=  88 think=  60
+  [s33.t2] ttft=0.49s   total=   5.8s  out= 228 prompt= 68454 (cached      0)   42.8 tok/s  tool_call steps=  76 think=  42
+  [s34.t0] ttft=5.14s   total=  20.0s  out= 614 prompt= 66637 (cached      0)   41.4 tok/s  tool_call steps= 221 think= 197
+  [s34.t1] ttft=0.52s   total=   4.4s  out= 170 prompt= 69211 (cached      0)   43.5 tok/s  tool_call steps=  60 think=  34
+  [s34.t2] ttft=0.40s   total=   4.7s  out= 298 prompt= 70113 (cached      0)   68.3 tok/s  tool_call steps= 107 think=  70
+  [s35.t0] ttft=4.96s   total=  25.0s  out= 794 prompt= 66689 (cached      0)   39.5 tok/s  tool_call steps= 309 think= 287
+  [s35.t1] ttft=0.32s   total=  11.1s  out= 816 prompt= 67280 (cached      0)   75.5 tok/s  tool_call steps= 312 think= 269
+  [s35.t2] ttft=0.44s   total=   3.7s  out= 479 prompt= 68129 (cached      0)  144.5 tok/s  tool_call steps= 181 think= 140
+  [s36.t0] ttft=4.29s   total=  17.5s  out= 538 prompt= 63964 (cached      0)   40.7 tok/s  tool_call steps= 195 think= 159
+  [s36.t1] ttft=1.30s   total=   5.1s  out= 163 prompt= 69862 (cached      0)   42.7 tok/s  tool_call steps=  44 think=  22
+  [s36.t2] ttft=0.60s   total=   2.7s  out= 148 prompt= 70540 (cached      0)   71.4 tok/s  tool_call steps=  50 think=  38
+  [s37.t0] ttft=4.29s   total=   6.3s  out=  81 prompt= 63804 (cached      0)   40.2 tok/s  tool_call steps=  32 think=  28
+  [s37.t1] ttft=0.72s   total=   5.4s  out= 206 prompt= 67500 (cached      0)   43.9 tok/s  tool_call steps=  62 think=  41
+  [s37.t2] ttft=1.45s   total=   5.7s  out= 213 prompt= 75491 (cached      0)   50.5 tok/s  tool_call steps=  65 think=  41
+  [s38.t0] ttft=4.28s   total=  27.3s  out= 897 prompt= 63892 (cached      0)   38.9 tok/s  tool_call steps= 376 think= 346
+  [s38.t1] ttft=0.80s   total=   3.2s  out= 176 prompt= 67680 (cached      0)   72.3 tok/s  tool_call steps=  56 think=  36
+  [s38.t2] ttft=0.77s   total=   4.4s  out= 299 prompt= 70942 (cached      0)   81.7 tok/s  tool_call steps= 115 think=  95
+  [s39.t0] ttft=5.36s   total=  16.4s  out= 440 prompt= 67203 (cached      0)   39.7 tok/s  tool_call steps= 169 think= 165
+  [s39.t1] ttft=0.34s   total=   5.0s  out= 180 prompt= 67575 (cached      0)   38.3 tok/s  tool_call steps=  65 think=  49
+  [s39.t2] ttft=1.13s   total=   5.6s  out= 279 prompt= 70889 (cached      0)   61.7 tok/s  tool_call steps= 106 think=  73
+  [s40.t0] ttft=5.26s   total=  19.1s  out= 551 prompt= 66667 (cached      0)   39.6 tok/s  tool_call steps= 208 think= 166
+  [s40.t1] ttft=0.58s   total=   6.3s  out= 290 prompt= 67619 (cached      0)   50.3 tok/s  tool_call steps= 103 think=  76
+  [s40.t2] ttft=0.42s   total=   6.2s  out= 370 prompt= 68873 (cached      0)   63.4 tok/s  tool_call steps= 142 think= 111
+--- c=24: 72/72 ok, ttft p50 0.85s p95 4.97s, 45.63 tok/s per req, 653.9 tok/s aggregate, wall 41.6s, accept 2.75 tok/step
+    shape: out p50 282 p95 897, tool_call 100%, reasoning 83% of steps, finish {'tool_calls': 72}  (production: gen mean 535, ~80% tool calls, ~half reasoning)
+    accept per position: 70% / 50% / 36%  (production 71 / 53 / 42%), uncached/req 3437, prefill 2627 tok/s
+    server[72 req]: TTFT 1.66s (queue 0.00s + prefill 1.31s), decode 8.11s, 45.46 tok/s/req, 653.89 tok/s total, cache hit 94.88%, preempt 0, accept 2.56
+
+=== concurrency 32 — 32 requests ===
+  [s41.t0] ttft=1.03s   total=  19.7s  out= 328 prompt= 65792 (cached      0)   17.5 tok/s  tool_call steps= 134 think= 115
+  [s41.t1] ttft=0.43s   total=  11.3s  out= 290 prompt= 66844 (cached      0)   26.6 tok/s  tool_call steps= 116 think=  97
+  [s41.t2] ttft=0.59s   total=   4.4s  out= 189 prompt= 69173 (cached      0)   49.6 tok/s  tool_call steps=  64 think=  45
+  [s42.t0] ttft=1.46s   total=  28.7s  out= 591 prompt= 63734 (cached      0)   21.7 tok/s  tool_call steps= 242 think= 222
+  [s42.t1] ttft=2.45s   total=  11.1s  out= 463 prompt= 75285 (cached      0)   53.3 tok/s  tool_call steps= 165 think= 122
+  [s42.t2] ttft=0.76s   total=   3.5s  out= 236 prompt= 78822 (cached      0)   86.2 tok/s  tool_call steps=  79 think=  44
+  [s43.t0] ttft=3.86s   total=  14.1s  out= 214 prompt= 63833 (cached      0)   20.8 tok/s  tool_call steps=  75 think=  49
+  [s43.t1] ttft=1.31s   total=   6.3s  out= 199 prompt= 66297 (cached      0)   39.3 tok/s  tool_call steps=  60 think=  34
+  [s43.t2] ttft=0.94s   total=   5.2s  out= 130 prompt= 66810 (cached      0)   30.1 tok/s  tool_call steps=  53 think=  49
+  [s44.t0] ttft=1.02s   total=  15.1s  out= 213 prompt= 63517 (cached      0)   15.0 tok/s  tool_call steps=  84 think=  52
+  [s44.t1] ttft=1.19s   total=  21.9s  out= 720 prompt= 66782 (cached      0)   34.7 tok/s  tool_call steps= 283 think= 265
+  [s44.t2] ttft=0.53s   total=   3.6s  out= 180 prompt= 67569 (cached      0)   59.2 tok/s  tool_call steps=  57 think=  41
+  [s45.t0] ttft=2.91s   total=  21.7s  out= 400 prompt= 64521 (cached      0)   21.2 tok/s  tool_call steps= 154 think= 133
+  [s45.t1] ttft=0.57s   total=   3.4s  out= 130 prompt= 64998 (cached      0)   45.7 tok/s  tool_call steps=  41 think=  28
+  [s45.t2] ttft=0.66s   total=  10.2s  out= 328 prompt= 65575 (cached      0)   34.3 tok/s  tool_call steps= 117 think=  79
+  [s46.t0] ttft=2.93s   total=  16.5s  out= 248 prompt= 65221 (cached      0)   18.2 tok/s  tool_call steps=  89 think=  67
+  [s46.t1] ttft=0.46s   total=  27.5s  out=1128 prompt= 65791 (cached      0)   41.7 tok/s  tool_call steps= 454 think= 406
+  [s46.t2] ttft=0.75s   total=   7.9s  out=1040 prompt= 69693 (cached      0)  145.6 tok/s  tool_call steps= 418 think= 398
+  [s47.t0] ttft=4.85s   total=  10.6s  out= 100 prompt= 65158 (cached      0)   17.4 tok/s  tool_call steps=  27 think=  17
+  [s47.t1] ttft=0.65s   total=   7.5s  out= 219 prompt= 68293 (cached      0)   31.9 tok/s  tool_call steps=  77 think=  54
+  [s47.t2] ttft=0.53s   total=  16.1s  out= 438 prompt= 69116 (cached      0)   28.1 tok/s  tool_call steps= 173 think= 146
+  [s48.t0] ttft=2.03s   total=  12.1s  out= 180 prompt= 63695 (cached      0)   17.8 tok/s  tool_call steps=  63 think=  60
+  [s48.t1] ttft=1.16s   total=  20.1s  out= 499 prompt= 66292 (cached      0)   26.2 tok/s  tool_call steps= 199 think= 166
+  [s48.t2] ttft=0.71s   total=  10.0s  out= 507 prompt= 67068 (cached      0)   54.5 tok/s  tool_call steps= 194 think= 173
+  [s49.t0] ttft=2.03s   total=  13.5s  out= 197 prompt= 63997 (cached      0)   17.1 tok/s  tool_call steps=  74 think=  47
+  [s49.t1] ttft=1.18s   total=  17.9s  out= 488 prompt= 66519 (cached      0)   29.2 tok/s  tool_call steps= 181 think= 158
+  [s49.t2] ttft=0.77s   total=   9.4s  out= 474 prompt= 66979 (cached      0)   54.6 tok/s  tool_call steps= 176 think= 153
+  [s50.t0] ttft=4.86s   total=  16.5s  out= 252 prompt= 64109 (cached      0)   21.6 tok/s  tool_call steps=  89 think=  58
+  [s50.t1] ttft=0.39s   total=   4.8s  out= 160 prompt= 64889 (cached      0)   36.2 tok/s  tool_call steps=  52 think=  27
+  [s50.t2] ttft=0.96s   total=   5.2s  out= 137 prompt= 67039 (cached      0)   32.1 tok/s  tool_call steps=  50 think=  38
+  [s51.t0] ttft=4.85s   total=  24.7s  out= 500 prompt= 65782 (cached      0)   25.1 tok/s  tool_call steps= 200 think= 175
+  [s51.t1] ttft=2.65s   total=  16.3s  out= 610 prompt= 78924 (cached      0)   44.5 tok/s  tool_call steps= 233 think= 212
+  [s51.t2] ttft=1.16s   total=   3.2s  out= 238 prompt= 85286 (cached      0)  114.5 tok/s  tool_call steps=  83 think=  60
+  [s52.t0] ttft=5.52s   total=  14.1s  out= 209 prompt= 65353 (cached      0)   24.3 tok/s  tool_call steps=  72 think=  49
+  [s52.t1] ttft=1.02s   total=  13.7s  out= 420 prompt= 66224 (cached      0)   33.2 tok/s  tool_call steps= 148 think= 111
+  [s52.t2] ttft=0.89s   total=   5.5s  out= 126 prompt= 67173 (cached      0)   26.9 tok/s  tool_call steps=  40 think=  24
+  [s53.t0] ttft=2.90s   total=  24.2s  out= 534 prompt= 63522 (cached      0)   25.0 tok/s  tool_call steps= 198 think= 154
+  [s53.t1] ttft=0.46s   total=   7.1s  out= 146 prompt= 64039 (cached      0)   22.0 tok/s  tool_call steps=  57 think=  53
+  [s53.t2] ttft=0.77s   total=   3.3s  out= 128 prompt= 65779 (cached      0)   50.0 tok/s  tool_call steps=  44 think=  34
+  [s54.t0] ttft=4.84s   total=  17.9s  out= 306 prompt= 64294 (cached      0)   23.3 tok/s  tool_call steps= 115 think=  81
+  [s54.t1] ttft=1.72s   total=  15.6s  out= 412 prompt= 73404 (cached      0)   29.5 tok/s  tool_call steps= 159 think= 155
+  [s54.t2] ttft=0.56s   total=   3.2s  out= 170 prompt= 75408 (cached      0)   63.3 tok/s  tool_call steps=  61 think=  44
+  [s55.t0] ttft=2.89s   total=  12.3s  out= 192 prompt= 64047 (cached      0)   20.3 tok/s  tool_call steps=  65 think=  42
+  [s55.t1] ttft=1.32s   total=  11.1s  out= 286 prompt= 67513 (cached      0)   29.0 tok/s  tool_call steps= 106 think=  82
+  [s55.t2] ttft=0.42s   total=   9.7s  out= 248 prompt= 68618 (cached      0)   26.6 tok/s  tool_call steps=  90 think=  60
+  [s56.t0] ttft=5.50s   total=  14.0s  out= 217 prompt= 65901 (cached      0)   25.3 tok/s  tool_call steps=  73 think=  39
+  [s56.t1] ttft=1.19s   total=  12.0s  out= 351 prompt= 66900 (cached      0)   32.3 tok/s  tool_call steps= 128 think= 104
+  [s56.t2] ttft=0.53s   total=   4.4s  out= 118 prompt= 67437 (cached      0)   29.8 tok/s  tool_call steps=  33 think=  14
+  [s57.t0] ttft=8.58s   total=  24.4s  out= 508 prompt= 71205 (cached      0)   32.1 tok/s  tool_call steps= 190 think= 151
+  [s57.t1] ttft=0.58s   total=   3.2s  out=  72 prompt= 72234 (cached      0)   26.9 tok/s  tool_call steps=  23 think=  19
+  [s57.t2] ttft=2.00s   total=  17.3s  out= 856 prompt= 80723 (cached      0)   55.9 tok/s  tool_call steps= 328 think= 286
+  [s58.t0] ttft=9.86s   total=  22.8s  out= 408 prompt= 74515 (cached      0)   31.5 tok/s  tool_call steps= 159 think= 117
+  [s58.t1] ttft=0.76s   total=  14.1s  out= 479 prompt= 77918 (cached      0)   35.9 tok/s  tool_call steps= 182 think= 160
+  [s58.t2] ttft=1.63s   total=   4.9s  out= 234 prompt= 87680 (cached      0)   70.9 tok/s  tool_call steps=  80 think=  66
+  [s59.t0] ttft=5.49s   total=  13.4s  out= 192 prompt= 64257 (cached      0)   24.1 tok/s  tool_call steps=  68 think=  36
+  [s59.t1] ttft=2.39s   total=   5.2s  out= 106 prompt= 72121 (cached      0)   37.1 tok/s  tool_call steps=  36 think=  31
+  [s59.t2] ttft=0.66s   total=   9.3s  out= 240 prompt= 72841 (cached      0)   27.6 tok/s  tool_call steps= 102 think=  90
+  [s60.t0] ttft=4.81s   total=  13.1s  out= 189 prompt= 63917 (cached      0)   22.8 tok/s  tool_call steps=  67 think=  40
+  [s60.t1] ttft=0.96s   total=   7.2s  out= 204 prompt= 66044 (cached      0)   32.3 tok/s  tool_call steps=  66 think=  44
+  [s60.t2] ttft=1.87s   total=  14.2s  out= 417 prompt= 73145 (cached      0)   33.6 tok/s  tool_call steps= 151 think= 117
+  [s61.t0] ttft=4.81s   total=  20.3s  out= 347 prompt= 63555 (cached      0)   22.3 tok/s  tool_call steps= 146 think= 142
+  [s61.t1] ttft=0.67s   total=   6.1s  out= 189 prompt= 63997 (cached      0)   34.9 tok/s  tool_call steps=  62 think=  26
+  [s61.t2] ttft=0.69s   total=   8.7s  out= 261 prompt= 64883 (cached      0)   32.4 tok/s  tool_call steps= 104 think=  89
+  [s62.t0] ttft=9.84s   total=  25.5s  out= 539 prompt= 74321 (cached      0)   34.4 tok/s  tool_call steps= 194 think= 157
+  [s62.t1] ttft=0.67s   total=  13.3s  out= 525 prompt= 75183 (cached      0)   41.6 tok/s  tool_call steps= 184 think=  97
+  [s62.t2] ttft=0.44s   total=   4.2s  out= 291 prompt= 76200 (cached      0)   76.3 tok/s  tool_call steps= 100 think=  64
+  [s63.t0] ttft=9.68s   total=  24.1s  out= 481 prompt= 73494 (cached      0)   33.3 tok/s  tool_call steps= 180 think= 158
+  [s63.t1] ttft=0.54s   total=  10.6s  out= 260 prompt= 74524 (cached      0)   25.6 tok/s  tool_call steps= 115 think=  98
+  [s63.t2] ttft=0.46s   total=   1.9s  out= 104 prompt= 75391 (cached      0)   71.0 tok/s  tool_call steps=  32 think=  28
+  [s64.t0] ttft=8.55s   total=  24.8s  out= 562 prompt= 69985 (cached      0)   34.4 tok/s  tool_call steps= 193 think=  65
+  [s64.t1] ttft=0.63s   total=   4.2s  out=  93 prompt= 70719 (cached      0)   25.5 tok/s  tool_call steps=  33 think=  29
+  [s64.t2] ttft=1.19s   total=   5.1s  out= 176 prompt= 73445 (cached      0)   44.3 tok/s  tool_call steps=  50 think=  27
+  [s65.t0] ttft=5.46s   total=  17.4s  out= 305 prompt= 63680 (cached      0)   25.5 tok/s  tool_call steps= 106 think=  69
+  [s65.t1] ttft=0.41s   total=  17.9s  out= 588 prompt= 64689 (cached      0)   33.5 tok/s  tool_call steps= 217 think= 180
+  [s65.t2] ttft=0.49s   total=   3.5s  out= 164 prompt= 65580 (cached      0)   53.9 tok/s  tool_call steps=  60 think=  42
+  [s66.t0] ttft=4.79s   total=  15.3s  out= 229 prompt= 63671 (cached      0)   21.6 tok/s  tool_call steps=  80 think=  50
+  [s66.t1] ttft=0.90s   total=   4.9s  out= 159 prompt= 65436 (cached      0)   39.7 tok/s  tool_call steps=  51 think=  35
+  [s66.t2] ttft=0.98s   total=   9.2s  out= 264 prompt= 68194 (cached      0)   32.1 tok/s  tool_call steps=  90 think=  55
+  [s67.t0] ttft=5.99s   total=  13.6s  out= 182 prompt= 64275 (cached      0)   23.9 tok/s  tool_call steps=  71 think=  67
+  [s67.t1] ttft=0.78s   total=  21.8s  out= 635 prompt= 65164 (cached      0)   30.2 tok/s  tool_call steps= 252 think= 236
+  [s67.t2] ttft=0.69s   total=  13.0s  out= 983 prompt= 66241 (cached      0)   80.1 tok/s  tool_call steps= 397 think= 377
+  [s68.t0] ttft=9.47s   total=  12.0s  out= 143 prompt= 71071 (cached      0)   55.5 tok/s  tool_call steps=  48 think=  34
+  [s68.t1] ttft=1.00s   total=  15.7s  out= 424 prompt= 72239 (cached      0)   28.8 tok/s  tool_call steps= 163 think= 129
+  [s68.t2] ttft=0.81s   total=   8.3s  out= 250 prompt= 73085 (cached      0)   33.1 tok/s  tool_call steps= 103 think=  98
+  [s69.t0] ttft=9.46s   total=  15.8s  out= 209 prompt= 70943 (cached      0)   33.0 tok/s  tool_call steps=  72 think=  40
+  [s69.t1] ttft=0.61s   total=  16.3s  out= 467 prompt= 71963 (cached      0)   29.7 tok/s  tool_call steps= 176 think= 154
+  [s69.t2] ttft=1.00s   total=  10.7s  out= 564 prompt= 76014 (cached      0)   58.1 tok/s  tool_call steps= 219 think= 181
+  [s70.t0] ttft=9.89s   total=  18.8s  out= 326 prompt= 74549 (cached      0)   36.5 tok/s  tool_call steps= 108 think=  67
+  [s70.t1] ttft=0.77s   total=   5.9s  out= 183 prompt= 75705 (cached      0)   35.4 tok/s  tool_call steps=  68 think=  47
+  [s70.t2] ttft=0.74s   total=   6.7s  out= 136 prompt= 76391 (cached      0)   22.5 tok/s  tool_call steps=  52 think=  47
+  [s71.t0] ttft=5.98s   total=  11.9s  out= 144 prompt= 63636 (cached      0)   24.2 tok/s  tool_call steps=  57 think=  44
+  [s71.t1] ttft=1.12s   total=  16.6s  out= 471 prompt= 67049 (cached      0)   30.3 tok/s  tool_call steps= 166 think= 132
+  [s71.t2] ttft=0.70s   total=   5.6s  out= 183 prompt= 67591 (cached      0)   37.1 tok/s  tool_call steps=  55 think=  32
+  [s72.t0] ttft=5.97s   total=  16.6s  out= 246 prompt= 64092 (cached      0)   23.0 tok/s  tool_call steps=  92 think=  60
+  [s72.t1] ttft=0.45s   total=  28.6s  out=1305 prompt= 64852 (cached      0)   46.4 tok/s  tool_call steps= 488 think= 461
+  [s72.t2] ttft=0.76s   total=   2.5s  out= 242 prompt= 68267 (cached      0)  138.3 tok/s  tool_call steps=  96 think=  92
+--- c=32: 96/96 ok, ttft p50 1.02s p95 9.46s, 31.17 tok/s per req, 624.6 tok/s aggregate, wall 51.9s, accept 2.78 tok/step
+    shape: out p50 250 p95 720, tool_call 100%, reasoning 80% of steps, finish {'tool_calls': 96}  (production: gen mean 535, ~80% tool calls, ~half reasoning)
+    accept per position: 71% / 52% / 39%  (production 71 / 53 / 42%), uncached/req 4095, prefill 2172 tok/s
+    server[96 req]: TTFT 2.36s (queue 0.04s + prefill 1.89s), decode 10.07s, 31.08 tok/s/req, 624.58 tok/s total, cache hit 94.06%, preempt 0, accept 2.61
+
+=== concurrency 48 — 48 requests ===
+  [s73.t0] ttft=2.30s   total=  18.0s  out= 284 prompt= 63704 (cached      0)   18.0 tok/s  tool_call steps= 101 think=  76
+  [s73.t1] ttft=0.41s   total=   6.5s  out= 146 prompt= 64699 (cached      0)   23.9 tok/s  tool_call steps=  49 think=  25
+  [s73.t2] ttft=0.46s   total=  20.3s  out= 548 prompt= 65677 (cached      0)   27.6 tok/s  tool_call steps= 219 think= 198
+  [s74.t0] ttft=10.44s  total=  47.3s  out=1068 prompt= 75842 (cached      0)   29.0 tok/s  tool_call steps= 404 think= 354
+  [s74.t1] ttft=1.68s   total=   6.5s  out= 209 prompt= 83402 (cached      0)   43.3 tok/s  tool_call steps=  72 think=  48
+  [s74.t2] ttft=0.56s   total=  15.9s  out= 709 prompt= 84357 (cached      0)   46.2 tok/s  tool_call steps= 266 think= 232
+  [s75.t0] ttft=10.43s  total=  60.4s  out=1443 prompt= 73602 (cached      0)   28.9 tok/s  tool_call steps= 598 think= 573
+  [s75.t1] ttft=0.92s   total=   5.5s  out= 258 prompt= 76409 (cached      0)   56.3 tok/s  tool_call steps=  92 think=  71
+  [s75.t2] ttft=0.68s   total=   4.1s  out= 210 prompt= 77114 (cached      0)   60.9 tok/s  tool_call steps=  70 think=  36
+  [s76.t0] ttft=9.29s   total=  16.1s  out= 226 prompt= 71054 (cached      0)   33.1 tok/s  tool_call steps=  71 think=  48
+  [s76.t1] ttft=0.72s   total=   3.3s  out=  96 prompt= 71932 (cached      0)   36.5 tok/s  tool_call steps=  35 think=  30
+  [s76.t2] ttft=0.96s   total=   5.8s  out= 112 prompt= 72768 (cached      0)   23.0 tok/s  tool_call steps=  38 think=  33
+  [s77.t0] ttft=2.28s   total=  14.1s  out= 132 prompt= 63831 (cached      0)   11.1 tok/s  tool_call steps=  55 think=  51
+  [s77.t1] ttft=0.45s   total=   7.2s  out= 190 prompt= 64554 (cached      0)   28.1 tok/s  tool_call steps=  71 think=  43
+  [s77.t2] ttft=2.37s   total=   6.2s  out= 127 prompt= 75014 (cached      0)   32.6 tok/s  tool_call steps=  33 think=  10
+  [s78.t0] ttft=1.51s   total=  57.5s  out=1372 prompt= 63919 (cached      0)   24.5 tok/s  tool_call steps= 568 think= 547
+  [s78.t1] ttft=0.69s   total=   2.8s  out= 104 prompt= 64582 (cached      0)   49.8 tok/s  tool_call steps=  33 think=  28
+  [s78.t2] ttft=0.54s   total=   4.4s  out= 175 prompt= 65183 (cached      0)   45.5 tok/s  tool_call steps=  67 think=  51
+  [s79.t0] ttft=3.23s   total=  57.4s  out=1434 prompt= 63669 (cached      0)   26.5 tok/s  tool_call steps= 562 think= 535
+  [s79.t1] ttft=0.57s   total=   5.2s  out= 232 prompt= 64338 (cached      0)   49.5 tok/s  tool_call steps=  80 think=  56
+  [s79.t2] ttft=0.73s   total=  11.8s  out= 729 prompt= 67839 (cached      0)   65.5 tok/s  tool_call steps= 273 think= 240
+  [s80.t0] ttft=9.86s   total=  20.0s  out= 325 prompt= 71003 (cached      0)   32.1 tok/s  tool_call steps= 117 think=  80
+  [s80.t1] ttft=1.28s   total=  45.1s  out=1397 prompt= 74574 (cached      0)   31.9 tok/s  tool_call steps= 560 think= 544
+  [s80.t2] ttft=0.54s   total=   8.0s  out= 546 prompt= 75191 (cached      0)   73.3 tok/s  tool_call steps= 178 think=  62
+  [s81.t0] ttft=8.63s   total=  16.9s  out= 211 prompt= 68584 (cached      0)   25.5 tok/s  tool_call steps=  78 think=  50
+  [s81.t1] ttft=0.67s   total=   8.3s  out= 213 prompt= 70630 (cached      0)   27.7 tok/s  tool_call steps=  72 think=  49
+  [s81.t2] ttft=1.64s   total=  13.0s  out= 312 prompt= 74249 (cached      0)   27.3 tok/s  tool_call steps= 119 think=  84
+  [s82.t0] ttft=12.23s  total=  18.7s  out= 254 prompt= 75717 (cached      0)   39.0 tok/s  tool_call steps= 100 think=  75
+  [s82.t1] ttft=1.81s   total=  11.4s  out= 217 prompt= 81236 (cached      0)   22.5 tok/s  tool_call steps=  87 think=  74
+  [s82.t2] ttft=1.40s   total=  23.5s  out= 659 prompt= 84287 (cached      0)   29.8 tok/s  tool_call steps= 268 think= 231
+  [s83.t0] ttft=4.23s   total=  14.7s  out= 179 prompt= 63860 (cached      0)   17.0 tok/s  tool_call steps=  59 think=  38
+  [s83.t1] ttft=0.46s   total=   2.9s  out=  93 prompt= 64385 (cached      0)   37.0 tok/s  tool_call steps=  29 think=  25
+  [s83.t2] ttft=0.32s   total=  18.4s  out= 468 prompt= 64834 (cached      0)   25.8 tok/s  tool_call steps= 176 think= 150
+  [s84.t0] ttft=4.23s   total=  14.2s  out= 158 prompt= 63552 (cached      0)   15.8 tok/s  tool_call steps=  53 think=  31
+  [s84.t1] ttft=0.64s   total=   4.6s  out= 133 prompt= 65678 (cached      0)   33.4 tok/s  tool_call steps=  52 think=  48
+  [s84.t2] ttft=1.19s   total=  39.9s  out=1062 prompt= 68135 (cached      0)   27.4 tok/s  tool_call steps= 451 think= 410
+  [s85.t0] ttft=4.22s   total=  24.1s  out= 382 prompt= 63520 (cached      0)   19.2 tok/s  tool_call steps= 155 think= 141
+  [s85.t1] ttft=0.46s   total=   8.0s  out= 190 prompt= 64603 (cached      0)   25.0 tok/s  tool_call steps=  69 think=  43
+  [s85.t2] ttft=0.97s   total=  13.2s  out= 418 prompt= 65510 (cached      0)   34.1 tok/s  tool_call steps= 154 think= 116
+  [s86.t0] ttft=12.36s  total=  19.6s  out= 257 prompt= 75784 (cached      0)   35.5 tok/s  tool_call steps= 106 think=  82
+  [s86.t1] ttft=0.77s   total=  47.5s  out=1483 prompt= 76463 (cached      0)   31.7 tok/s  tool_call steps= 604 think= 563
+  [s86.t2] ttft=1.90s   total=   7.3s  out= 443 prompt= 88340 (cached      0)   82.6 tok/s  tool_call steps= 171 think= 144
+  [s87.t0] ttft=12.21s  total=  43.3s  out= 929 prompt= 74898 (cached      0)   29.9 tok/s  tool_call steps= 362 think= 335
+  [s87.t1] ttft=0.54s   total=  11.9s  out= 370 prompt= 75543 (cached      0)   32.4 tok/s  tool_call steps= 143 think= 107
+  [s87.t2] ttft=0.51s   total=   4.8s  out= 169 prompt= 76569 (cached      0)   38.9 tok/s  tool_call steps=  64 think=  50
+  [s88.t0] ttft=11.64s  total=  28.7s  out= 449 prompt= 72269 (cached      0)   26.3 tok/s  tool_call steps= 186 think= 174
+  [s88.t1] ttft=0.77s   total=   9.6s  out= 264 prompt= 74937 (cached      0)   29.9 tok/s  tool_call steps=  97 think=  70
+  [s88.t2] ttft=0.67s   total=  21.2s  out= 757 prompt= 75884 (cached      0)   36.8 tok/s  tool_call steps= 279 think= 249
+  [s89.t0] ttft=4.21s   total=  15.9s  out= 195 prompt= 64022 (cached      0)   16.6 tok/s  tool_call steps=  77 think=  61
+  [s89.t1] ttft=0.84s   total=  11.4s  out= 268 prompt= 66013 (cached      0)   25.3 tok/s  tool_call steps=  94 think=  72
+  [s89.t2] ttft=0.56s   total=  10.8s  out= 293 prompt= 67124 (cached      0)   28.6 tok/s  tool_call steps= 108 think=  77
+  [s90.t0] ttft=5.11s   total=  15.2s  out= 174 prompt= 64142 (cached      0)   17.1 tok/s  tool_call steps=  64 think=  59
+  [s90.t1] ttft=0.46s   total=   6.4s  out= 188 prompt= 65383 (cached      0)   31.5 tok/s  tool_call steps=  61 think=  39
+  [s90.t2] ttft=0.92s   total=  32.4s  out= 860 prompt= 66399 (cached      0)   27.2 tok/s  tool_call steps= 366 think= 361
+  [s91.t0] ttft=4.20s   total=  15.3s  out= 199 prompt= 64242 (cached      0)   17.8 tok/s  tool_call steps=  67 think=  32
+  [s91.t1] ttft=0.43s   total=   9.5s  out= 220 prompt= 64815 (cached      0)   24.3 tok/s  tool_call steps=  90 think=  75
+  [s91.t2] ttft=0.48s   total=   8.3s  out= 201 prompt= 65529 (cached      0)   25.5 tok/s  tool_call steps=  69 think=  38
+  [s92.t0] ttft=11.63s  total=  18.6s  out= 287 prompt= 72217 (cached      0)   40.8 tok/s  tool_call steps= 100 think=  76
+  [s92.t1] ttft=1.10s   total=   8.8s  out= 167 prompt= 75367 (cached      0)   21.7 tok/s  tool_call steps=  60 think=  56
+  [s92.t2] ttft=1.60s   total=   8.5s  out= 231 prompt= 81810 (cached      0)   33.2 tok/s  tool_call steps=  72 think=  45
+  [s93.t0] ttft=10.36s  total=  21.0s  out= 311 prompt= 69454 (cached      0)   29.0 tok/s  tool_call steps= 123 think=  98
+  [s93.t1] ttft=2.20s   total=   8.4s  out= 169 prompt= 77912 (cached      0)   27.2 tok/s  tool_call steps=  54 think=  35
+  [s93.t2] ttft=0.47s   total=   8.1s  out= 218 prompt= 78643 (cached      0)   28.3 tok/s  tool_call steps=  84 think=  61
+  [s94.t0] ttft=11.94s  total=  19.7s  out= 306 prompt= 71702 (cached      0)   39.2 tok/s  tool_call steps= 110 think=  88
+  [s94.t1] ttft=2.23s   total=  19.0s  out= 414 prompt= 80148 (cached      0)   24.7 tok/s  tool_call steps= 169 think= 165
+  [s94.t2] ttft=0.42s   total=  16.2s  out= 542 prompt= 80643 (cached      0)   34.4 tok/s  tool_call steps= 203 think= 179
+  [s95.t0] ttft=5.09s   total=  27.4s  out= 456 prompt= 64085 (cached      0)   20.4 tok/s  tool_call steps= 184 think= 163
+  [s95.t1] ttft=0.67s   total=  17.8s  out= 507 prompt= 64877 (cached      0)   29.6 tok/s  tool_call steps= 199 think= 177
+  [s95.t2] ttft=1.88s   total=  14.3s  out= 477 prompt= 73863 (cached      0)   38.2 tok/s  tool_call steps= 179 think= 155
+  [s96.t0] ttft=6.01s   total=  14.8s  out= 159 prompt= 64065 (cached      0)   18.0 tok/s  tool_call steps=  57 think=  42
+  [s96.t1] ttft=0.52s   total=  10.5s  out= 296 prompt= 65349 (cached      0)   29.6 tok/s  tool_call steps=  96 think=  43
+  [s96.t2] ttft=1.91s   total=   5.1s  out= 115 prompt= 72431 (cached      0)   35.5 tok/s  tool_call steps=  38 think=  34
+  [s97.t0] ttft=5.08s   total=  26.6s  out= 486 prompt= 63681 (cached      0)   22.5 tok/s  tool_call steps= 176 think= 123
+  [s97.t1] ttft=0.68s   total=   8.5s  out= 217 prompt= 64626 (cached      0)   27.5 tok/s  tool_call steps=  79 think=  58
+  [s97.t2] ttft=0.72s   total=   8.0s  out= 259 prompt= 67365 (cached      0)   35.5 tok/s  tool_call steps=  96 think=  82
+  [s98.t0] ttft=11.92s  total=  32.1s  out= 586 prompt= 71887 (cached      0)   29.0 tok/s  tool_call steps= 220 think= 188
+  [s98.t1] ttft=2.53s   total=   7.8s  out= 217 prompt= 81000 (cached      0)   41.3 tok/s  tool_call steps=  70 think=  46
+  [s98.t2] ttft=1.09s   total=  21.8s  out= 767 prompt= 83534 (cached      0)   37.0 tok/s  tool_call steps= 293 think= 248
+  [s99.t0] ttft=12.70s  total=  42.2s  out= 799 prompt= 76242 (cached      0)   27.1 tok/s  tool_call steps= 344 think= 320
+  [s99.t1] ttft=0.55s   total=  19.3s  out= 648 prompt= 76823 (cached      0)   34.5 tok/s  tool_call steps= 256 think= 222
+  [s99.t2] ttft=0.58s   total=   5.2s  out= 240 prompt= 78952 (cached      0)   51.3 tok/s  tool_call steps=  84 think=  57
+  [s100.t0] ttft=6.95s   total=  23.4s  out= 382 prompt= 63980 (cached      0)   23.1 tok/s  tool_call steps= 141 think= 113
+  [s100.t1] ttft=0.64s   total=  29.5s  out= 806 prompt= 65149 (cached      0)   27.9 tok/s  tool_call steps= 331 think= 293
+  [s100.t2] ttft=0.41s   total=   4.2s  out= 191 prompt= 65943 (cached      0)   50.4 tok/s  tool_call steps=  60 think=  35
+  [s101.t0] ttft=7.85s   total=  16.0s  out= 175 prompt= 63810 (cached      0)   21.3 tok/s  tool_call steps=  76 think=  71
+  [s101.t1] ttft=1.24s   total=   9.4s  out= 232 prompt= 67792 (cached      0)   28.1 tok/s  tool_call steps=  78 think=  54
+  [s101.t2] ttft=1.27s   total=  18.0s  out= 519 prompt= 70613 (cached      0)   31.0 tok/s  tool_call steps= 196 think= 170
+  [s102.t0] ttft=7.85s   total=  58.9s  out=1429 prompt= 63878 (cached      0)   28.0 tok/s  tool_call steps= 578 think= 508
+  [s102.t1] ttft=0.48s   total=  11.3s  out= 559 prompt= 64369 (cached      0)   51.7 tok/s  tool_call steps= 209 think= 171
+  [s102.t2] ttft=0.35s   total=   3.0s  out= 224 prompt= 64837 (cached      0)   84.7 tok/s  tool_call steps=  82 think=  52
+  [s103.t0] ttft=8.54s   total=  30.7s  out= 547 prompt= 63641 (cached      0)   24.7 tok/s  tool_call steps= 219 think= 207
+  [s103.t1] ttft=1.33s   total=   6.0s  out= 144 prompt= 66964 (cached      0)   30.3 tok/s  tool_call steps=  56 think=  38
+  [s103.t2] ttft=1.34s   total=   7.6s  out= 249 prompt= 74112 (cached      0)   39.7 tok/s  tool_call steps=  76 think=  42
+  [s104.t0] ttft=7.83s   total=  23.3s  out= 352 prompt= 64133 (cached      0)   22.7 tok/s  tool_call steps= 140 think= 122
+  [s104.t1] ttft=0.46s   total=   8.8s  out= 203 prompt= 64726 (cached      0)   24.2 tok/s  tool_call steps=  83 think=  69
+  [s104.t2] ttft=1.11s   total=  20.0s  out= 615 prompt= 65328 (cached      0)   32.5 tok/s  tool_call steps= 229 think=  77
+  [s105.t0] ttft=0.57s   total=   4.9s  out= 131 prompt= 63695 (cached      0)   30.2 tok/s  tool_call steps=  40 think=  36
+  [s105.t1] ttft=1.99s   total=   9.1s  out= 203 prompt= 72094 (cached      0)   28.5 tok/s  tool_call steps=  75 think=  60
+  [s105.t2] ttft=0.46s   total=  12.0s  out= 354 prompt= 73119 (cached      0)   30.5 tok/s  tool_call steps= 144 think= 140
+  [s106.t0] ttft=0.92s   total=   4.6s  out= 103 prompt= 63728 (cached      0)   27.6 tok/s  tool_call steps=  37 think=  33
+  [s106.t1] ttft=2.22s   total=  15.0s  out= 410 prompt= 71876 (cached      0)   31.9 tok/s  tool_call steps= 161 think= 140
+  [s106.t2] ttft=1.10s   total=   7.3s  out= 237 prompt= 75834 (cached      0)   38.1 tok/s  tool_call steps=  85 think=  64
+  [s107.t0] ttft=0.91s   total=   9.4s  out= 265 prompt= 63834 (cached      0)   31.2 tok/s  tool_call steps=  96 think=  59
+  [s107.t1] ttft=0.89s   total=  11.8s  out= 332 prompt= 66426 (cached      0)   30.3 tok/s  tool_call steps= 132 think= 113
+  [s107.t2] ttft=0.54s   total=   3.0s  out= 100 prompt= 67153 (cached      0)   40.1 tok/s  tool_call steps=  37 think=  32
+  [s108.t0] ttft=1.03s   total=   9.7s  out= 329 prompt= 64301 (cached      0)   38.0 tok/s  tool_call steps= 119 think=  86
+  [s108.t1] ttft=0.73s   total=   7.5s  out= 188 prompt= 66952 (cached      0)   27.7 tok/s  tool_call steps=  68 think=  43
+  [s108.t2] ttft=0.54s   total=  14.4s  out= 643 prompt= 67792 (cached      0)   46.5 tok/s  tool_call steps= 227 think= 187
+  [s109.t0] ttft=0.48s   total=   7.9s  out= 270 prompt= 63807 (cached      0)   36.1 tok/s  tool_call steps=  93 think=  73
+  [s109.t1] ttft=0.57s   total=  13.5s  out= 479 prompt= 64941 (cached      0)   37.0 tok/s  tool_call steps= 173 think= 139
+  [s109.t2] ttft=0.53s   total=   5.3s  out= 254 prompt= 65580 (cached      0)   52.7 tok/s  tool_call steps=  84 think=  48
+  [s110.t0] ttft=0.62s   total=  22.2s  out= 720 prompt= 63925 (cached      0)   33.3 tok/s  tool_call steps= 283 think= 261
+  [s110.t1] ttft=0.64s   total=  13.8s  out= 681 prompt= 66620 (cached      0)   51.7 tok/s  tool_call steps= 267 think= 234
+  [s110.t2] ttft=0.33s   total=   2.2s  out= 190 prompt= 67271 (cached      0)  101.2 tok/s  tool_call steps=  65 think=  45
+  [s111.t0] ttft=0.62s   total=   4.3s  out= 167 prompt= 63667 (cached      0)   45.3 tok/s  tool_call steps=  50 think=  28
+  [s111.t1] ttft=0.55s   total=   3.7s  out=  90 prompt= 65891 (cached      0)   28.6 tok/s  tool_call steps=  34 think=  20
+  [s111.t2] ttft=1.22s   total=  11.7s  out= 358 prompt= 69455 (cached      0)   34.0 tok/s  tool_call steps= 150 think= 126
+  [s112.t0] ttft=0.48s   total=   1.9s  out=  60 prompt= 63708 (cached      0)   40.7 tok/s  tool_call steps=  20 think=  16
+  [s112.t1] ttft=1.01s   total=   7.1s  out= 199 prompt= 66288 (cached      0)   32.3 tok/s  tool_call steps=  74 think=  53
+  [s112.t2] ttft=0.87s   total=  23.9s  out=1029 prompt= 66905 (cached      0)   44.6 tok/s  tool_call steps= 406 think= 379
+  [s113.t0] ttft=0.69s   total=  12.9s  out= 388 prompt= 64019 (cached      0)   31.8 tok/s  tool_call steps= 149 think= 117
+  [s113.t1] ttft=0.46s   total=   2.7s  out=  86 prompt= 64561 (cached      0)   37.8 tok/s  tool_call steps=  35 think=  31
+  [s113.t2] ttft=0.76s   total=   4.3s  out= 180 prompt= 65462 (cached      0)   51.0 tok/s  tool_call steps=  54 think=  35
+  [s114.t0] ttft=0.65s   total=  20.4s  out= 702 prompt= 64117 (cached      0)   35.5 tok/s  tool_call steps= 286 think= 256
+  [s114.t1] ttft=0.75s   total=  11.1s  out= 676 prompt= 67131 (cached      0)   64.9 tok/s  tool_call steps= 271 think= 241
+  [s114.t2] ttft=0.36s   total=   1.9s  out= 251 prompt= 67975 (cached      0)  165.8 tok/s  tool_call steps=  87 think=  54
+  [s115.t0] ttft=0.60s   total=  11.9s  out= 385 prompt= 63862 (cached      0)   33.9 tok/s  tool_call steps= 146 think= 114
+  [s115.t1] ttft=1.12s   total=   8.2s  out= 345 prompt= 67585 (cached      0)   48.8 tok/s  tool_call steps= 127 think= 100
+  [s115.t2] ttft=0.92s   total=   3.3s  out= 165 prompt= 70933 (cached      0)   67.9 tok/s  tool_call steps=  46 think=  24
+  [s116.t0] ttft=0.49s   total=   4.8s  out= 150 prompt= 63560 (cached      0)   34.3 tok/s  tool_call steps=  43 think=  19
+  [s116.t1] ttft=1.32s   total=   4.6s  out= 147 prompt= 71739 (cached      0)   44.1 tok/s  tool_call steps=  49 think=  35
+  [s116.t2] ttft=0.93s   total=   4.4s  out= 161 prompt= 74346 (cached      0)   46.5 tok/s  tool_call steps=  55 think=  30
+  [s117.t0] ttft=0.47s   total=  14.3s  out= 478 prompt= 63530 (cached      0)   34.6 tok/s  tool_call steps= 190 think= 169
+  [s117.t1] ttft=0.97s   total=  12.4s  out= 594 prompt= 67351 (cached      0)   52.0 tok/s  tool_call steps= 242 think= 222
+  [s117.t2] ttft=0.59s   total=   2.2s  out= 189 prompt= 69074 (cached      0)  117.0 tok/s  tool_call steps=  58 think=  35
+  [s118.t0] ttft=0.86s   total=  21.0s  out= 834 prompt= 64271 (cached      0)   41.4 tok/s  tool_call steps= 309 think= 285
+  [s118.t1] ttft=0.38s   total=   7.3s  out= 513 prompt= 65045 (cached      0)   73.5 tok/s  tool_call steps= 190 think= 155
+  [s118.t2] ttft=0.31s   total=   4.5s  out= 568 prompt= 65658 (cached      0)  134.0 tok/s  tool_call steps= 241 think= 220
+  [s119.t0] ttft=0.77s   total=  14.5s  out= 593 prompt= 65107 (cached      0)   43.1 tok/s  tool_call steps= 234 think= 192
+  [s119.t1] ttft=0.77s   total=   8.0s  out= 472 prompt= 68389 (cached      0)   65.1 tok/s  tool_call steps= 195 think= 163
+  [s119.t2] ttft=0.47s   total=   1.9s  out= 161 prompt= 69164 (cached      0)  109.8 tok/s  tool_call steps=  67 think=  48
+  [s120.t0] ttft=0.54s   total=   3.1s  out= 123 prompt= 64928 (cached      0)   48.2 tok/s  tool_call steps=  42 think=  27
+  [s120.t1] ttft=1.02s   total=   9.7s  out= 390 prompt= 68411 (cached      0)   44.9 tok/s  tool_call steps= 154 think= 109
+  [s120.t2] ttft=0.33s   total=   4.5s  out= 190 prompt= 69144 (cached      0)   45.4 tok/s  tool_call steps=  70 think=  66
+--- c=48: 144/144 ok, ttft p50 0.89s p95 11.63s, 32.20 tok/s per req, 725.3 tok/s aggregate, wall 78.3s, accept 2.73 tok/step
+    shape: out p50 268 p95 1062, tool_call 100%, reasoning 83% of steps, finish {'tool_calls': 144}  (production: gen mean 535, ~80% tool calls, ~half reasoning)
+    accept per position: 70% / 50% / 36%  (production 71 / 53 / 42%), uncached/req 4213, prefill 2203 tok/s
+    server[144 req]: TTFT 2.35s (queue 0.09s + prefill 1.91s), decode 12.08s, 32.13 tok/s/req, 725.31 tok/s total, cache hit 93.91%, preempt 0, accept 2.56
+
+raw: runs/sweep3-onbox-seqs48/loadgen-20260920-200025.json

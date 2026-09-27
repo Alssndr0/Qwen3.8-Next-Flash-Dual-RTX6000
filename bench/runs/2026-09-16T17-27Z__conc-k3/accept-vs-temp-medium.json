@@ -1,0 +1,274 @@
+[
+ {
+  "rep": 0,
+  "prompt": "code",
+  "cond": "prod",
+  "tokens": 1500,
+  "secs": 19.5,
+  "tok_s": 76.9,
+  "reasoning_chars": 1150,
+  "content_chars": 5052,
+  "accept_rate": 0.7047,
+  "accept_len": 3.114,
+  "per_pos": [
+   0.828,
+   0.695,
+   0.591
+  ]
+ },
+ {
+  "rep": 0,
+  "prompt": "code",
+  "cond": "t0.7",
+  "tokens": 1500,
+  "secs": 21.8,
+  "tok_s": 69.0,
+  "reasoning_chars": 4979,
+  "content_chars": 1242,
+  "accept_rate": 0.5943,
+  "accept_len": 2.783,
+  "per_pos": [
+   0.75,
+   0.588,
+   0.445
+  ]
+ },
+ {
+  "rep": 0,
+  "prompt": "code",
+  "cond": "t0.6",
+  "tokens": 1500,
+  "secs": 22.3,
+  "tok_s": 67.3,
+  "reasoning_chars": 5877,
+  "content_chars": 151,
+  "accept_rate": 0.5836,
+  "accept_len": 2.751,
+  "per_pos": [
+   0.751,
+   0.559,
+   0.441
+  ]
+ },
+ {
+  "rep": 0,
+  "prompt": "code",
+  "cond": "greedy",
+  "tokens": 1500,
+  "secs": 20.0,
+  "tok_s": 75.1,
+  "reasoning_chars": 3343,
+  "content_chars": 2735,
+  "accept_rate": 0.6568,
+  "accept_len": 2.97,
+  "per_pos": [
+   0.8,
+   0.65,
+   0.521
+  ]
+ },
+ {
+  "rep": 0,
+  "prompt": "agentic",
+  "cond": "prod",
+  "tokens": 1500,
+  "secs": 22.2,
+  "tok_s": 67.6,
+  "reasoning_chars": 1813,
+  "content_chars": 4471,
+  "accept_rate": 0.5774,
+  "accept_len": 2.732,
+  "per_pos": [
+   0.741,
+   0.561,
+   0.43
+  ]
+ },
+ {
+  "rep": 0,
+  "prompt": "agentic",
+  "cond": "t0.7",
+  "tokens": 1500,
+  "secs": 19.8,
+  "tok_s": 75.8,
+  "reasoning_chars": 1096,
+  "content_chars": 5243,
+  "accept_rate": 0.6864,
+  "accept_len": 3.059,
+  "per_pos": [
+   0.833,
+   0.673,
+   0.553
+  ]
+ },
+ {
+  "rep": 0,
+  "prompt": "agentic",
+  "cond": "t0.6",
+  "tokens": 1500,
+  "secs": 20.9,
+  "tok_s": 71.8,
+  "reasoning_chars": 1068,
+  "content_chars": 5111,
+  "accept_rate": 0.6426,
+  "accept_len": 2.928,
+  "per_pos": [
+   0.789,
+   0.635,
+   0.503
+  ]
+ },
+ {
+  "rep": 0,
+  "prompt": "agentic",
+  "cond": "greedy",
+  "tokens": 1500,
+  "secs": 17.6,
+  "tok_s": 85.2,
+  "reasoning_chars": 1071,
+  "content_chars": 5122,
+  "accept_rate": 0.7827,
+  "accept_len": 3.348,
+  "per_pos": [
+   0.884,
+   0.779,
+   0.685
+  ]
+ },
+ {
+  "rep": 1,
+  "prompt": "code",
+  "cond": "prod",
+  "tokens": 1500,
+  "secs": 21.4,
+  "tok_s": 70.3,
+  "reasoning_chars": 5955,
+  "content_chars": 0,
+  "accept_rate": 0.6197,
+  "accept_len": 2.859,
+  "per_pos": [
+   0.768,
+   0.606,
+   0.486
+  ]
+ },
+ {
+  "rep": 1,
+  "prompt": "code",
+  "cond": "t0.7",
+  "tokens": 1500,
+  "secs": 20.4,
+  "tok_s": 73.5,
+  "reasoning_chars": 3293,
+  "content_chars": 2457,
+  "accept_rate": 0.6594,
+  "accept_len": 2.978,
+  "per_pos": [
+   0.796,
+   0.653,
+   0.53
+  ]
+ },
+ {
+  "rep": 1,
+  "prompt": "code",
+  "cond": "t0.6",
+  "tokens": 1500,
+  "secs": 22.0,
+  "tok_s": 68.1,
+  "reasoning_chars": 3976,
+  "content_chars": 2445,
+  "accept_rate": 0.5875,
+  "accept_len": 2.762,
+  "per_pos": [
+   0.744,
+   0.578,
+   0.44
+  ]
+ },
+ {
+  "rep": 1,
+  "prompt": "code",
+  "cond": "greedy",
+  "tokens": 1500,
+  "secs": 20.5,
+  "tok_s": 73.3,
+  "reasoning_chars": 4176,
+  "content_chars": 1933,
+  "accept_rate": 0.6294,
+  "accept_len": 2.888,
+  "per_pos": [
+   0.767,
+   0.618,
+   0.503
+  ]
+ },
+ {
+  "rep": 1,
+  "prompt": "agentic",
+  "cond": "prod",
+  "tokens": 1500,
+  "secs": 20.6,
+  "tok_s": 72.8,
+  "reasoning_chars": 6161,
+  "content_chars": 140,
+  "accept_rate": 0.6714,
+  "accept_len": 3.014,
+  "per_pos": [
+   0.799,
+   0.667,
+   0.548
+  ]
+ },
+ {
+  "rep": 1,
+  "prompt": "agentic",
+  "cond": "t0.7",
+  "tokens": 1500,
+  "secs": 21.2,
+  "tok_s": 70.6,
+  "reasoning_chars": 1205,
+  "content_chars": 5144,
+  "accept_rate": 0.6313,
+  "accept_len": 2.894,
+  "per_pos": [
+   0.776,
+   0.62,
+   0.497
+  ]
+ },
+ {
+  "rep": 1,
+  "prompt": "agentic",
+  "cond": "t0.6",
+  "tokens": 1500,
+  "secs": 20.1,
+  "tok_s": 74.7,
+  "reasoning_chars": 1161,
+  "content_chars": 5241,
+  "accept_rate": 0.6815,
+  "accept_len": 3.045,
+  "per_pos": [
+   0.834,
+   0.653,
+   0.558
+  ]
+ },
+ {
+  "rep": 1,
+  "prompt": "agentic",
+  "cond": "greedy",
+  "tokens": 1500,
+  "secs": 19.1,
+  "tok_s": 78.4,
+  "reasoning_chars": 1170,
+  "content_chars": 5253,
+  "accept_rate": 0.6885,
+  "accept_len": 3.065,
+  "per_pos": [
+   0.83,
+   0.681,
+   0.554
+  ]
+ }
+]

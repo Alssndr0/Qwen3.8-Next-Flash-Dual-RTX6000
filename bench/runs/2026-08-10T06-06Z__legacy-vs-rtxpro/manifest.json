@@ -1,0 +1,27 @@
+{
+ "ref": "legacy-vs-rtxpro",
+ "provenance": "unverified",
+ "captured_utc": "2026-08-10T08:06:47",
+ "served_model_name": "deepseek-v4-flash-dspark",
+ "model": null,
+ "dspark_sha": null,
+ "vllm_version": null,
+ "serve_flags": {},
+ "hotfixes": {},
+ "workload": {
+  "prompt_tokens": 1000,
+  "unique_tokens": 1000,
+  "max_tokens": 300,
+  "levels": [
+   1,
+   2,
+   4,
+   8,
+   16,
+   24
+  ]
+ },
+ "note": "Pre-suite run: no provenance was captured. Config identity can only be inferred from the workload params and observed cache-hit/prefill numbers.",
+ "gates": {},
+ "results": {}
+}

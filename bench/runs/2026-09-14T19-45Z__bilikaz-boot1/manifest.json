@@ -1,0 +1,55 @@
+{
+  "captured_utc": "2026-09-14T19:52:39.517096Z",
+  "ref": "bilikaz-boot1",
+  "deployment": "bilikaz-cluster-recipe boot1 (trial, NOT bench.py-captured)",
+  "kit": "bilikaz/qwen38-flash-next-cluster-recipe@7f8c48b79120b083f150b6db6fdc32decedfe514",
+  "image": "myllmbox/qwen38-flash-next-cluster-vllm@sha256:49b57ee9920b7132cd0b4d3e351c5ae96829c4094594981b8d9c711a56b65360",
+  "vllm_version": "0.29.0",
+  "model": "myllmbox/Qwen3.8-Flash-Next-hibrid48@e316057ddc794cbf76c3ef28bfd1c7b62b20128c",
+  "served_model_name": "Qwen/Qwen3.8-Flash-Next",
+  "recipe": "../bilikaz-cluster-recipe/config/recipe.yaml (MBX_PLE_REPLICATE unset = half-table layout)",
+  "serve_flags": {
+    "max_num_seqs": 32,
+    "max_num_batched_tokens": 8192,
+    "gpu_memory_utilization": 0.7,
+    "kv_cache_memory_bytes": 28000000000,
+    "speculative_config": {
+      "method": "mtp",
+      "num_speculative_tokens": 4
+    },
+    "moe_backend": "marlin",
+    "async_scheduling": true,
+    "compilation_config": "default (inductor, FULL_AND_PIECEWISE)",
+    "mamba_ssm_cache_dtype": "default",
+    "long_prefill_token_threshold": null
+  },
+  "workload": {
+    "sweep": "1,5,6,10",
+    "prompt_tokens": 18000,
+    "unique_tokens": 2700,
+    "max_tokens": 300,
+    "reps": 3,
+    "kind": "code",
+    "tail_seed_base": 20260920,
+    "tail_seeds": {
+      "warmup": 20260920,
+      "counted": [
+        20260921,
+        20260922,
+        20260923
+      ]
+    }
+  },
+  "memory": {
+    "boot_floor_gib": {
+      "head": 26.4,
+      "worker": 29.5
+    },
+    "under_load_floor_gib": {
+      "head": 25.3,
+      "worker": 26.3
+    },
+    "kill_switch_trips": 0
+  },
+  "note": "loadgen driven by hand on the head with bench.py's exact flags; compare with: python3 compare.py code-baseline-k3 bilikaz-boot1"
+}

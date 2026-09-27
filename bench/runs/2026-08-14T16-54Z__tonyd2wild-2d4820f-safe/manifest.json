@@ -1,0 +1,159 @@
+{
+ "captured_utc": "2026-08-14T16:54:02+00:00",
+ "provenance": "full",
+ "bench_sha": "28c46eb0db3e5262d7a9268d3c38363f789de450-dirty",
+ "deployment": "sparkrun",
+ "container": "sparkrun_6fb816680b2e_node_0",
+ "serve_cmd": "export B12X_W4A16_TC_DECODE=0; export DG_JIT_NVCC_COMPILER=/opt/env/bin/nvcc; export DG_JIT_USE_NVRTC=0; export DSPARK_SLOT_CLAMP=1; export FLASHINFER_CUDA_ARCH_LIST=12.1a; export FLASHINFER_DISABLE_VERSION_CHECK=1; export HF_HOME=/cache/huggingface; export HF_HUB_DISABLE_XET=1; export HF_HUB_OFFLINE=1; export NCCL_CUMEM_ENABLE=0; export NCCL_IB_GID_INDEX=3; export NCCL_IB_HCA=rocep1s0f1:1; export NCCL_NVLS_ENABLE=0; export NCCL_SOCKET_IFNAME=enp1s0f1np1; export OMP_NUM_THREADS=4; export PYTHONUNBUFFERED=1; export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True; export TILELANG_CLEANUP_TEMP_FILES=1; export TORCH_CUDA_ARCH_LIST=12.1a; export TRANSFORMERS_OFFLINE=1; export VLLM_ALLOW_LONG_MAX_MODEL_LEN=1; export VLLM_B12X_W4A16_FORCE_BLOCKS_MAX_M=16; export VLLM_B12X_W4A16_FORCE_BLOCKS_PER_SM=0; export VLLM_CACHE_ROOT=/cache/huggingface/vllm-cache; export VLLM_DSPARK_CONFIDENCE_SCHEDULER=off; export VLLM_DSPARK_CONFIDENCE_THRESHOLD=0.0; export VLLM_DSPARK_FUSED_MARKOV_ARGMAX=0; export VLLM_DSPARK_GPU_REJECTED_CONTEXT_MASK=1; export VLLM_DSPARK_HARDWARE_SCHEDULER_EARLY_STOP=1; export VLLM_DSPARK_LOCAL_ARGMAX=1; export VLLM_DSPARK_REFERENCE_KV_QUANT_DEQUANT=0; export VLLM_DSPARK_REPLICATE_MARKOV_W1=1; export VLLM_DSV4_B12X_COMPRESSED_MLA=0; export VLLM_DSV4_DSPARK_DEFER_TARGET_CAPTURE=0; export VLLM_DSV4_DSPARK_DEFER_TARGET_CAPTURE_EXACT=0; export VLLM_ENGINE_READY_TIMEOUT_S=3600; export VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0; export VLLM_SKIP_INIT_MEMORY_CHECK=1; export VLLM_SPARSE_INDEXER_MAX_LOGITS_MB=256; export VLLM_TRITON_MLA_SPARSE=1; export VLLM_USE_B12X_MOE=1; export VLLM_USE_B12X_WO_PROJECTION=1; export VLLM_USE_FLASHINFER_SAMPLER=1; export PATH=/opt/env/bin:/opt/env/nvvm/bin:/opt/env/targets/sbsa-linux/nvvm/bin:$PATH &&\nexport CUDA_HOME=/opt/env/targets/sbsa-linux CUDA_PATH=/opt/env/targets/sbsa-linux CUDAToolkit_ROOT=/opt/env/targets/sbsa-linux &&\nexport LD_LIBRARY_PATH=/opt/env/lib:/opt/env/targets/sbsa-linux/lib:$LD_LIBRARY_PATH &&\n/opt/env/bin/vllm serve deepseek-ai/DeepSeek-V4-Flash-0731 \\\n  --served-model-name deepseek-v4-flash-dspark \\\n  --host 0.0.0.0 \\\n  --port 8000 \\\n  --trust-remote-code \\\n  --tensor-parallel-size 2 \\\n  --pipeline-parallel-size 1 \\\n  --kv-cache-dtype nvfp4_ds_mla \\\n  --block-size 256 \\\n  --max-model-len 262144 \\\n  --max-num-seqs 6 \\\n  --max-num-batched-tokens 8192 \\\n  --gpu-memory-utilization 0.78 \\\n  --enable-prefix-caching \\\n  --async-scheduling \\\n  --enable-chunked-prefill \\\n  --speculative-config '{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\"}' \\\n  --tokenizer-mode deepseek_v4 \\\n  --distributed-executor-backend mp \\\n  --tool-call-parser deepseek_v4 \\\n  --enable-auto-tool-choice \\\n  --reasoning-parser deepseek_v4 \\\n  --reasoning-config '{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"<think>\",\"reasoning_end_str\":\"</think>\"}' \\\n  --default-chat-template-kwargs '{\"thinking\":false}' \\\n  --generation-config vllm \\\n  --enable-flashinfer-autotune --nnodes 2 --node-rank 0 --master-addr 10.150.0.50 --master-port 25000",
+ "image": "ghcr.io/bjk110/vllm-spark@sha256:d8492e7677cf1b9aaa3344e0e6865efc468454013eee5ebabac85be90af027be",
+ "image_id": "sha256:b2eb4e6ee5cc8b69b941bd7a00c2be93a5c2c93e0c74dc7306a42919ccdf9f2d",
+ "vllm_version": "0.21.1rc1.dev339+g1967a5627bc3",
+ "retention_interval": "(absent)",
+ "containers": {
+  "10.150.0.50": "sparkrun_6fb816680b2e_node_0",
+  "10.150.0.51": "sparkrun_6fb816680b2e_node_1"
+ },
+ "hotfixes": {
+  "10.150.0.50": [
+   "sparkrun-dspark-overlay-2d4820f025d2e8eb118cdecb07ccafdd0587aa48"
+  ],
+  "10.150.0.51": [
+   "sparkrun-dspark-overlay-2d4820f025d2e8eb118cdecb07ccafdd0587aa48"
+  ]
+ },
+ "serve_flags": {
+  "_model": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "--served-model-name": "deepseek-v4-flash-dspark",
+  "--host": "0.0.0.0",
+  "--port": "8000",
+  "--trust-remote-code": "\\",
+  "--tensor-parallel-size": "2",
+  "--pipeline-parallel-size": "1",
+  "--kv-cache-dtype": "nvfp4_ds_mla",
+  "--block-size": "256",
+  "--max-model-len": "262144",
+  "--max-num-seqs": "6",
+  "--max-num-batched-tokens": "8192",
+  "--gpu-memory-utilization": "0.78",
+  "--enable-prefix-caching": "\\",
+  "--async-scheduling": "\\",
+  "--enable-chunked-prefill": "\\",
+  "--speculative-config": "'{\"method\":\"dspark\",\"num_speculative_tokens\":5,\"draft_sample_method\":\"probabilistic\"}'",
+  "--tokenizer-mode": "deepseek_v4",
+  "--distributed-executor-backend": "mp",
+  "--tool-call-parser": "deepseek_v4",
+  "--enable-auto-tool-choice": "\\",
+  "--reasoning-parser": "deepseek_v4",
+  "--reasoning-config": "'{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"<think>\",\"reasoning_end_str\":\"</think>\"}'",
+  "--default-chat-template-kwargs": "'{\"thinking\":false}'",
+  "--generation-config": "vllm",
+  "--enable-flashinfer-autotune": true,
+  "--nnodes": "2",
+  "--node-rank": "0",
+  "--master-addr": "10.150.0.50",
+  "--master-port": "25000"
+ },
+ "model": "deepseek-ai/DeepSeek-V4-Flash-0731",
+ "dspark_sha": "2d4820f025d2e8eb118cdecb07ccafdd0587aa48",
+ "dspark_dirty": false,
+ "config_file": "recipe.yaml",
+ "recipe_path": "/home/alessandroalviani/dgx-cluster/sparkrun/deepseek-v4-flash-0731-tonyd2wild-2d4820f.yaml",
+ "recipe_sha256": "3743118219417f77f62152ad925f910705d853a5bef56c26b422cac99d2e1870",
+ "served_model_name": "deepseek-v4-flash-dspark",
+ "dspark_revision": null,
+ "max_num_seqs": "6",
+ "max_num_batched_tokens": "8192",
+ "max_model_len": "262144",
+ "long_prefill_token_threshold": null,
+ "mtp_num_tokens": "5",
+ "default_thinking": "off",
+ "ref": "tonyd2wild-2d4820f-safe",
+ "gates": {
+  "smoke": true,
+  "toolprobe": true,
+  "loadgen": true,
+  "decode_shapes": null
+ },
+ "results": {
+  "smoke": {
+   "ok": true,
+   "served": [
+    "deepseek-v4-flash-dspark"
+   ]
+  },
+  "toolprobe": {
+   "test": "toolprobe",
+   "n": 10,
+   "passed": 10,
+   "gate": "all",
+   "ok": true,
+   "model": "deepseek-v4-flash-dspark",
+   "url": "http://127.0.0.1:8000/v1/chat/completions",
+   "results": [
+    {
+     "i": 1,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 2,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 3,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 4,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 5,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 6,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 7,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 8,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 9,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 10,
+     "pass": true,
+     "detail": "run_shell"
+    }
+   ]
+  },
+  "loadgen": {
+   "ok": true,
+   "preemptions": 0.0,
+   "incomplete": [],
+   "reps": [
+    "loadgen-20260814-185850.json",
+    "loadgen-20260814-190056.json"
+   ]
+  },
+  "decode_shapes": {
+   "ok": null,
+   "recorded": true
+  }
+ }
+}

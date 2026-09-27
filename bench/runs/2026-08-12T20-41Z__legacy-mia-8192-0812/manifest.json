@@ -1,0 +1,24 @@
+{
+ "ref": "legacy-mia-8192-0812",
+ "provenance": "unverified",
+ "captured_utc": "2026-08-12T22:41:02",
+ "served_model_name": "deepseek-v4-flash-0731",
+ "model": null,
+ "dspark_sha": null,
+ "vllm_version": null,
+ "serve_flags": {},
+ "hotfixes": {},
+ "workload": {
+  "prompt_tokens": 18000,
+  "unique_tokens": 2700,
+  "max_tokens": 300,
+  "levels": [
+   1,
+   5,
+   10
+  ]
+ },
+ "note": "Pre-suite run: no provenance was captured. Config identity can only be inferred from the workload params and observed cache-hit/prefill numbers. NOTE: served as 'deepseek-v4-flash-0731', which 404s on the current deployment \u2014 the serving config demonstrably differed.",
+ "gates": {},
+ "results": {}
+}

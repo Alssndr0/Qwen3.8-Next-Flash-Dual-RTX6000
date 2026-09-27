@@ -1,0 +1,61 @@
+{
+ "test": "toolprobe",
+ "n": 10,
+ "passed": 10,
+ "gate": "all",
+ "ok": true,
+ "model": "qwen3.8-flash-next",
+ "url": "http://127.0.0.1:8000/v1/chat/completions",
+ "results": [
+  {
+   "i": 1,
+   "pass": true,
+   "detail": "run_shell"
+  },
+  {
+   "i": 2,
+   "pass": true,
+   "detail": "run_shell"
+  },
+  {
+   "i": 3,
+   "pass": true,
+   "detail": "run_shell"
+  },
+  {
+   "i": 4,
+   "pass": true,
+   "detail": "run_shell"
+  },
+  {
+   "i": 5,
+   "pass": true,
+   "detail": "run_shell"
+  },
+  {
+   "i": 6,
+   "pass": true,
+   "detail": "run_shell"
+  },
+  {
+   "i": 7,
+   "pass": true,
+   "detail": "run_shell"
+  },
+  {
+   "i": 8,
+   "pass": true,
+   "detail": "run_shell"
+  },
+  {
+   "i": 9,
+   "pass": true,
+   "detail": "run_shell"
+  },
+  {
+   "i": 10,
+   "pass": true,
+   "detail": "run_shell"
+  }
+ ]
+}

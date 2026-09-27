@@ -1,0 +1,7 @@
+arm	kill_utc	ready_utc	secs	extra
+seqs48	19:43:45	19:47:20	215	--speculative-config {"method":"mtp","num_speculative_tokens":3} --no-enable-flashinfer-autotune
+b12x	20:04:14	FAILED	-	b12x + MTP: FP8 draft MoE rejects b12x
+b12x-nomtp	20:14:50	FAILED	-	illegal memory access in profiling (custom_all_reduce)
+mtp2	20:21:15	20:24:05	170	--speculative-config {"method":"mtp","num_speculative_tokens":2} --no-enable-flashinfer-autotune
+nomtp	20:28:22	20:31:01	159	
+batch32k-ctx262k	20:35:28	20:38:15	167	--speculative-config {"method":"mtp","num_speculative_tokens":3} --no-enable-flashinfer-autotune

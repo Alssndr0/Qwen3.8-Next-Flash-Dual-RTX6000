@@ -1,0 +1,66 @@
+diff --git a/files/patch_checkpoint_config.py b/files/patch_checkpoint_config.py
+index 1b36650..4d963dc 100755
+--- a/files/patch_checkpoint_config.py
++++ b/files/patch_checkpoint_config.py
+@@ -81,10 +81,13 @@ def add_aliases(quant_config: dict, num_hidden_layers: int) -> bool:
+ # RoutedExperts algos ModelOptMixedPrecisionConfig.get_quant_method can build.
+ # Anything else resolves to a *silently unquantized* MoE, which then dies at load
+ # with "has no parameter 'w2_weight_scale_inv'".
++# FP8_PB_WO is ModelOpt's newer name for the same 128x128 block-scaled FP8 weights
++# (nvidia/Qwen3.8-Flash-Next-NVFP4 commit fc694b54, 2026-09-05, renamed it in
++# config.json only; hf_quant_config.json still says FP8_BLOCK_SCALES).
+ # FP8_BLOCK_SCALES is supported only because files/patch_modelopt_fp8_block_moe.py
+ # adds that branch; stock vLLM (image and upstream main) would build an
+ # unquantized MoE and die at load.
+-SUPPORTED_MOE_ALGOS = {"FP8", "NVFP4", "W4A16_NVFP4", "MXFP8", "FP8_BLOCK_SCALES"}
++SUPPORTED_MOE_ALGOS = {"FP8", "NVFP4", "W4A16_NVFP4", "MXFP8", "FP8_BLOCK_SCALES", "FP8_PB_WO"}
+ 
+ 
+ def mtp_moe_algo(snapshot_dir: str) -> str:
+diff --git a/files/patch_modelopt_fp8_block_moe.py b/files/patch_modelopt_fp8_block_moe.py
+index e0757ab..c2abcd2 100755
+--- a/files/patch_modelopt_fp8_block_moe.py
++++ b/files/patch_modelopt_fp8_block_moe.py
+@@ -80,15 +80,16 @@ DISPATCH = """            if quant_algo == "MXFP8":
+                     quant_config=self.mxfp8_config,
+                     moe_config=layer.moe_config,
+                 )
+-            if quant_algo == "FP8_BLOCK_SCALES":
++            if quant_algo in ("FP8_BLOCK_SCALES", "FP8_PB_WO"):
+                 # Imported lazily: modelopt.py deliberately does not import fp8.py
+                 # at module scope.
+                 from vllm.model_executor.layers.quantization.fp8 import Fp8MoEMethod
+ 
+                 logger.info_once(
+-                    "Routed experts %s use FP8_BLOCK_SCALES; building them with "
++                    "Routed experts %s use %s; building them with "
+                     "Fp8MoEMethod (block-quantized).",
+                     prefix,
++                    quant_algo,
+                 )
+                 return Fp8MoEMethod(
+                     quant_config=self._fp8_block_scales_config(prefix),
+@@ -104,11 +105,22 @@ def _replace_once(src: str, old: str, new: str, what: str) -> str:
+     return src.replace(old, new)
+ 
+ 
++NEW_BRANCH = 'if quant_algo in ("FP8_BLOCK_SCALES", "FP8_PB_WO"):'
++OLD_BRANCH = 'if quant_algo == "FP8_BLOCK_SCALES":'
++
++
+ def patch() -> None:
+     src = open(TARGET).read()
+-    if "FP8_BLOCK_SCALES" in src:
++    if NEW_BRANCH in src:
+         print("already patched", TARGET)
+         return
++    if OLD_BRANCH in src:
++        # Patched by an earlier version of this script: widen the branch to the
++        # FP8_PB_WO alias without re-applying the helper.
++        src = _replace_once(src, OLD_BRANCH, NEW_BRANCH, "moe dispatch (alias upgrade)")
++        open(TARGET, "w").write(src)
++        print("upgraded (FP8_PB_WO alias)", TARGET)
++        return
+     src = _replace_once(src, ANCHOR_HELPER, HELPER + ANCHOR_HELPER, "helper")
+     src = _replace_once(src, ANCHOR_DISPATCH, DISPATCH, "moe dispatch")
+     open(TARGET, "w").write(src)

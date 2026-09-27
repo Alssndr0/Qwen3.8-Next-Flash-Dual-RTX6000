@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "url": "http://10.150.0.50:8000/v1/chat/completions",
+    "model": "deepseek-v4-flash-dspark",
+    "prompt_tokens": 100000,
+    "unique_tokens": 2000,
+    "max_tokens": 300,
+    "warmup": 0,
+    "tail_seed": 1786561487,
+    "levels": [
+      1
+    ],
+    "started": "2026-08-12T20:05:41"
+  },
+  "summary": [
+    {
+      "level": 1,
+      "launched": 1,
+      "succeeded": 1,
+      "wall_s": 53.376667511998676,
+      "ttft_p50": 46.83519847900607,
+      "ttft_p95": 46.83519847900607,
+      "total_p50": 53.35317915500491,
+      "total_p95": 53.35317915500491,
+      "tpot_mean": 0.021799266474912517,
+      "tps_per_req": 45.87310316844104,
+      "out_tokens": 300,
+      "tps_aggregate": 5.620433308852829,
+      "out_tokens_mean": 300.0,
+      "prompt_tokens_mean": 100021.0,
+      "server": {
+        "requests": 1.0,
+        "ttft_mean": 46.50884652137756,
+        "queue_mean": 1.732795499265194e-05,
+        "prefill_mean": 46.304952102014795,
+        "decode_mean": 6.577990928897634,
+        "tpot_mean": 0.02199996966186646,
+        "decode_tps_per_req": 45.45460813672599,
+        "prompt_tokens": 100021.0,
+        "gen_tokens": 300.0,
+        "cache_hit_pct": 15.100828825946552,
+        "gen_tps_server": 5.620433308852829,
+        "prompt_tps_server": 1873.8711999492293,
+        "preemptions": 0.0
+      }
+    }
+  ],
+  "requests": [
+    {
+      "index": 1,
+      "ok": true,
+      "ttft_s": 46.83519847900607,
+      "total_s": 53.35317915500491,
+      "out_tokens": 300,
+      "prompt_tokens": 100021,
+      "cached_tokens": 0,
+      "error": ""
+    }
+  ]
+}

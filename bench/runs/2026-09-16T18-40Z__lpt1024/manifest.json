@@ -1,0 +1,57 @@
+{
+  "captured_utc": "2026-09-16T19:02:57Z",
+  "ref": "lpt1024",
+  "deployment": "bilikaz-cluster-recipe lpt1024 (arm on conc-k3; KEPT, now the live config)",
+  "kit": "bilikaz/qwen38-flash-next-cluster-recipe@7f8c48b79120b083f150b6db6fdc32decedfe514",
+  "image": "myllmbox/qwen38-flash-next-cluster-vllm@sha256:49b57ee9920b7132cd0b4d3e351c5ae96829c4094594981b8d9c711a56b65360",
+  "vllm_version": "0.29.0",
+  "model": "myllmbox/Qwen3.8-Flash-Next-hibrid48@e316057ddc794cbf76c3ef28bfd1c7b62b20128c",
+  "served_model_name": "Qwen3.8-Flash-Next-NVFP4",
+  "recipe": "../bilikaz-cluster-recipe/config/recipe.lpt1024.yaml (conc-k3 + long-prefill-token-threshold 1024)",
+  "serve_flags": {
+    "max_num_seqs": 12,
+    "max_num_batched_tokens": 8192,
+    "gpu_memory_utilization": 0.7,
+    "kv_cache_memory_bytes": 28000000000,
+    "speculative_config": {
+      "method": "mtp",
+      "num_speculative_tokens": 3
+    },
+    "moe_backend": "marlin",
+    "async_scheduling": true,
+    "compilation_config": "FULL_AND_PIECEWISE, cudagraph_capture_sizes [1,2,4,8,12,16,20,24,28,32,36,40,44,48,60,64,80,120,128,160] -> 12 FULL decode graphs {4..48 step 4}",
+    "mamba_ssm_cache_dtype": "bfloat16",
+    "long_prefill_token_threshold": 1024
+  },
+  "workload": {
+    "sweep": "1,5,6,10,12",
+    "prompt_tokens": 18000,
+    "unique_tokens": 2700,
+    "max_tokens": 300,
+    "reps": 3,
+    "kind": "code",
+    "tail_seed_base": 20260920,
+    "tail_seeds": {
+      "warmup": 20260920,
+      "counted": [
+        20260921,
+        20260922,
+        20260923
+      ]
+    }
+  },
+  "memory": {
+    "boot_floor_gib": {
+      "head": 26.9,
+      "worker": 30.1
+    },
+    "kill_switch_trips": 0
+  },
+  "quality": {
+    "gsm8k": "194/200 (item 161 lost vs conc-k3, truncated 2 vs 1; 194/195 is the boot-to-boot band)",
+    "needles": "24/24",
+    "toolprobe": "10/10"
+  },
+  "note": "loadgen driven by hand on the head (bench-suite/bench-lpt1024.sh, bench.py's exact flags plus level 12); compare with: python3 compare.py conc-k3 lpt1024; python3 probe_mixed.py --out <dir> --compare conc-k3 lpt1024",
+  "stall_probe": "conc-k3.json / lpt1024.json in this dir (bench/probe_mixed.py, 2 decoders, 65k+18k prefills, 2 reps): worst decoder gap during an 18k prefill 761-765 -> 418-431 ms, 65k 842-892 -> 467-483 ms; long TTFT +8.6% (18k) / +9.4% (65k)"
+}

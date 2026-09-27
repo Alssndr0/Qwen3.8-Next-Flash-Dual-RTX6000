@@ -1,0 +1,107 @@
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                   execute_context_0(0)_generation_1(4)         0.00%       0.000us         0.00%       0.000us       0.000us        1.241s        52.88%        1.241s     295.171us          4205  
+                          _moe_C::moe_wna16_marlin_gemm         0.25%       5.717ms         1.47%      33.461ms     113.812us     408.590ms        17.41%     468.401ms       1.593ms           294  
+                execute_context_1(1024)_generation_0(0)         0.00%       0.000us         0.00%       0.000us       0.000us     407.705ms        17.37%     407.705ms     407.705ms             1  
+                 execute_context_1(832)_generation_0(0)         0.00%       0.000us         0.00%       0.000us       0.000us     364.487ms        15.53%     364.487ms     364.487ms             1  
+ncclDevKernel_AllReduce_Sum_bf16_RING_LL(ncclDevKern...         0.00%       0.000us         0.00%       0.000us       0.000us     306.222ms        13.05%     306.222ms      86.724us          3531  
+void marlin_moe_wna16::Marlin<1125899906909960l, 562...         0.00%       0.000us         0.00%       0.000us       0.000us     291.630ms        12.42%     291.630ms       1.488ms           196  
+void marlin_moe_wna16::Marlin<1125899906909960l, 562...         0.00%       0.000us         0.00%       0.000us       0.000us     288.201ms        12.28%     288.201ms      93.815us          3072  
+                 execute_context_1(392)_generation_0(0)         0.00%       0.000us         0.00%       0.000us       0.000us     257.874ms        10.99%     257.874ms     257.874ms             1  
+void cutlass::Kernel2<cutlass_80_wmma_tensorop_bf16_...         0.00%       0.000us         0.00%       0.000us       0.000us     252.087ms        10.74%     252.087ms      29.745us          8475  
+void marlin::Marlin<1125899906909960l, 5629499534871...         0.00%       0.000us         0.00%       0.000us       0.000us     184.079ms         7.84%     184.079ms      80.314us          2292  
+void cutlass::Kernel2<cutlass_80_wmma_tensorop_bf16_...         0.00%       0.000us         0.00%       0.000us       0.000us     179.576ms         7.65%     179.576ms      39.312us          4568  
+                                       vllm::all_reduce         0.44%      10.062ms         0.63%      14.253ms      42.803us     162.061ms         6.90%     162.375ms     487.612us           333  
+                                    Command Buffer Full        15.36%     350.029ms        15.36%     350.029ms     401.409us     154.416ms         6.58%     154.416ms     177.083us           872  
+void marlin_moe_wna16::Marlin<1125899906909960l, 562...         0.00%       0.000us         0.00%       0.000us       0.000us     116.960ms         4.98%     116.960ms       1.193ms            98  
+                                               aten::mm        18.77%     427.849ms        20.89%     476.030ms     331.036us     116.570ms         4.97%     137.655ms      95.727us          1438  
+                  execute_context_1(13)_generation_0(0)         0.00%       0.000us         0.00%       0.000us       0.000us     103.612ms         4.41%     103.612ms       1.068ms            97  
+                                        _C::marlin_gemm         0.28%       6.286ms         0.75%      17.086ms      67.534us      86.259ms         3.67%      89.601ms     354.153us           253  
+                                _hc_combine_norm_kernel         0.00%       0.000us         0.00%       0.000us       0.000us      77.044ms         3.28%      77.044ms      23.115us          3333  
+                        vllm::qwen4_exp_hc_combine_norm         0.35%       7.908ms         2.58%      58.756ms     201.910us      69.592ms         2.96%      89.461ms     307.427us           291  
+                        vllm::qwen4_exp_qsa_with_output         1.17%      26.713ms         2.05%      46.653ms     897.179us      64.957ms         2.77%      87.604ms       1.685ms            52  
+                    _qsa_sparse_paged_gqa_splitk_kernel         0.00%       0.000us         0.00%       0.000us       0.000us      62.298ms         2.65%      62.298ms     125.854us           495  
+void marlin::Marlin<1125899906909960l, 5629499534871...         0.00%       0.000us         0.00%       0.000us       0.000us      57.549ms         2.45%      57.549ms     266.433us           216  
+                                    _hc_gate_mix_kernel         0.00%       0.000us         0.00%       0.000us       0.000us      44.305ms         1.89%      44.305ms      12.666us          3498  
+                            vllm::qwen4_exp_hc_gate_mix         0.19%       4.426ms         0.81%      18.556ms      61.855us      40.406ms         1.72%      44.830ms     149.434us           300  
+void at::native::elementwise_kernel<128, 4, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us      39.245ms         1.67%      39.245ms      22.923us          1712  
+nvjet_sm121_tst_mma_128x128x64_3_64x32x64_tmaAB_spli...         0.00%       0.000us         0.00%       0.000us       0.000us      38.688ms         1.65%      38.688ms     128.961us           300  
+                            ChunkGatedDeltaRuleFunction         1.23%      27.950ms         3.05%      69.582ms     483.211us      30.950ms         1.32%      54.998ms     381.927us           144  
+void vllm::moe::moe_sum_vec_dynamic_kernel<c10::BFlo...         0.00%       0.000us         0.00%       0.000us       0.000us      28.601ms         1.22%      28.601ms      16.994us          1683  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us      25.612ms         1.09%      25.612ms      15.218us          1683  
+                                        _moe_C::moe_sum         0.01%     301.555us         0.58%      13.270ms      90.270us      25.470ms         1.09%      29.014ms     197.372us           147  
+std::enable_if<!(false), void>::type internal::gemvx...         0.00%       0.000us         0.00%       0.000us       0.000us      21.909ms         0.93%      21.909ms      74.018us           296  
+std::enable_if<!(false), void>::type internal::gemvx...         0.00%       0.000us         0.00%       0.000us       0.000us      18.505ms         0.79%      18.505ms      10.379us          1783  
+void cutlass::Kernel2<cutlass_80_tensorop_bf16_s1681...         0.00%       0.000us         0.00%       0.000us       0.000us      18.091ms         0.77%      18.091ms     110.309us           164  
+ncclDevKernel_AllGather_RING_LL(ncclDevKernelArgsSto...         0.00%       0.000us         0.00%       0.000us       0.000us      17.378ms         0.74%      17.378ms      52.660us           330  
+void (anonymous namespace)::gdn_decode_post_conv_mtp...         0.00%       0.000us         0.00%       0.000us       0.000us      15.515ms         0.66%      15.515ms      14.861us          1044  
+void vllm::moe::topkGating<16, 512, 4, 16, 32, int, ...         0.00%       0.000us         0.00%       0.000us       0.000us      14.093ms         0.60%      14.093ms       8.374us          1683  
+                                            aten::copy_         0.30%       6.759ms        44.48%        1.014s     225.458us      14.083ms         0.60%      15.581ms       3.465us          4496  
+        vllm::qwen_gdn_attention_core_fused_norm_packed         1.26%      28.664ms         8.00%     182.424ms       1.267ms      13.491ms         0.57%      87.579ms     608.190us           144  
+void cublasLt::splitKreduce_kernel<32, 16, int, __nv...         0.00%       0.000us         0.00%       0.000us       0.000us      13.217ms         0.56%      13.217ms       2.025us          6528  
+void cutlass::Kernel2<cutlass_80_tensorop_bf16_s1681...         0.00%       0.000us         0.00%       0.000us       0.000us      13.149ms         0.56%      13.149ms      88.251us           149  
+                                  _qsa_mqa_paged_kernel         0.00%       0.000us         0.00%       0.000us       0.000us      10.649ms         0.45%      10.649ms      19.942us           534  
+void vllm::moe::moe_align_block_size_kernel<int>(int...         0.00%       0.000us         0.00%       0.000us       0.000us      10.431ms         0.44%      10.431ms       6.198us          1683  
+         chunk_gated_delta_rule_fwd_kernel_h_blockdim64         0.00%       0.000us         0.00%       0.000us       0.000us      10.024ms         0.43%      10.024ms      69.610us           144  
+                                     chunk_fwd_kernel_o         0.00%       0.000us         0.00%       0.000us       0.000us       8.957ms         0.38%       8.957ms      62.200us           144  
+                                       vllm::all_gather         0.16%       3.711ms         0.25%       5.673ms     131.931us       8.945ms         0.38%      10.397ms     241.780us            43  
+void at::native::elementwise_kernel<128, 4, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us       8.480ms         0.36%       8.480ms      12.790us           663  
+                                  Lazy Function Loading         0.02%     393.346us         0.02%     393.346us      26.223us       8.058ms         0.34%       8.058ms     537.207us            15  
+                              _causal_conv1d_fwd_kernel         0.00%       0.000us         0.00%       0.000us       0.000us       7.178ms         0.31%       7.178ms      49.850us           144  
+void cutlass::Kernel2<cutlass_80_tensorop_bf16_s1681...         0.00%       0.000us         0.00%       0.000us       0.000us       6.822ms         0.29%       6.822ms      68.216us           100  
+nvjet_sm121_tst_mma_128x224x64_2_64x56x64_tmaAB_bz_T...         0.00%       0.000us         0.00%       0.000us       0.000us       6.347ms         0.27%       6.347ms     423.144us            15  
+void cutlass::Kernel2<cutlass_80_wmma_tensorop_bf16_...         0.00%       0.000us         0.00%       0.000us       0.000us       5.931ms         0.25%       5.931ms      29.953us           198  
+void vllm::act_and_mul_kernel<c10::BFloat16, __nv_bf...         0.00%       0.000us         0.00%       0.000us       0.000us       5.810ms         0.25%       5.810ms      29.645us           196  
+                                       _C::silu_and_mul         0.02%     505.571us         0.07%       1.524ms      10.366us       5.649ms         0.24%       6.654ms      45.265us           147  
+                                        _hc_silu_kernel         0.00%       0.000us         0.00%       0.000us       0.000us       4.947ms         0.21%       4.947ms       1.414us          3498  
+                               recompute_w_u_fwd_kernel         0.00%       0.000us         0.00%       0.000us       0.000us       4.843ms         0.21%       4.843ms      33.633us           144  
+void vllm::persistent::persistent_topk_kernel<512, 4...         0.00%       0.000us         0.00%       0.000us       0.000us       4.748ms         0.20%       4.748ms       8.892us           534  
+nvjet_sm121_tst_mma_192x144x64_2_48x72x64_tmaAB_bz_T...         0.00%       0.000us         0.00%       0.000us       0.000us       4.683ms         0.20%       4.683ms     334.467us            14  
+                     _fused_qk_rmsnorm_rope_gate_kernel         0.00%       0.000us         0.00%       0.000us       0.000us       4.409ms         0.19%       4.409ms       8.907us           495  
+                    merge_16x16_to_64x64_inverse_kernel         0.00%       0.000us         0.00%       0.000us       0.000us       4.314ms         0.18%       4.314ms      29.955us           144  
+nvjet_sm121_tst_mma_128x96x64_3_64x24x64_tmaAB_bz_TN...         0.00%       0.000us         0.00%       0.000us       0.000us       4.267ms         0.18%       4.267ms      38.440us           111  
+                                _fused_post_conv_kernel         0.00%       0.000us         0.00%       0.000us       0.000us       4.238ms         0.18%       4.238ms      29.430us           144  
+                         Memcpy DtoD (Device -> Device)         0.00%       0.000us         0.00%       0.000us       0.000us       4.037ms         0.17%       4.037ms       4.365us           925  
+                           _causal_conv1d_update_kernel         0.00%       0.000us         0.00%       0.000us       0.000us       3.920ms         0.17%       3.920ms       3.755us          1044  
+                                 triton_poi_fused_add_0         0.00%       0.000us         0.00%       0.000us       0.000us       3.808ms         0.16%       3.808ms       3.206us          1188  
+                                            aten::index         0.25%       5.735ms         1.55%      35.232ms      40.450us       3.583ms         0.15%       4.277ms       4.911us           871  
+nvjet_sm121_tst_mma_128x128x64_3_32x64x64_tmaAB_bz_T...         0.00%       0.000us         0.00%       0.000us       0.000us       3.354ms         0.14%       3.354ms      53.234us            63  
+nvjet_sm121_tst_mma_128x144x64_2_32x72x64_tmaAB_bz_T...         0.00%       0.000us         0.00%       0.000us       0.000us       3.252ms         0.14%       3.252ms     250.162us            13  
+void marlin::Marlin<1125899906909960l, 5629499534871...         0.00%       0.000us         0.00%       0.000us       0.000us       3.236ms         0.14%       3.236ms      44.940us            72  
+void at::native::index_elementwise_kernel<128, 4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       3.203ms         0.14%       3.203ms      12.969us           247  
+void vllm::moe::count_and_sort_expert_tokens_kernel<...         0.00%       0.000us         0.00%       0.000us       0.000us       3.198ms         0.14%       3.198ms       1.900us          1683  
+                   _fused_qk_rmsnorm_rope_gate_kernel_0         0.02%     553.107us         0.10%       2.333ms      59.828us       3.103ms         0.13%       3.453ms      88.535us            39  
+void vllm::act_and_mul_kernel<c10::BFloat16, __nv_bf...         0.00%       0.000us         0.00%       0.000us       0.000us       2.998ms         0.13%       2.998ms       2.016us          1487  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       2.640ms         0.11%       2.640ms       3.597us           734  
+                                 triton_poi_fused_add_0         0.03%     762.864us         0.65%      14.819ms     137.214us       2.540ms         0.11%       2.894ms      26.799us           108  
+                                            aten::fill_         0.09%       2.045ms         1.50%      34.121ms      22.360us       2.526ms         0.11%       2.884ms       1.890us          1526  
+                                _qsa_pre_indexer_kernel         0.00%       0.000us         0.00%       0.000us       0.000us       2.452ms         0.10%       2.452ms       4.953us           495  
+                      triton_poi_fused_mul_silu_slice_0         0.00%       0.000us         0.00%       0.000us       0.000us       2.445ms         0.10%       2.445ms       1.453us          1683  
+                                              aten::mul         0.04%     857.475us         0.62%      14.162ms      70.810us       2.429ms         0.10%       2.789ms      13.947us           200  
+                        chunk_scaled_dot_kkt_fwd_kernel         0.00%       0.000us         0.00%       0.000us       0.000us       2.424ms         0.10%       2.424ms      16.834us           144  
+void cublasLt::splitKreduce_kernel<32, 16, int, floa...         0.00%       0.000us         0.00%       0.000us       0.000us       2.370ms         0.10%       2.370ms       7.900us           300  
+                               _qsa_merge_splitk_kernel         0.00%       0.000us         0.00%       0.000us       0.000us       2.360ms         0.10%       2.360ms       5.031us           469  
+nvjet_sm121_tst_mma_128x208x64_2_32x104x64_tmaAB_bz_...         0.00%       0.000us         0.00%       0.000us       0.000us       2.320ms         0.10%       2.320ms     165.738us            14  
+                             _expand_qsa_indices_kernel         0.00%       0.000us         0.00%       0.000us       0.000us       2.260ms         0.10%       2.260ms       4.233us           534  
+void cublasLt::splitKreduce_kernel<32, 16, int, floa...         0.00%       0.000us         0.00%       0.000us       0.000us       2.252ms         0.10%       2.252ms      34.127us            66  
+nvjet_sm121_tst_mma_32x64x64_8_16x32x64_tmaAB_bz_TNN...         0.00%       0.000us         0.00%       0.000us       0.000us       2.143ms         0.09%       2.143ms      29.766us            72  
+                                  layer_norm_fwd_kernel         0.00%       0.000us         0.00%       0.000us       0.000us       2.074ms         0.09%       2.074ms      14.406us           144  
+void at::native::index_elementwise_kernel<128, 4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       2.035ms         0.09%       2.035ms      11.499us           177  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       1.994ms         0.08%       1.994ms       1.056us          1888  
+                                 aten::_index_put_impl_         0.07%       1.584ms         0.28%       6.362ms      19.337us       1.976ms         0.08%       2.762ms       8.394us           329  
+                    triton_poi_fused_mul_sigmoid_view_0         0.00%       0.000us         0.00%       0.000us       0.000us       1.951ms         0.08%       1.951ms       3.941us           495  
+nvjet_sm121_tst_mma_128x64x64_4_32x64x64_tmaAB_bz_TN...         0.00%       0.000us         0.00%       0.000us       0.000us       1.919ms         0.08%       1.919ms      30.957us            62  
+nvjet_sm121_tst_mma_128x96x64_3_32x48x64_tmaAB_bz_TN...         0.00%       0.000us         0.00%       0.000us       0.000us       1.819ms         0.08%       1.819ms      37.128us            49  
+void vllm::reshape_and_cache_flash_kernel<__nv_bfloa...         0.00%       0.000us         0.00%       0.000us       0.000us       1.728ms         0.07%       1.728ms       3.491us           495  
+                                    _C::persistent_topk         0.03%     661.317us         0.40%       9.179ms     100.864us       1.701ms         0.07%       1.953ms      21.460us            91  
+nvjet_sm121_tst_mma_256x128x64_2_64x64x64_tmaAB_bz_T...         0.00%       0.000us         0.00%       0.000us       0.000us       1.628ms         0.07%       1.628ms     116.295us            14  
+                                   _moe_C::topk_softmax         0.05%       1.128ms         0.16%       3.576ms      24.328us       1.517ms         0.06%       1.619ms      11.017us           147  
+triton_poi_fused___rshift___add_bitwise_and_bitwise_...         0.00%       0.000us         0.00%       0.000us       0.000us       1.498ms         0.06%       1.498ms      45.400us            33  
+                    triton_poi_fused_mul_sigmoid_view_0         0.01%     241.984us         0.02%     403.264us      10.340us       1.495ms         0.06%       1.495ms      38.331us            39  
+                                 triton_poi_fused_add_1         0.00%       0.000us         0.00%       0.000us       0.000us       1.455ms         0.06%       1.455ms       2.940us           495  
+void at::native::unrolled_elementwise_kernel<at::nat...         0.00%       0.000us         0.00%       0.000us       0.000us       1.326ms         0.06%       1.326ms       1.313us          1010  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 2.279s
+Self CUDA time total: 2.347s
+

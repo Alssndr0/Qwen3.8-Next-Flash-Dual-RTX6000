@@ -1,0 +1,36 @@
+{
+  "captured_utc": "2026-09-16T17:48:29Z",
+  "ref": "conc-k3",
+  "deployment": "bilikaz-cluster-recipe conc-k3 (arm on the adopted kit, NOT bench.py-captured; KEPT, now the live config)",
+  "kit": "bilikaz/qwen38-flash-next-cluster-recipe@7f8c48b79120b083f150b6db6fdc32decedfe514",
+  "image": "myllmbox/qwen38-flash-next-cluster-vllm@sha256:49b57ee9920b7132cd0b4d3e351c5ae96829c4094594981b8d9c711a56b65360",
+  "vllm_version": "0.29.0",
+  "model": "myllmbox/Qwen3.8-Flash-Next-hibrid48@e316057ddc794cbf76c3ef28bfd1c7b62b20128c",
+  "served_model_name": "Qwen3.8-Flash-Next-NVFP4",
+  "recipe": "../bilikaz-cluster-recipe/config/recipe.conc-k3.yaml (adopt + max-num-seqs 12 + K=3-aligned cudagraph_capture_sizes)",
+  "serve_flags": {
+    "max_num_seqs": 12,
+    "max_num_batched_tokens": 8192,
+    "gpu_memory_utilization": 0.7,
+    "kv_cache_memory_bytes": 28000000000,
+    "speculative_config": {"method": "mtp", "num_speculative_tokens": 3},
+    "moe_backend": "marlin",
+    "async_scheduling": true,
+    "compilation_config": "FULL_AND_PIECEWISE, cudagraph_capture_sizes [1,2,4,8,12,16,20,24,28,32,36,40,44,48,60,64,80,120,128,160] -> 12 FULL decode graphs {4..48 step 4}",
+    "mamba_ssm_cache_dtype": "bfloat16",
+    "long_prefill_token_threshold": 2048
+  },
+  "workload": {
+    "sweep": "1,5,6,10,12",
+    "prompt_tokens": 18000,
+    "unique_tokens": 2700,
+    "max_tokens": 300,
+    "reps": 3,
+    "kind": "code",
+    "tail_seed_base": 20260920,
+    "tail_seeds": {"warmup": 20260920, "counted": [20260921, 20260922, 20260923]}
+  },
+  "memory": {"boot_floor_gib": {"head": 26.6, "worker": 29.8}, "kill_switch_trips": 0, "nvrm_lines": 1},
+  "quality": {"gsm8k": "195/200 (items 12 lost / 184 won vs boot2 -- the same two volatile items as boot2 vs lpt2048)", "needles": "24/24", "toolprobe": "10/10"},
+  "note": "loadgen driven by hand on the head (bench-suite/bench-conc-k3.sh, bench.py's exact flags plus level 12); compare with: python3 compare.py bilikaz-boot2 conc-k3. c=12 has no boot2 pair."
+}

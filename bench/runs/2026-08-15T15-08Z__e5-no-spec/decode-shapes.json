@@ -1,0 +1,69 @@
+{
+ "url": "http://127.0.0.1:8000/v1/chat/completions",
+ "model": "deepseek-v4-flash-dspark",
+ "rows": [
+  {
+   "label": "numbered word list, t=0.6 natural",
+   "out_tokens": 512,
+   "decode_tok_s": 27.242628284661183,
+   "acceptance": NaN,
+   "tok_per_step": NaN,
+   "steps_s": NaN,
+   "wall_s": 23.787291039014235
+  },
+  {
+   "label": "numbered word list, t=1.0 forced 512",
+   "out_tokens": 512,
+   "decode_tok_s": 27.239707928232807,
+   "acceptance": NaN,
+   "tok_per_step": NaN,
+   "steps_s": NaN,
+   "wall_s": 19.068628039909527
+  },
+  {
+   "label": "prose answer, t=0.0 natural",
+   "out_tokens": 512,
+   "decode_tok_s": 27.637145837199444,
+   "acceptance": NaN,
+   "tok_per_step": NaN,
+   "steps_s": NaN,
+   "wall_s": 18.65817735204473
+  },
+  {
+   "label": "prose answer, t=1.0 natural",
+   "out_tokens": 512,
+   "decode_tok_s": 27.30354733309807,
+   "acceptance": NaN,
+   "tok_per_step": NaN,
+   "steps_s": NaN,
+   "wall_s": 18.878503287909552
+  },
+  {
+   "label": "code answer, t=0.0 natural",
+   "out_tokens": 512,
+   "decode_tok_s": 27.664572332029934,
+   "acceptance": NaN,
+   "tok_per_step": NaN,
+   "steps_s": NaN,
+   "wall_s": 18.670325497165322
+  },
+  {
+   "label": "filler summarise, forced 300",
+   "out_tokens": 300,
+   "decode_tok_s": 27.074075083947605,
+   "acceptance": NaN,
+   "tok_per_step": NaN,
+   "steps_s": NaN,
+   "wall_s": 11.325313800014555
+  },
+  {
+   "label": "filler summarise, forced 512",
+   "out_tokens": 512,
+   "decode_tok_s": 27.489566702871006,
+   "acceptance": NaN,
+   "tok_per_step": NaN,
+   "steps_s": NaN,
+   "wall_s": 18.869693613843992
+  }
+ ]
+}

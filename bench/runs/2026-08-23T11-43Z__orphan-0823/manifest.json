@@ -1,0 +1,24 @@
+{
+ "ref": "orphan-0823",
+ "provenance": "unverified",
+ "captured_utc": "2026-08-23T13:43:34",
+ "served_model_name": "deepseek-v4-flash-dspark",
+ "model": null,
+ "dspark_sha": null,
+ "vllm_version": null,
+ "serve_flags": {},
+ "hotfixes": {},
+ "workload": {
+  "prompt_tokens": 18000,
+  "unique_tokens": 2700,
+  "max_tokens": 300,
+  "levels": [
+   1,
+   5,
+   10
+  ]
+ },
+ "note": "Recovered 2026-09-06 from ~/bench-suite on spark-4ab3, where it was the only copy: bench.py scp's results back with check=False, so the return copy failed silently and no run directory was ever created here. The next `bench.py run` would have deleted it (the runner starts with `rm -rf $REMOTE/warmup $REMOTE/counted`). NO PROVENANCE WAS CAPTURED -- there is no manifest, env.dspark or local.diff for this run, so per this suite's own rule it can corroborate but never settle anything. Worse, the config demonstrably changed straight afterwards: dspark-mia's docker-compose.dspark.yml and start-deepseek-v4-flash-dspark.sh have mtime 13:48, three minutes after the last counted rep at 13:45 -- so the box's current state is NOT what produced these numbers and cannot be read back as their config. The date and score put it in the 2026-08-23 CUDA-graph session, but which arm it was cannot be established from the files. Recovered alongside: a discarded warm-up rep, deliberately not stored here. toolprobe passed 10/10 exact tool names at the time of the run.",
+ "gates": {},
+ "results": {}
+}

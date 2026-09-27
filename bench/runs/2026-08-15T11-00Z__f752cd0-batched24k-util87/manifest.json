@@ -1,0 +1,165 @@
+{
+ "captured_utc": "2026-08-15T11:00:21+00:00",
+ "provenance": "full",
+ "bench_sha": "18d45406b24047a5ac3e8acd66f958f82af88f1a-dirty",
+ "deployment": "compose",
+ "container": "deepseek-v4-flash-vllm-dspark-1",
+ "serve_cmd": "bash -lc export PATH=\"/usr/local/cuda/bin:/usr/local/bin:${PATH:-}\"; export CUDA_HOME=\"${CUDA_HOME:-/usr/local/cuda}\"; export CUDA_PATH=\"${CUDA_PATH:-${CUDA_HOME}}\"; export CUDAToolkit_ROOT=\"${CUDAToolkit_ROOT:-${CUDA_HOME}}\"; export LD_LIBRARY_PATH=\"/usr/local/cuda/lib64:${LD_LIBRARY_PATH:-}\"; ENCODING_SOURCE=\"${DSPARK_ENCODING_FILE:-}\"; if [ -z \"${ENCODING_SOURCE}\" ]; then\n  MODEL_HUB_DIR=$(printf '%s' \"${DSPARK_MODEL:-deepseek-ai/DeepSeek-V4-Flash-0731}\" | sed 's|/|--|g');\n  if [ -n \"${DSPARK_REVISION:-}\" ] && [ -f \"/cache/huggingface/hub/models--${MODEL_HUB_DIR}/snapshots/${DSPARK_REVISION}/encoding/encoding_dsv4.py\" ]; then\n    ENCODING_SOURCE=\"/cache/huggingface/hub/models--${MODEL_HUB_DIR}/snapshots/${DSPARK_REVISION}/encoding/encoding_dsv4.py\";\n  fi;\n  if [ -z \"${ENCODING_SOURCE}\" ]; then\n    for candidate in /cache/huggingface/hub/models--${MODEL_HUB_DIR}/snapshots/*/encoding/encoding_dsv4.py; do\n      if [ -f \"${candidate}\" ]; then ENCODING_SOURCE=\"${candidate}\"; break; fi;\n    done;\n  fi;\nfi; if [ -z \"${ENCODING_SOURCE}\" ]; then for candidate in /cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/*/encoding/encoding_dsv4.py; do if [ -f \"${candidate}\" ]; then ENCODING_SOURCE=\"${candidate}\"; break; fi; done; fi; if [ -z \"${ENCODING_SOURCE}\" ] && [ -f /models/deepseek-ai/DeepSeek-V4-Flash-0731/encoding/encoding_dsv4.py ]; then ENCODING_SOURCE=/models/deepseek-ai/DeepSeek-V4-Flash-0731/encoding/encoding_dsv4.py; fi; if [ -n \"${ENCODING_SOURCE}\" ] && [ -f \"${ENCODING_SOURCE}\" ]; then cp \"${ENCODING_SOURCE}\" /usr/local/lib/python3.12/dist-packages/vllm/tokenizers/deepseek_v4_encoding.py; python3 -c 'from pathlib import Path; p=Path(\"/usr/local/lib/python3.12/dist-packages/vllm/tokenizers/deepseek_v4.py\"); s=p.read_text(); old=\"elif reasoning_effort in (\\\"max\\\", \\\"xhigh\\\"):\\n                reasoning_effort = \\\"max\\\"\\n            else:\\n                reasoning_effort = \\\"high\\\"\"; new=\"elif reasoning_effort in (\\\"max\\\", \\\"xhigh\\\"):\\n                reasoning_effort = \\\"max\\\"\\n            elif reasoning_effort == \\\"high\\\":\\n                reasoning_effort = \\\"high\\\"\\n            else:\\n                reasoning_effort = \\\"low\\\"\"; updated=s.replace(old,new); assert new in updated; p.write_text(updated)'; python3 /opt/hotfix-encoding-dsv4-issue21.py; python3 /opt/hotfix-dsv4-issue31-v2-thinking-budget-gpu.py; python3 /opt/hotfix-dsv4-issue55-tool-truncation.py; fi; if [ \"${DSPARK_SKIP_ISSUE22_HOTFIX:-0}\" != \"1\" ] && [ -f /opt/dspark-patches/hotfix-nvfp4-ds-mla-issue22.sh ]; then bash /opt/dspark-patches/hotfix-nvfp4-ds-mla-issue22.sh || true; fi; if [ \"${DSPARK_SKIP_HOTFIX:-0}\" != \"1\" ]; then for _hf in hotfix-dsv4-mtp-buffer-50312.sh hotfix-dsv4-adaptive-topk-50004.sh hotfix-dsv4-skip-topk-49486.sh hotfix-dsv4-dense-prefill-indexer-48407.sh hotfix-dsv4-skip-empty-c128-48957.sh hotfix-dsv4-flashmla-workspace-50298.sh hotfix-dsv4-grammar-advance.sh; do if [ -f /opt/dspark-patches/${_hf} ]; then bash /opt/dspark-patches/${_hf} || true; fi; done; fi; python3 /opt/hotfix-dsv4-issue27-partial-prefill-concurrency.py; python3 /opt/hotfix-dsv4-issue43-decode-fairness-and-diag.py; python3 /opt/hotfix-dsv4-issue26-hybrid-swa-min.py; if [ \"${DSPARK_SKIP_SUPPRESS_STOPS_HOTFIX:-0}\" != \"1\" ]; then python3 /opt/hotfix-dsv4-suppress-stops-in-reasoning.py; fi; VLLM_QUANTIZATION_ARGS=\"\"; if [ \"${ENABLE_VLLM_GB10_PATCH:-0}\" = \"1\" ]; then\n  python3 -m pip install -e /opt/vllm-gb10-hybrid-nvfp4 --no-deps;\n  export VLLM_PLUGINS=\"${VLLM_PLUGINS:-gb10_hybrid_nvfp4}\";\n  VLLM_QUANTIZATION_ARGS=\"--quantization modelopt_gb10_hybrid\";\nfi; SPECULATIVE_CONFIG=\"{\\\"method\\\":\\\"dspark\\\",\\\"num_speculative_tokens\\\":${MTP_NUM_TOKENS:-5},\\\"draft_sample_method\\\":\\\"probabilistic\\\"}\"; case \"${DEFAULT_THINKING:-low}\" in\n  off) DEFAULT_CHAT_TEMPLATE_KWARGS='{\"thinking\":false}' ;;\n  low) DEFAULT_CHAT_TEMPLATE_KWARGS='{\"thinking\":true,\"reasoning_effort\":\"low\"}' ;;\n  high) DEFAULT_CHAT_TEMPLATE_KWARGS='{\"thinking\":true,\"reasoning_effort\":\"high\"}' ;;\n  max) DEFAULT_CHAT_TEMPLATE_KWARGS='{\"thinking\":true,\"reasoning_effort\":\"max\"}' ;;\n  *) echo \"DEFAULT_THINKING must be one of: off, low, high, max (got: ${DEFAULT_THINKING})\" >&2; exit 2 ;;\nesac; REVISION_ARGS=\"\"; if [ -n \"${DSPARK_REVISION:-}\" ]; then REVISION_ARGS=\"--revision ${DSPARK_REVISION}\"; fi; exec /usr/local/bin/vllm serve deepseek-ai/DeepSeek-V4-Flash-0731 ${REVISION_ARGS} --served-model-name deepseek-v4-flash-dspark --host 0.0.0.0 --port 8000 --trust-remote-code ${VLLM_QUANTIZATION_ARGS} --tensor-parallel-size 2 --pipeline-parallel-size 1 --kv-cache-dtype nvfp4_ds_mla --block-size 256 --max-model-len 262144 --max-num-seqs 10 --max-num-batched-tokens 24576 --long-prefill-token-threshold 0 --max-cudagraph-capture-size $(( 10 * (5 + 1) )) --gpu-memory-utilization 0.87 --enable-prefix-caching --enable-prompt-tokens-details --async-scheduling --enable-chunked-prefill --speculative-config \"${SPECULATIVE_CONFIG}\" --tokenizer-mode deepseek_v4 --distributed-executor-backend mp --moe-backend flashinfer_b12x --tool-call-parser deepseek_v4 --enable-auto-tool-choice --reasoning-parser deepseek_v4 --reasoning-config '{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"<think>\",\"reasoning_end_str\":\"</think>\"}' --default-chat-template-kwargs \"${DEFAULT_CHAT_TEMPLATE_KWARGS}\" --generation-config vllm --override-generation-config '{\"top_p\":0.95}' --enable-flashinfer-autotune --nnodes 2 --node-rank 0 --master-addr 169.254.240.100 --master-port 25000",
+ "image": "ghcr.io/anemll/dspark-vllm-gx10:0.1.1@sha256:a83948492cf13df455170fb42885f5ef4db54fefe0feff0f841ecbff464ac9d8",
+ "image_id": "sha256:3430d6614a8e2925f34d059af6caf05aff42387326db4d05639a60f10f2654d8",
+ "vllm_version": "0.25.2.dev0+g752a3a504.d20260714",
+ "retention_interval": "None",
+ "containers": {
+  "10.150.0.50": "deepseek-v4-flash-vllm-dspark-1",
+  "10.150.0.51": "deepseek-v4-flash-vllm-dspark-1"
+ },
+ "hotfixes": {
+  "10.150.0.50": [
+   "issue43-hotfix",
+   "issue55-hotfix"
+  ],
+  "10.150.0.51": [
+   "issue43-hotfix",
+   "issue55-hotfix"
+  ]
+ },
+ "serve_flags": {
+  "_model": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "--no-deps;": "export",
+  "--served-model-name": "deepseek-v4-flash-dspark",
+  "--host": "0.0.0.0",
+  "--port": "8000",
+  "--trust-remote-code": "${VLLM_QUANTIZATION_ARGS}",
+  "--tensor-parallel-size": "2",
+  "--pipeline-parallel-size": "1",
+  "--kv-cache-dtype": "nvfp4_ds_mla",
+  "--block-size": "256",
+  "--max-model-len": "262144",
+  "--max-num-seqs": "10",
+  "--max-num-batched-tokens": "24576",
+  "--long-prefill-token-threshold": "0",
+  "--max-cudagraph-capture-size": "$((",
+  "--gpu-memory-utilization": "0.87",
+  "--enable-prefix-caching": true,
+  "--enable-prompt-tokens-details": true,
+  "--async-scheduling": true,
+  "--enable-chunked-prefill": true,
+  "--speculative-config": "\"${SPECULATIVE_CONFIG}\"",
+  "--tokenizer-mode": "deepseek_v4",
+  "--distributed-executor-backend": "mp",
+  "--moe-backend": "flashinfer_b12x",
+  "--tool-call-parser": "deepseek_v4",
+  "--enable-auto-tool-choice": true,
+  "--reasoning-parser": "deepseek_v4",
+  "--reasoning-config": "'{\"reasoning_parser\":\"deepseek_v4\",\"reasoning_start_str\":\"<think>\",\"reasoning_end_str\":\"</think>\"}'",
+  "--default-chat-template-kwargs": "\"${DEFAULT_CHAT_TEMPLATE_KWARGS}\"",
+  "--generation-config": "vllm",
+  "--override-generation-config": "'{\"top_p\":0.95}'",
+  "--enable-flashinfer-autotune": true,
+  "--nnodes": "2",
+  "--node-rank": "0",
+  "--master-addr": "169.254.240.100",
+  "--master-port": "25000"
+ },
+ "model": "deepseek-ai/DeepSeek-V4-Flash-0731",
+ "dspark_sha": "f752cd04ab30f2cf42077dd8811a5e1e682d63e7",
+ "dspark_dirty": true,
+ "config_file": "env.dspark",
+ "served_model_name": "deepseek-v4-flash-dspark",
+ "dspark_revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+ "max_num_seqs": "10",
+ "max_num_batched_tokens": "24576",
+ "max_model_len": "262144",
+ "mtp_num_tokens": "5",
+ "default_thinking": "off",
+ "long_prefill_token_threshold": "0",
+ "ref": "f752cd0-batched24k-util87",
+ "gates": {
+  "smoke": true,
+  "toolprobe": true,
+  "loadgen": true,
+  "decode_shapes": null
+ },
+ "results": {
+  "smoke": {
+   "ok": true,
+   "served": [
+    "deepseek-v4-flash-dspark"
+   ]
+  },
+  "toolprobe": {
+   "test": "toolprobe",
+   "n": 10,
+   "passed": 10,
+   "gate": "all",
+   "ok": true,
+   "model": "deepseek-v4-flash-dspark",
+   "url": "http://127.0.0.1:8000/v1/chat/completions",
+   "results": [
+    {
+     "i": 1,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 2,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 3,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 4,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 5,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 6,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 7,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 8,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 9,
+     "pass": true,
+     "detail": "run_shell"
+    },
+    {
+     "i": 10,
+     "pass": true,
+     "detail": "run_shell"
+    }
+   ]
+  },
+  "loadgen": {
+   "ok": true,
+   "preemptions": 0.0,
+   "incomplete": [],
+   "reps": [
+    "loadgen-20260815-130530.json",
+    "loadgen-20260815-130732.json"
+   ]
+  },
+  "decode_shapes": {
+   "ok": null,
+   "recorded": true
+  }
+ }
+}

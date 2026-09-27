@@ -1,0 +1,69 @@
+{
+ "url": "http://127.0.0.1:8000/v1/chat/completions",
+ "model": "deepseek-v4-flash-dspark",
+ "rows": [
+  {
+   "label": "numbered word list, t=0.6 natural",
+   "out_tokens": 512,
+   "decode_tok_s": 87.09198419454387,
+   "acceptance": 0.9906976744186047,
+   "tok_per_step": 5.953488372093023,
+   "steps_s": 14.62873172017729,
+   "wall_s": 11.112894262187183
+  },
+  {
+   "label": "numbered word list, t=1.0 forced 512",
+   "out_tokens": 512,
+   "decode_tok_s": 88.86366196210683,
+   "acceptance": 0.950561797752809,
+   "tok_per_step": 5.752808988764045,
+   "steps_s": 15.447003739506853,
+   "wall_s": 6.047776764957234
+  },
+  {
+   "label": "prose answer, t=0.0 natural",
+   "out_tokens": 512,
+   "decode_tok_s": 53.99123017279573,
+   "acceptance": 0.5027397260273972,
+   "tok_per_step": 3.5136986301369864,
+   "steps_s": 15.365925156390208,
+   "wall_s": 9.663773808861151
+  },
+  {
+   "label": "prose answer, t=1.0 natural",
+   "out_tokens": 512,
+   "decode_tok_s": 51.04657187662566,
+   "acceptance": 0.47058823529411764,
+   "tok_per_step": 3.3529411764705883,
+   "steps_s": 15.22441617373046,
+   "wall_s": 10.182893899036571
+  },
+  {
+   "label": "code answer, t=0.0 natural",
+   "out_tokens": 512,
+   "decode_tok_s": 62.33291428688595,
+   "acceptance": 0.6446280991735537,
+   "tok_per_step": 4.223140495867769,
+   "steps_s": 14.759848588479842,
+   "wall_s": 8.500620570033789
+  },
+  {
+   "label": "filler summarise, forced 300",
+   "out_tokens": 300,
+   "decode_tok_s": 43.0659311926023,
+   "acceptance": 0.3864077669902913,
+   "tok_per_step": 2.9320388349514563,
+   "steps_s": 14.6880493802584,
+   "wall_s": 7.260828890139237
+  },
+  {
+   "label": "filler summarise, forced 512",
+   "out_tokens": 512,
+   "decode_tok_s": 39.163100794557415,
+   "acceptance": 0.3268041237113402,
+   "tok_per_step": 2.634020618556701,
+   "steps_s": 14.868183080516905,
+   "wall_s": 13.378997169900686
+  }
+ ]
+}

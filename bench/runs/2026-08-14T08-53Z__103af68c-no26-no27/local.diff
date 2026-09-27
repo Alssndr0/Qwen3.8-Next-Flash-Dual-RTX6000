@@ -1,0 +1,25 @@
+diff --git a/docker-compose.dspark.yml b/docker-compose.dspark.yml
+index 38370b7..f07a6f7 100644
+--- a/docker-compose.dspark.yml
++++ b/docker-compose.dspark.yml
+@@ -53,7 +53,11 @@ services:
+       # 4096-token segment + replay boundary). Complements the hybrid
+       # coordinator hotfix — SWA-min alone still 0/8 at 44K+ x8 because
+       # dense SWA tails evict MLA prefix blocks.
+-      VLLM_PREFIX_CACHE_RETENTION_INTERVAL: "${VLLM_PREFIX_CACHE_RETENTION_INTERVAL:-4096}"
++      # LOCAL: line removed, not blanked. envs.py reads this as
++      # `int(os.environ[k]) if k in os.environ else None`, so the key must be
++      # ABSENT to get the disabled default — "" would raise and "${x:-4096}"
++      # re-enables it on any empty value. Held with the #26 hotfix (issue #39).
++      # VLLM_PREFIX_CACHE_RETENTION_INTERVAL: "${VLLM_PREFIX_CACHE_RETENTION_INTERVAL:-4096}"
+       # Issue #43 scheduler diagnostics: emit one compact per-step line
+       # (scheduled prefill/decode tokens per request + zero-token decode
+       # skips) when set to 1. Off by default (zero overhead).
+@@ -196,6 +200,7 @@ services:
+         --reasoning-config '{"reasoning_parser":"deepseek_v4","reasoning_start_str":"<think>","reasoning_end_str":"</think>"}'
+         --default-chat-template-kwargs "$${DEFAULT_CHAT_TEMPLATE_KWARGS}"
+         --generation-config vllm
++        --override-generation-config '{"top_p":0.95}'
+         --enable-flashinfer-autotune
+         --nnodes 2
+         --node-rank ${NODE_RANK}

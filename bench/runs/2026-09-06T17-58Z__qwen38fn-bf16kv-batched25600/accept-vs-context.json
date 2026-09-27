@@ -1,0 +1,186 @@
+{
+ "url": "http://127.0.0.1:8000/v1/chat/completions",
+ "model": "qwen3.8-flash-next",
+ "rows": [
+  {
+   "label": "prose @ bare ctx",
+   "prompt_tokens": 73,
+   "cached_tokens": 0,
+   "out_tokens": 400,
+   "decode_tok_s": 38.13248991040994,
+   "acceptance": 0.43486590038314177,
+   "tok_per_step": 2.3045977011494254,
+   "steps_s": 16.546267442422266,
+   "acceptance_by_pos": {
+    "0": 0.6149425287356322,
+    "1": 0.40804597701149425,
+    "2": 0.28160919540229884
+   },
+   "wall_s": 10.696387201081961,
+   "task": "prose",
+   "ctx_target": 0
+  },
+  {
+   "label": "prose @ 1000 ctx",
+   "prompt_tokens": 1080,
+   "cached_tokens": 0,
+   "out_tokens": 400,
+   "decode_tok_s": 40.564442221419895,
+   "acceptance": 0.4817073170731707,
+   "tok_per_step": 2.4451219512195124,
+   "steps_s": 16.58994644467048,
+   "acceptance_by_pos": {
+    "0": 0.7134146341463414,
+    "1": 0.4634146341463415,
+    "2": 0.2682926829268293
+   },
+   "wall_s": 10.424337510950863,
+   "task": "prose",
+   "ctx_target": 1000
+  },
+  {
+   "label": "prose @ 4000 ctx",
+   "prompt_tokens": 4080,
+   "cached_tokens": 0,
+   "out_tokens": 400,
+   "decode_tok_s": 40.767762828832524,
+   "acceptance": 0.48466257668711654,
+   "tok_per_step": 2.4539877300613497,
+   "steps_s": 16.612863352749255,
+   "acceptance_by_pos": {
+    "0": 0.7177914110429447,
+    "1": 0.4294478527607362,
+    "2": 0.3067484662576687
+   },
+   "wall_s": 11.69151968182996,
+   "task": "prose",
+   "ctx_target": 4000
+  },
+  {
+   "label": "prose @ 8000 ctx",
+   "prompt_tokens": 8080,
+   "cached_tokens": 0,
+   "out_tokens": 400,
+   "decode_tok_s": 42.95016295478656,
+   "acceptance": 0.510548523206751,
+   "tok_per_step": 2.5316455696202533,
+   "steps_s": 16.965314367140692,
+   "acceptance_by_pos": {
+    "0": 0.7278481012658228,
+    "1": 0.4810126582278481,
+    "2": 0.3227848101265823
+   },
+   "wall_s": 12.113917601760477,
+   "task": "prose",
+   "ctx_target": 8000
+  },
+  {
+   "label": "prose @ 18000 ctx",
+   "prompt_tokens": 18080,
+   "cached_tokens": 0,
+   "out_tokens": 400,
+   "decode_tok_s": 41.6473301117232,
+   "acceptance": 0.4979166666666667,
+   "tok_per_step": 2.49375,
+   "steps_s": 16.70068375407447,
+   "acceptance_by_pos": {
+    "0": 0.70625,
+    "1": 0.5,
+    "2": 0.2875
+   },
+   "wall_s": 15.031477085780352,
+   "task": "prose",
+   "ctx_target": 18000
+  },
+  {
+   "label": "code @ bare ctx",
+   "prompt_tokens": 76,
+   "cached_tokens": 0,
+   "out_tokens": 400,
+   "decode_tok_s": 46.482118230213295,
+   "acceptance": 0.5714285714285714,
+   "tok_per_step": 2.7142857142857144,
+   "steps_s": 17.124990926920688,
+   "acceptance_by_pos": {
+    "0": 0.7210884353741497,
+    "1": 0.564625850340136,
+    "2": 0.42857142857142855
+   },
+   "wall_s": 8.839710065163672,
+   "task": "code",
+   "ctx_target": 0
+  },
+  {
+   "label": "code @ 1000 ctx",
+   "prompt_tokens": 1083,
+   "cached_tokens": 0,
+   "out_tokens": 400,
+   "decode_tok_s": 45.773201326704765,
+   "acceptance": 0.5637583892617449,
+   "tok_per_step": 2.6912751677852347,
+   "steps_s": 17.00799750044641,
+   "acceptance_by_pos": {
+    "0": 0.7449664429530202,
+    "1": 0.5436241610738255,
+    "2": 0.40268456375838924
+   },
+   "wall_s": 9.266526720952243,
+   "task": "code",
+   "ctx_target": 1000
+  },
+  {
+   "label": "code @ 4000 ctx",
+   "prompt_tokens": 4083,
+   "cached_tokens": 0,
+   "out_tokens": 400,
+   "decode_tok_s": 38.95622107963192,
+   "acceptance": 0.4367816091954023,
+   "tok_per_step": 2.310344827586207,
+   "steps_s": 16.86164792998994,
+   "acceptance_by_pos": {
+    "0": 0.6551724137931034,
+    "1": 0.40229885057471265,
+    "2": 0.25287356321839083
+   },
+   "wall_s": 11.204655296169221,
+   "task": "code",
+   "ctx_target": 4000
+  },
+  {
+   "label": "code @ 8000 ctx",
+   "prompt_tokens": 8083,
+   "cached_tokens": 0,
+   "out_tokens": 400,
+   "decode_tok_s": 39.08756493104065,
+   "acceptance": 0.4603174603174603,
+   "tok_per_step": 2.380952380952381,
+   "steps_s": 16.416777271037073,
+   "acceptance_by_pos": {
+    "0": 0.6785714285714286,
+    "1": 0.4166666666666667,
+    "2": 0.2857142857142857
+   },
+   "wall_s": 10.991180400829762,
+   "task": "code",
+   "ctx_target": 8000
+  },
+  {
+   "label": "code @ 18000 ctx",
+   "prompt_tokens": 18083,
+   "cached_tokens": 0,
+   "out_tokens": 400,
+   "decode_tok_s": 44.34434279217382,
+   "acceptance": 0.5416666666666666,
+   "tok_per_step": 2.625,
+   "steps_s": 16.893082968447168,
+   "acceptance_by_pos": {
+    "0": 0.7368421052631579,
+    "1": 0.5526315789473685,
+    "2": 0.3355263157894737
+   },
+   "wall_s": 12.968724918551743,
+   "task": "code",
+   "ctx_target": 18000
+  }
+ ]
+}

@@ -1,0 +1,2061 @@
+{
+ "ref": "lpt1024",
+ "model": "Qwen3.8-Flash-Next-NVFP4",
+ "utc": "2026-09-16T18:50:04Z",
+ "gsm8k": {
+  "n": 200,
+  "correct": 194,
+  "acc": 0.97,
+  "truncated": 2,
+  "effort": "none",
+  "max_tokens": 1536,
+  "items": [
+   {
+    "i": 0,
+    "ok": true,
+    "gold": 18.0,
+    "pred": 18.0,
+    "finish": "stop",
+    "out_tokens": 250,
+    "wall_s": 7.03159101807978
+   },
+   {
+    "i": 1,
+    "ok": true,
+    "gold": 3.0,
+    "pred": 3.0,
+    "finish": "stop",
+    "out_tokens": 244,
+    "wall_s": 5.966458115028217
+   },
+   {
+    "i": 2,
+    "ok": true,
+    "gold": 70000.0,
+    "pred": 70000.0,
+    "finish": "stop",
+    "out_tokens": 411,
+    "wall_s": 10.413443338009529
+   },
+   {
+    "i": 3,
+    "ok": true,
+    "gold": 540.0,
+    "pred": 540.0,
+    "finish": "stop",
+    "out_tokens": 214,
+    "wall_s": 5.128534606075846
+   },
+   {
+    "i": 4,
+    "ok": true,
+    "gold": 20.0,
+    "pred": 20.0,
+    "finish": "stop",
+    "out_tokens": 246,
+    "wall_s": 6.442030134960078
+   },
+   {
+    "i": 5,
+    "ok": true,
+    "gold": 64.0,
+    "pred": 64.0,
+    "finish": "stop",
+    "out_tokens": 444,
+    "wall_s": 11.339057233999483
+   },
+   {
+    "i": 6,
+    "ok": true,
+    "gold": 260.0,
+    "pred": 260.0,
+    "finish": "stop",
+    "out_tokens": 276,
+    "wall_s": 7.166274854913354
+   },
+   {
+    "i": 7,
+    "ok": true,
+    "gold": 160.0,
+    "pred": 160.0,
+    "finish": "stop",
+    "out_tokens": 425,
+    "wall_s": 11.41179219901096
+   },
+   {
+    "i": 8,
+    "ok": true,
+    "gold": 45.0,
+    "pred": 45.0,
+    "finish": "stop",
+    "out_tokens": 640,
+    "wall_s": 15.506911900942214
+   },
+   {
+    "i": 9,
+    "ok": true,
+    "gold": 460.0,
+    "pred": 460.0,
+    "finish": "stop",
+    "out_tokens": 299,
+    "wall_s": 7.740144082927145
+   },
+   {
+    "i": 10,
+    "ok": true,
+    "gold": 366.0,
+    "pred": 366.0,
+    "finish": "stop",
+    "out_tokens": 388,
+    "wall_s": 9.278161257039756
+   },
+   {
+    "i": 11,
+    "ok": true,
+    "gold": 694.0,
+    "pred": 694.0,
+    "finish": "stop",
+    "out_tokens": 491,
+    "wall_s": 11.388841919018887
+   },
+   {
+    "i": 12,
+    "ok": false,
+    "gold": 13.0,
+    "pred": 12.1,
+    "finish": "length",
+    "out_tokens": 1536,
+    "wall_s": 45.66596078907605
+   },
+   {
+    "i": 13,
+    "ok": true,
+    "gold": 18.0,
+    "pred": 18.0,
+    "finish": "stop",
+    "out_tokens": 598,
+    "wall_s": 14.325041083036922
+   },
+   {
+    "i": 14,
+    "ok": true,
+    "gold": 60.0,
+    "pred": 60.0,
+    "finish": "stop",
+    "out_tokens": 392,
+    "wall_s": 9.187407007906586
+   },
+   {
+    "i": 15,
+    "ok": true,
+    "gold": 125.0,
+    "pred": 125.0,
+    "finish": "stop",
+    "out_tokens": 301,
+    "wall_s": 7.966087672044523
+   },
+   {
+    "i": 16,
+    "ok": true,
+    "gold": 230.0,
+    "pred": 230.0,
+    "finish": "stop",
+    "out_tokens": 238,
+    "wall_s": 6.572879832005128
+   },
+   {
+    "i": 17,
+    "ok": true,
+    "gold": 57500.0,
+    "pred": 57500.0,
+    "finish": "stop",
+    "out_tokens": 376,
+    "wall_s": 9.16333884303458
+   },
+   {
+    "i": 18,
+    "ok": true,
+    "gold": 7.0,
+    "pred": 7.0,
+    "finish": "stop",
+    "out_tokens": 210,
+    "wall_s": 5.857743786997162
+   },
+   {
+    "i": 19,
+    "ok": true,
+    "gold": 6.0,
+    "pred": 6.0,
+    "finish": "stop",
+    "out_tokens": 523,
+    "wall_s": 12.867967957048677
+   },
+   {
+    "i": 20,
+    "ok": true,
+    "gold": 15.0,
+    "pred": 15.0,
+    "finish": "stop",
+    "out_tokens": 558,
+    "wall_s": 13.727591319009662
+   },
+   {
+    "i": 21,
+    "ok": true,
+    "gold": 14.0,
+    "pred": 14.0,
+    "finish": "stop",
+    "out_tokens": 374,
+    "wall_s": 9.634113479987718
+   },
+   {
+    "i": 22,
+    "ok": true,
+    "gold": 7.0,
+    "pred": 7.0,
+    "finish": "stop",
+    "out_tokens": 211,
+    "wall_s": 4.975676979986019
+   },
+   {
+    "i": 23,
+    "ok": true,
+    "gold": 8.0,
+    "pred": 8.0,
+    "finish": "stop",
+    "out_tokens": 218,
+    "wall_s": 5.412037537083961
+   },
+   {
+    "i": 24,
+    "ok": true,
+    "gold": 26.0,
+    "pred": 26.0,
+    "finish": "stop",
+    "out_tokens": 472,
+    "wall_s": 11.858721567085013
+   },
+   {
+    "i": 25,
+    "ok": true,
+    "gold": 2.0,
+    "pred": 2.0,
+    "finish": "stop",
+    "out_tokens": 368,
+    "wall_s": 8.954993837047368
+   },
+   {
+    "i": 26,
+    "ok": true,
+    "gold": 243.0,
+    "pred": 243.0,
+    "finish": "stop",
+    "out_tokens": 379,
+    "wall_s": 9.193020131904632
+   },
+   {
+    "i": 27,
+    "ok": true,
+    "gold": 16.0,
+    "pred": 16.0,
+    "finish": "stop",
+    "out_tokens": 273,
+    "wall_s": 6.633215678972192
+   },
+   {
+    "i": 28,
+    "ok": true,
+    "gold": 25.0,
+    "pred": 25.0,
+    "finish": "stop",
+    "out_tokens": 265,
+    "wall_s": 7.195899407961406
+   },
+   {
+    "i": 29,
+    "ok": true,
+    "gold": 104.0,
+    "pred": 104.0,
+    "finish": "stop",
+    "out_tokens": 338,
+    "wall_s": 8.501890097977594
+   },
+   {
+    "i": 30,
+    "ok": true,
+    "gold": 109.0,
+    "pred": 109.0,
+    "finish": "stop",
+    "out_tokens": 379,
+    "wall_s": 10.00934695394244
+   },
+   {
+    "i": 31,
+    "ok": true,
+    "gold": 80.0,
+    "pred": 80.0,
+    "finish": "stop",
+    "out_tokens": 336,
+    "wall_s": 8.354618569021113
+   },
+   {
+    "i": 32,
+    "ok": true,
+    "gold": 35.0,
+    "pred": 35.0,
+    "finish": "stop",
+    "out_tokens": 168,
+    "wall_s": 4.395194499054924
+   },
+   {
+    "i": 33,
+    "ok": true,
+    "gold": 70.0,
+    "pred": 70.0,
+    "finish": "stop",
+    "out_tokens": 327,
+    "wall_s": 8.349672699929215
+   },
+   {
+    "i": 34,
+    "ok": true,
+    "gold": 23.0,
+    "pred": 23.0,
+    "finish": "stop",
+    "out_tokens": 218,
+    "wall_s": 6.045578675926663
+   },
+   {
+    "i": 35,
+    "ok": true,
+    "gold": 9.0,
+    "pred": 9.0,
+    "finish": "stop",
+    "out_tokens": 264,
+    "wall_s": 7.284370135050267
+   },
+   {
+    "i": 36,
+    "ok": true,
+    "gold": 75.0,
+    "pred": 75.0,
+    "finish": "stop",
+    "out_tokens": 235,
+    "wall_s": 6.227816369035281
+   },
+   {
+    "i": 37,
+    "ok": true,
+    "gold": 2.0,
+    "pred": 2.0,
+    "finish": "stop",
+    "out_tokens": 274,
+    "wall_s": 7.6159172100014985
+   },
+   {
+    "i": 38,
+    "ok": true,
+    "gold": 10.0,
+    "pred": 10.0,
+    "finish": "stop",
+    "out_tokens": 445,
+    "wall_s": 10.95847407693509
+   },
+   {
+    "i": 39,
+    "ok": true,
+    "gold": 18.0,
+    "pred": 18.0,
+    "finish": "stop",
+    "out_tokens": 513,
+    "wall_s": 12.7034826669842
+   },
+   {
+    "i": 40,
+    "ok": true,
+    "gold": 8.0,
+    "pred": 8.0,
+    "finish": "stop",
+    "out_tokens": 813,
+    "wall_s": 22.483360023936257
+   },
+   {
+    "i": 41,
+    "ok": true,
+    "gold": 200.0,
+    "pred": 200.0,
+    "finish": "stop",
+    "out_tokens": 475,
+    "wall_s": 12.204770405078307
+   },
+   {
+    "i": 42,
+    "ok": true,
+    "gold": 26.0,
+    "pred": 26.0,
+    "finish": "stop",
+    "out_tokens": 235,
+    "wall_s": 6.104000578983687
+   },
+   {
+    "i": 43,
+    "ok": true,
+    "gold": 48.0,
+    "pred": 48.0,
+    "finish": "stop",
+    "out_tokens": 380,
+    "wall_s": 8.973644978017546
+   },
+   {
+    "i": 44,
+    "ok": true,
+    "gold": 20.0,
+    "pred": 20.0,
+    "finish": "stop",
+    "out_tokens": 401,
+    "wall_s": 9.857373356935568
+   },
+   {
+    "i": 45,
+    "ok": true,
+    "gold": 104.0,
+    "pred": 104.0,
+    "finish": "stop",
+    "out_tokens": 447,
+    "wall_s": 10.96180524607189
+   },
+   {
+    "i": 46,
+    "ok": true,
+    "gold": 163.0,
+    "pred": 163.0,
+    "finish": "stop",
+    "out_tokens": 462,
+    "wall_s": 11.716971923946403
+   },
+   {
+    "i": 47,
+    "ok": true,
+    "gold": 800.0,
+    "pred": 800.0,
+    "finish": "stop",
+    "out_tokens": 498,
+    "wall_s": 11.515072158887051
+   },
+   {
+    "i": 48,
+    "ok": true,
+    "gold": 8.0,
+    "pred": 8.0,
+    "finish": "stop",
+    "out_tokens": 270,
+    "wall_s": 6.864583663991652
+   },
+   {
+    "i": 49,
+    "ok": true,
+    "gold": 30.0,
+    "pred": 30.0,
+    "finish": "stop",
+    "out_tokens": 316,
+    "wall_s": 7.869213524041697
+   },
+   {
+    "i": 50,
+    "ok": true,
+    "gold": 294.0,
+    "pred": 294.0,
+    "finish": "stop",
+    "out_tokens": 261,
+    "wall_s": 6.847296311985701
+   },
+   {
+    "i": 51,
+    "ok": true,
+    "gold": 5.0,
+    "pred": 5.0,
+    "finish": "stop",
+    "out_tokens": 304,
+    "wall_s": 8.345191151020117
+   },
+   {
+    "i": 52,
+    "ok": true,
+    "gold": 15.0,
+    "pred": 15.0,
+    "finish": "stop",
+    "out_tokens": 467,
+    "wall_s": 12.109080543043092
+   },
+   {
+    "i": 53,
+    "ok": true,
+    "gold": 40.0,
+    "pred": 40.0,
+    "finish": "stop",
+    "out_tokens": 334,
+    "wall_s": 8.825669688987546
+   },
+   {
+    "i": 54,
+    "ok": true,
+    "gold": 40.0,
+    "pred": 40.0,
+    "finish": "stop",
+    "out_tokens": 320,
+    "wall_s": 8.010443673934788
+   },
+   {
+    "i": 55,
+    "ok": true,
+    "gold": 14.0,
+    "pred": 14.0,
+    "finish": "stop",
+    "out_tokens": 163,
+    "wall_s": 4.307835135026835
+   },
+   {
+    "i": 56,
+    "ok": true,
+    "gold": 3.0,
+    "pred": 3.0,
+    "finish": "stop",
+    "out_tokens": 245,
+    "wall_s": 6.56936347996816
+   },
+   {
+    "i": 57,
+    "ok": true,
+    "gold": 83.0,
+    "pred": 83.0,
+    "finish": "stop",
+    "out_tokens": 483,
+    "wall_s": 11.885210066102445
+   },
+   {
+    "i": 58,
+    "ok": true,
+    "gold": 57.0,
+    "pred": 57.0,
+    "finish": "stop",
+    "out_tokens": 284,
+    "wall_s": 7.5661734560271725
+   },
+   {
+    "i": 59,
+    "ok": true,
+    "gold": 187.0,
+    "pred": 187.0,
+    "finish": "stop",
+    "out_tokens": 204,
+    "wall_s": 5.15063186106272
+   },
+   {
+    "i": 60,
+    "ok": true,
+    "gold": 17.0,
+    "pred": 17.0,
+    "finish": "stop",
+    "out_tokens": 345,
+    "wall_s": 9.318296271958388
+   },
+   {
+    "i": 61,
+    "ok": true,
+    "gold": 1430.0,
+    "pred": 1430.0,
+    "finish": "stop",
+    "out_tokens": 251,
+    "wall_s": 6.738611530978233
+   },
+   {
+    "i": 62,
+    "ok": true,
+    "gold": 25000.0,
+    "pred": 25000.0,
+    "finish": "stop",
+    "out_tokens": 405,
+    "wall_s": 10.958089489024132
+   },
+   {
+    "i": 63,
+    "ok": true,
+    "gold": 1596.0,
+    "pred": 1596.0,
+    "finish": "stop",
+    "out_tokens": 431,
+    "wall_s": 10.671290138969198
+   },
+   {
+    "i": 64,
+    "ok": true,
+    "gold": 300.0,
+    "pred": 300.0,
+    "finish": "stop",
+    "out_tokens": 321,
+    "wall_s": 8.819701742962934
+   },
+   {
+    "i": 65,
+    "ok": true,
+    "gold": 36.0,
+    "pred": 36.0,
+    "finish": "stop",
+    "out_tokens": 248,
+    "wall_s": 6.115211729076691
+   },
+   {
+    "i": 66,
+    "ok": true,
+    "gold": 48.0,
+    "pred": 48.0,
+    "finish": "stop",
+    "out_tokens": 350,
+    "wall_s": 9.073751862044446
+   },
+   {
+    "i": 67,
+    "ok": true,
+    "gold": 595.0,
+    "pred": 595.0,
+    "finish": "stop",
+    "out_tokens": 396,
+    "wall_s": 9.541431128047407
+   },
+   {
+    "i": 68,
+    "ok": true,
+    "gold": 36.0,
+    "pred": 36.0,
+    "finish": "stop",
+    "out_tokens": 314,
+    "wall_s": 7.82471414108295
+   },
+   {
+    "i": 69,
+    "ok": true,
+    "gold": 60.0,
+    "pred": 60.0,
+    "finish": "stop",
+    "out_tokens": 272,
+    "wall_s": 7.575621213996783
+   },
+   {
+    "i": 70,
+    "ok": true,
+    "gold": 7425.0,
+    "pred": 7425.0,
+    "finish": "stop",
+    "out_tokens": 374,
+    "wall_s": 9.443764953059144
+   },
+   {
+    "i": 71,
+    "ok": true,
+    "gold": 60.0,
+    "pred": 60.0,
+    "finish": "stop",
+    "out_tokens": 157,
+    "wall_s": 4.12692246993538
+   },
+   {
+    "i": 72,
+    "ok": true,
+    "gold": 221.0,
+    "pred": 221.0,
+    "finish": "stop",
+    "out_tokens": 275,
+    "wall_s": 7.171212778077461
+   },
+   {
+    "i": 73,
+    "ok": true,
+    "gold": 255.0,
+    "pred": 255.0,
+    "finish": "stop",
+    "out_tokens": 351,
+    "wall_s": 9.344999019056559
+   },
+   {
+    "i": 74,
+    "ok": true,
+    "gold": 88.0,
+    "pred": 88.0,
+    "finish": "stop",
+    "out_tokens": 560,
+    "wall_s": 13.623555550002493
+   },
+   {
+    "i": 75,
+    "ok": true,
+    "gold": 60.0,
+    "pred": 60.0,
+    "finish": "stop",
+    "out_tokens": 574,
+    "wall_s": 13.87421925808303
+   },
+   {
+    "i": 76,
+    "ok": true,
+    "gold": 5.0,
+    "pred": 5.0,
+    "finish": "stop",
+    "out_tokens": 385,
+    "wall_s": 9.41527130198665
+   },
+   {
+    "i": 77,
+    "ok": true,
+    "gold": 100.0,
+    "pred": 100.0,
+    "finish": "stop",
+    "out_tokens": 311,
+    "wall_s": 7.519246861920692
+   },
+   {
+    "i": 78,
+    "ok": true,
+    "gold": 6.0,
+    "pred": 6.0,
+    "finish": "stop",
+    "out_tokens": 303,
+    "wall_s": 7.565470475004986
+   },
+   {
+    "i": 79,
+    "ok": true,
+    "gold": 70.0,
+    "pred": 70.0,
+    "finish": "stop",
+    "out_tokens": 302,
+    "wall_s": 7.579417599015869
+   },
+   {
+    "i": 80,
+    "ok": true,
+    "gold": 10.0,
+    "pred": 10.0,
+    "finish": "stop",
+    "out_tokens": 258,
+    "wall_s": 6.825450231903233
+   },
+   {
+    "i": 81,
+    "ok": true,
+    "gold": 17.0,
+    "pred": 17.0,
+    "finish": "stop",
+    "out_tokens": 215,
+    "wall_s": 5.299958168063313
+   },
+   {
+    "i": 82,
+    "ok": true,
+    "gold": 623.0,
+    "pred": 623.0,
+    "finish": "stop",
+    "out_tokens": 303,
+    "wall_s": 7.783095944905654
+   },
+   {
+    "i": 83,
+    "ok": true,
+    "gold": 600.0,
+    "pred": 600.0,
+    "finish": "stop",
+    "out_tokens": 184,
+    "wall_s": 4.927665761089884
+   },
+   {
+    "i": 84,
+    "ok": true,
+    "gold": 15.0,
+    "pred": 15.0,
+    "finish": "stop",
+    "out_tokens": 387,
+    "wall_s": 9.736500820959918
+   },
+   {
+    "i": 85,
+    "ok": false,
+    "gold": 44.0,
+    "pred": 48.0,
+    "finish": "stop",
+    "out_tokens": 326,
+    "wall_s": 9.015112533932552
+   },
+   {
+    "i": 86,
+    "ok": true,
+    "gold": 22.0,
+    "pred": 22.0,
+    "finish": "stop",
+    "out_tokens": 221,
+    "wall_s": 5.891041854978539
+   },
+   {
+    "i": 87,
+    "ok": true,
+    "gold": 9360.0,
+    "pred": 9360.0,
+    "finish": "stop",
+    "out_tokens": 452,
+    "wall_s": 12.14405370305758
+   },
+   {
+    "i": 88,
+    "ok": true,
+    "gold": 8000.0,
+    "pred": 8000.0,
+    "finish": "stop",
+    "out_tokens": 307,
+    "wall_s": 7.476241728989407
+   },
+   {
+    "i": 89,
+    "ok": true,
+    "gold": 24.0,
+    "pred": 24.0,
+    "finish": "stop",
+    "out_tokens": 467,
+    "wall_s": 12.079678895999677
+   },
+   {
+    "i": 90,
+    "ok": true,
+    "gold": 225.0,
+    "pred": 225.0,
+    "finish": "stop",
+    "out_tokens": 274,
+    "wall_s": 6.913462576107122
+   },
+   {
+    "i": 91,
+    "ok": true,
+    "gold": 28.0,
+    "pred": 28.0,
+    "finish": "stop",
+    "out_tokens": 244,
+    "wall_s": 5.78674566897098
+   },
+   {
+    "i": 92,
+    "ok": true,
+    "gold": 4.0,
+    "pred": 4.0,
+    "finish": "stop",
+    "out_tokens": 369,
+    "wall_s": 8.848305478109978
+   },
+   {
+    "i": 93,
+    "ok": false,
+    "gold": 36.0,
+    "pred": 36.36,
+    "finish": "stop",
+    "out_tokens": 759,
+    "wall_s": 19.274670950020663
+   },
+   {
+    "i": 94,
+    "ok": true,
+    "gold": 348.0,
+    "pred": 348.0,
+    "finish": "stop",
+    "out_tokens": 375,
+    "wall_s": 8.691946529084817
+   },
+   {
+    "i": 95,
+    "ok": true,
+    "gold": 40.0,
+    "pred": 40.0,
+    "finish": "stop",
+    "out_tokens": 381,
+    "wall_s": 9.180727250990458
+   },
+   {
+    "i": 96,
+    "ok": true,
+    "gold": 3.0,
+    "pred": 3.0,
+    "finish": "stop",
+    "out_tokens": 228,
+    "wall_s": 5.851468147942796
+   },
+   {
+    "i": 97,
+    "ok": true,
+    "gold": 12.0,
+    "pred": 12.0,
+    "finish": "stop",
+    "out_tokens": 400,
+    "wall_s": 9.933866836945526
+   },
+   {
+    "i": 98,
+    "ok": true,
+    "gold": 5.0,
+    "pred": 5.0,
+    "finish": "stop",
+    "out_tokens": 334,
+    "wall_s": 8.847618301981129
+   },
+   {
+    "i": 99,
+    "ok": true,
+    "gold": 58.0,
+    "pred": 58.0,
+    "finish": "stop",
+    "out_tokens": 270,
+    "wall_s": 6.985677826916799
+   },
+   {
+    "i": 100,
+    "ok": true,
+    "gold": 175.0,
+    "pred": 175.0,
+    "finish": "stop",
+    "out_tokens": 539,
+    "wall_s": 12.934542694943957
+   },
+   {
+    "i": 101,
+    "ok": true,
+    "gold": 6.0,
+    "pred": 6.0,
+    "finish": "stop",
+    "out_tokens": 235,
+    "wall_s": 6.318498127046041
+   },
+   {
+    "i": 102,
+    "ok": true,
+    "gold": 26.0,
+    "pred": 26.0,
+    "finish": "stop",
+    "out_tokens": 388,
+    "wall_s": 10.265683404984884
+   },
+   {
+    "i": 103,
+    "ok": true,
+    "gold": 140.0,
+    "pred": 140.0,
+    "finish": "stop",
+    "out_tokens": 421,
+    "wall_s": 11.256999781006016
+   },
+   {
+    "i": 104,
+    "ok": true,
+    "gold": 500.0,
+    "pred": 500.0,
+    "finish": "stop",
+    "out_tokens": 296,
+    "wall_s": 7.337696705013514
+   },
+   {
+    "i": 105,
+    "ok": true,
+    "gold": 20.0,
+    "pred": 20.0,
+    "finish": "stop",
+    "out_tokens": 195,
+    "wall_s": 4.683245553052984
+   },
+   {
+    "i": 106,
+    "ok": true,
+    "gold": 72.0,
+    "pred": 72.0,
+    "finish": "stop",
+    "out_tokens": 551,
+    "wall_s": 13.234152309945785
+   },
+   {
+    "i": 107,
+    "ok": true,
+    "gold": 3.0,
+    "pred": 3.0,
+    "finish": "stop",
+    "out_tokens": 524,
+    "wall_s": 13.488445177907124
+   },
+   {
+    "i": 108,
+    "ok": true,
+    "gold": 50.0,
+    "pred": 50.0,
+    "finish": "stop",
+    "out_tokens": 410,
+    "wall_s": 10.920686766970903
+   },
+   {
+    "i": 109,
+    "ok": true,
+    "gold": 28.0,
+    "pred": 28.0,
+    "finish": "stop",
+    "out_tokens": 291,
+    "wall_s": 7.120353225036524
+   },
+   {
+    "i": 110,
+    "ok": true,
+    "gold": 45.0,
+    "pred": 45.0,
+    "finish": "stop",
+    "out_tokens": 266,
+    "wall_s": 6.444923628005199
+   },
+   {
+    "i": 111,
+    "ok": true,
+    "gold": 16.0,
+    "pred": 16.0,
+    "finish": "stop",
+    "out_tokens": 493,
+    "wall_s": 12.778169634984806
+   },
+   {
+    "i": 112,
+    "ok": true,
+    "gold": 24.0,
+    "pred": 24.0,
+    "finish": "stop",
+    "out_tokens": 200,
+    "wall_s": 5.404669045004994
+   },
+   {
+    "i": 113,
+    "ok": true,
+    "gold": 25.0,
+    "pred": 25.0,
+    "finish": "stop",
+    "out_tokens": 134,
+    "wall_s": 3.7086961519671604
+   },
+   {
+    "i": 114,
+    "ok": true,
+    "gold": 6.0,
+    "pred": 6.0,
+    "finish": "stop",
+    "out_tokens": 577,
+    "wall_s": 15.194623650051653
+   },
+   {
+    "i": 115,
+    "ok": true,
+    "gold": 90.0,
+    "pred": 90.0,
+    "finish": "stop",
+    "out_tokens": 559,
+    "wall_s": 13.87144575198181
+   },
+   {
+    "i": 116,
+    "ok": true,
+    "gold": 42.0,
+    "pred": 42.0,
+    "finish": "stop",
+    "out_tokens": 416,
+    "wall_s": 10.378945223987103
+   },
+   {
+    "i": 117,
+    "ok": true,
+    "gold": 360.0,
+    "pred": 360.0,
+    "finish": "stop",
+    "out_tokens": 137,
+    "wall_s": 3.4222165159881115
+   },
+   {
+    "i": 118,
+    "ok": true,
+    "gold": 4.0,
+    "pred": 4.0,
+    "finish": "stop",
+    "out_tokens": 337,
+    "wall_s": 7.7962750809965655
+   },
+   {
+    "i": 119,
+    "ok": false,
+    "gold": 95200.0,
+    "pred": 99076.92,
+    "finish": "stop",
+    "out_tokens": 872,
+    "wall_s": 20.440282994997688
+   },
+   {
+    "i": 120,
+    "ok": true,
+    "gold": 240.0,
+    "pred": 240.0,
+    "finish": "stop",
+    "out_tokens": 200,
+    "wall_s": 5.387333676917478
+   },
+   {
+    "i": 121,
+    "ok": true,
+    "gold": 27.0,
+    "pred": 27.0,
+    "finish": "stop",
+    "out_tokens": 267,
+    "wall_s": 6.8242811360396445
+   },
+   {
+    "i": 122,
+    "ok": true,
+    "gold": 48.0,
+    "pred": 48.0,
+    "finish": "stop",
+    "out_tokens": 395,
+    "wall_s": 9.780991708976217
+   },
+   {
+    "i": 123,
+    "ok": true,
+    "gold": 50.0,
+    "pred": 50.0,
+    "finish": "stop",
+    "out_tokens": 370,
+    "wall_s": 8.874071466038004
+   },
+   {
+    "i": 124,
+    "ok": true,
+    "gold": 10.0,
+    "pred": 10.0,
+    "finish": "stop",
+    "out_tokens": 300,
+    "wall_s": 7.368823284981772
+   },
+   {
+    "i": 125,
+    "ok": true,
+    "gold": 10.0,
+    "pred": 10.0,
+    "finish": "stop",
+    "out_tokens": 392,
+    "wall_s": 9.762827959028073
+   },
+   {
+    "i": 126,
+    "ok": true,
+    "gold": 82.0,
+    "pred": 82.0,
+    "finish": "stop",
+    "out_tokens": 202,
+    "wall_s": 4.939731545979157
+   },
+   {
+    "i": 127,
+    "ok": true,
+    "gold": 120.0,
+    "pred": 120.0,
+    "finish": "stop",
+    "out_tokens": 202,
+    "wall_s": 5.1889955080114305
+   },
+   {
+    "i": 128,
+    "ok": true,
+    "gold": 880.0,
+    "pred": 880.0,
+    "finish": "stop",
+    "out_tokens": 459,
+    "wall_s": 10.867184020928107
+   },
+   {
+    "i": 129,
+    "ok": true,
+    "gold": 10000.0,
+    "pred": 10000.0,
+    "finish": "stop",
+    "out_tokens": 484,
+    "wall_s": 11.915463633020408
+   },
+   {
+    "i": 130,
+    "ok": true,
+    "gold": 30.0,
+    "pred": 30.0,
+    "finish": "stop",
+    "out_tokens": 190,
+    "wall_s": 5.017298543010838
+   },
+   {
+    "i": 131,
+    "ok": true,
+    "gold": 940.0,
+    "pred": 940.0,
+    "finish": "stop",
+    "out_tokens": 241,
+    "wall_s": 5.905096765956841
+   },
+   {
+    "i": 132,
+    "ok": true,
+    "gold": 60.0,
+    "pred": 60.0,
+    "finish": "stop",
+    "out_tokens": 263,
+    "wall_s": 6.722011392004788
+   },
+   {
+    "i": 133,
+    "ok": true,
+    "gold": 13.0,
+    "pred": 13.0,
+    "finish": "stop",
+    "out_tokens": 285,
+    "wall_s": 7.296363600995392
+   },
+   {
+    "i": 134,
+    "ok": true,
+    "gold": 720.0,
+    "pred": 720.0,
+    "finish": "stop",
+    "out_tokens": 240,
+    "wall_s": 6.657867548987269
+   },
+   {
+    "i": 135,
+    "ok": true,
+    "gold": 40.0,
+    "pred": 40.0,
+    "finish": "stop",
+    "out_tokens": 182,
+    "wall_s": 5.374881930067204
+   },
+   {
+    "i": 136,
+    "ok": true,
+    "gold": 6.0,
+    "pred": 6.0,
+    "finish": "stop",
+    "out_tokens": 145,
+    "wall_s": 4.100270865019411
+   },
+   {
+    "i": 137,
+    "ok": true,
+    "gold": 29.0,
+    "pred": 29.0,
+    "finish": "stop",
+    "out_tokens": 376,
+    "wall_s": 9.252159193041734
+   },
+   {
+    "i": 138,
+    "ok": true,
+    "gold": 105.0,
+    "pred": 105.0,
+    "finish": "stop",
+    "out_tokens": 473,
+    "wall_s": 11.712077526957728
+   },
+   {
+    "i": 139,
+    "ok": true,
+    "gold": 70.0,
+    "pred": 70.0,
+    "finish": "stop",
+    "out_tokens": 311,
+    "wall_s": 7.694366108975373
+   },
+   {
+    "i": 140,
+    "ok": true,
+    "gold": 20.0,
+    "pred": 20.0,
+    "finish": "stop",
+    "out_tokens": 321,
+    "wall_s": 7.78054795099888
+   },
+   {
+    "i": 141,
+    "ok": true,
+    "gold": 400.0,
+    "pred": 400.0,
+    "finish": "stop",
+    "out_tokens": 528,
+    "wall_s": 13.068809791933745
+   },
+   {
+    "i": 142,
+    "ok": true,
+    "gold": 140.0,
+    "pred": 140.0,
+    "finish": "stop",
+    "out_tokens": 179,
+    "wall_s": 4.648258915985934
+   },
+   {
+    "i": 143,
+    "ok": true,
+    "gold": 16.0,
+    "pred": 16.0,
+    "finish": "stop",
+    "out_tokens": 351,
+    "wall_s": 9.019584682071581
+   },
+   {
+    "i": 144,
+    "ok": true,
+    "gold": 20.0,
+    "pred": 20.0,
+    "finish": "stop",
+    "out_tokens": 335,
+    "wall_s": 9.35619120602496
+   },
+   {
+    "i": 145,
+    "ok": true,
+    "gold": 4000.0,
+    "pred": 4000.0,
+    "finish": "stop",
+    "out_tokens": 301,
+    "wall_s": 7.654589059995487
+   },
+   {
+    "i": 146,
+    "ok": true,
+    "gold": 2125.0,
+    "pred": 2125.0,
+    "finish": "stop",
+    "out_tokens": 579,
+    "wall_s": 14.823200594051741
+   },
+   {
+    "i": 147,
+    "ok": true,
+    "gold": 75.0,
+    "pred": 75.0,
+    "finish": "stop",
+    "out_tokens": 565,
+    "wall_s": 14.662106276024133
+   },
+   {
+    "i": 148,
+    "ok": true,
+    "gold": 30.0,
+    "pred": 30.0,
+    "finish": "stop",
+    "out_tokens": 212,
+    "wall_s": 5.752902208012529
+   },
+   {
+    "i": 149,
+    "ok": true,
+    "gold": 16.0,
+    "pred": 16.0,
+    "finish": "stop",
+    "out_tokens": 285,
+    "wall_s": 7.167009248048998
+   },
+   {
+    "i": 150,
+    "ok": true,
+    "gold": 4.0,
+    "pred": 4.0,
+    "finish": "stop",
+    "out_tokens": 543,
+    "wall_s": 13.415914515964687
+   },
+   {
+    "i": 151,
+    "ok": true,
+    "gold": 5.0,
+    "pred": 5.0,
+    "finish": "stop",
+    "out_tokens": 371,
+    "wall_s": 9.289799279067665
+   },
+   {
+    "i": 152,
+    "ok": true,
+    "gold": 4.0,
+    "pred": 4.0,
+    "finish": "stop",
+    "out_tokens": 189,
+    "wall_s": 4.869909100001678
+   },
+   {
+    "i": 153,
+    "ok": true,
+    "gold": 48.0,
+    "pred": 48.0,
+    "finish": "stop",
+    "out_tokens": 648,
+    "wall_s": 17.11393318802584
+   },
+   {
+    "i": 154,
+    "ok": true,
+    "gold": 272.0,
+    "pred": 272.0,
+    "finish": "stop",
+    "out_tokens": 424,
+    "wall_s": 10.772863992024213
+   },
+   {
+    "i": 155,
+    "ok": true,
+    "gold": 280.0,
+    "pred": 280.0,
+    "finish": "stop",
+    "out_tokens": 380,
+    "wall_s": 9.617056170944124
+   },
+   {
+    "i": 156,
+    "ok": true,
+    "gold": 1400.0,
+    "pred": 1400.0,
+    "finish": "stop",
+    "out_tokens": 214,
+    "wall_s": 5.665030362084508
+   },
+   {
+    "i": 157,
+    "ok": true,
+    "gold": 80.0,
+    "pred": 80.0,
+    "finish": "stop",
+    "out_tokens": 520,
+    "wall_s": 13.36297468689736
+   },
+   {
+    "i": 158,
+    "ok": true,
+    "gold": 34.0,
+    "pred": 34.0,
+    "finish": "stop",
+    "out_tokens": 324,
+    "wall_s": 8.245391097967513
+   },
+   {
+    "i": 159,
+    "ok": true,
+    "gold": 15.0,
+    "pred": 15.0,
+    "finish": "stop",
+    "out_tokens": 245,
+    "wall_s": 6.269317553960718
+   },
+   {
+    "i": 160,
+    "ok": true,
+    "gold": 16.0,
+    "pred": 16.0,
+    "finish": "stop",
+    "out_tokens": 252,
+    "wall_s": 6.641513410024345
+   },
+   {
+    "i": 161,
+    "ok": false,
+    "gold": 32.0,
+    "pred": 17.0,
+    "finish": "length",
+    "out_tokens": 1536,
+    "wall_s": 46.33380001806654
+   },
+   {
+    "i": 162,
+    "ok": true,
+    "gold": 92.0,
+    "pred": 92.0,
+    "finish": "stop",
+    "out_tokens": 365,
+    "wall_s": 9.864677421981469
+   },
+   {
+    "i": 163,
+    "ok": false,
+    "gold": 50.0,
+    "pred": 54.0,
+    "finish": "stop",
+    "out_tokens": 355,
+    "wall_s": 8.582073217025027
+   },
+   {
+    "i": 164,
+    "ok": true,
+    "gold": 15.0,
+    "pred": 15.0,
+    "finish": "stop",
+    "out_tokens": 448,
+    "wall_s": 11.86912988498807
+   },
+   {
+    "i": 165,
+    "ok": true,
+    "gold": 77.0,
+    "pred": 77.0,
+    "finish": "stop",
+    "out_tokens": 314,
+    "wall_s": 8.036422042991035
+   },
+   {
+    "i": 166,
+    "ok": true,
+    "gold": 5.0,
+    "pred": 5.0,
+    "finish": "stop",
+    "out_tokens": 250,
+    "wall_s": 6.11875033006072
+   },
+   {
+    "i": 167,
+    "ok": true,
+    "gold": 16.0,
+    "pred": 16.0,
+    "finish": "stop",
+    "out_tokens": 427,
+    "wall_s": 10.878637030953541
+   },
+   {
+    "i": 168,
+    "ok": true,
+    "gold": 18.0,
+    "pred": 18.0,
+    "finish": "stop",
+    "out_tokens": 168,
+    "wall_s": 4.5684552119346336
+   },
+   {
+    "i": 169,
+    "ok": true,
+    "gold": 120.0,
+    "pred": 120.0,
+    "finish": "stop",
+    "out_tokens": 258,
+    "wall_s": 6.935076694004238
+   },
+   {
+    "i": 170,
+    "ok": true,
+    "gold": 150.0,
+    "pred": 150.0,
+    "finish": "stop",
+    "out_tokens": 373,
+    "wall_s": 8.583589943940751
+   },
+   {
+    "i": 171,
+    "ok": true,
+    "gold": 1210.0,
+    "pred": 1210.0,
+    "finish": "stop",
+    "out_tokens": 320,
+    "wall_s": 8.038326642010361
+   },
+   {
+    "i": 172,
+    "ok": true,
+    "gold": 51.0,
+    "pred": 51.0,
+    "finish": "stop",
+    "out_tokens": 415,
+    "wall_s": 9.85114857298322
+   },
+   {
+    "i": 173,
+    "ok": true,
+    "gold": 18000.0,
+    "pred": 18000.0,
+    "finish": "stop",
+    "out_tokens": 402,
+    "wall_s": 10.536045863991603
+   },
+   {
+    "i": 174,
+    "ok": true,
+    "gold": 95.0,
+    "pred": 95.0,
+    "finish": "stop",
+    "out_tokens": 322,
+    "wall_s": 8.254025120986626
+   },
+   {
+    "i": 175,
+    "ok": true,
+    "gold": 15.0,
+    "pred": 15.0,
+    "finish": "stop",
+    "out_tokens": 426,
+    "wall_s": 10.74903535505291
+   },
+   {
+    "i": 176,
+    "ok": true,
+    "gold": 100.0,
+    "pred": 100.0,
+    "finish": "stop",
+    "out_tokens": 233,
+    "wall_s": 5.977752167033032
+   },
+   {
+    "i": 177,
+    "ok": true,
+    "gold": 350.0,
+    "pred": 350.0,
+    "finish": "stop",
+    "out_tokens": 533,
+    "wall_s": 13.159954029950313
+   },
+   {
+    "i": 178,
+    "ok": true,
+    "gold": 122.0,
+    "pred": 122.0,
+    "finish": "stop",
+    "out_tokens": 293,
+    "wall_s": 7.0457633710466325
+   },
+   {
+    "i": 179,
+    "ok": true,
+    "gold": 130.0,
+    "pred": 130.0,
+    "finish": "stop",
+    "out_tokens": 286,
+    "wall_s": 6.979628267930821
+   },
+   {
+    "i": 180,
+    "ok": true,
+    "gold": 20.0,
+    "pred": 20.0,
+    "finish": "stop",
+    "out_tokens": 304,
+    "wall_s": 7.3317145550390705
+   },
+   {
+    "i": 181,
+    "ok": true,
+    "gold": 160.0,
+    "pred": 160.0,
+    "finish": "stop",
+    "out_tokens": 364,
+    "wall_s": 9.9331127559999
+   },
+   {
+    "i": 182,
+    "ok": true,
+    "gold": 23.0,
+    "pred": 23.0,
+    "finish": "stop",
+    "out_tokens": 305,
+    "wall_s": 7.596012215013616
+   },
+   {
+    "i": 183,
+    "ok": true,
+    "gold": 2.0,
+    "pred": 2.0,
+    "finish": "stop",
+    "out_tokens": 579,
+    "wall_s": 14.274340245989151
+   },
+   {
+    "i": 184,
+    "ok": true,
+    "gold": 25.0,
+    "pred": 25.0,
+    "finish": "stop",
+    "out_tokens": 1414,
+    "wall_s": 34.9285165379988
+   },
+   {
+    "i": 185,
+    "ok": true,
+    "gold": 30.0,
+    "pred": 30.0,
+    "finish": "stop",
+    "out_tokens": 213,
+    "wall_s": 5.63576285704039
+   },
+   {
+    "i": 186,
+    "ok": true,
+    "gold": 5.0,
+    "pred": 5.0,
+    "finish": "stop",
+    "out_tokens": 461,
+    "wall_s": 11.630674998974428
+   },
+   {
+    "i": 187,
+    "ok": true,
+    "gold": 106.0,
+    "pred": 106.0,
+    "finish": "stop",
+    "out_tokens": 496,
+    "wall_s": 13.666316122049466
+   },
+   {
+    "i": 188,
+    "ok": true,
+    "gold": 50.0,
+    "pred": 50.0,
+    "finish": "stop",
+    "out_tokens": 329,
+    "wall_s": 8.74701613909565
+   },
+   {
+    "i": 189,
+    "ok": true,
+    "gold": 34.0,
+    "pred": 34.0,
+    "finish": "stop",
+    "out_tokens": 363,
+    "wall_s": 8.683544232975692
+   },
+   {
+    "i": 190,
+    "ok": true,
+    "gold": 360.0,
+    "pred": 360.0,
+    "finish": "stop",
+    "out_tokens": 177,
+    "wall_s": 4.726188842905685
+   },
+   {
+    "i": 191,
+    "ok": true,
+    "gold": 5.0,
+    "pred": 5.0,
+    "finish": "stop",
+    "out_tokens": 308,
+    "wall_s": 7.990827213041484
+   },
+   {
+    "i": 192,
+    "ok": true,
+    "gold": 91.0,
+    "pred": 91.0,
+    "finish": "stop",
+    "out_tokens": 357,
+    "wall_s": 8.960407064994797
+   },
+   {
+    "i": 193,
+    "ok": true,
+    "gold": 24.0,
+    "pred": 24.0,
+    "finish": "stop",
+    "out_tokens": 388,
+    "wall_s": 10.262770754983649
+   },
+   {
+    "i": 194,
+    "ok": true,
+    "gold": 10.0,
+    "pred": 10.0,
+    "finish": "stop",
+    "out_tokens": 166,
+    "wall_s": 4.563712607952766
+   },
+   {
+    "i": 195,
+    "ok": true,
+    "gold": 12.0,
+    "pred": 12.0,
+    "finish": "stop",
+    "out_tokens": 221,
+    "wall_s": 5.813733998918906
+   },
+   {
+    "i": 196,
+    "ok": true,
+    "gold": 120.0,
+    "pred": 120.0,
+    "finish": "stop",
+    "out_tokens": 234,
+    "wall_s": 6.387016028049402
+   },
+   {
+    "i": 197,
+    "ok": true,
+    "gold": 6277.0,
+    "pred": 6277.0,
+    "finish": "stop",
+    "out_tokens": 206,
+    "wall_s": 5.1129339499166235
+   },
+   {
+    "i": 198,
+    "ok": true,
+    "gold": 320.0,
+    "pred": 320.0,
+    "finish": "stop",
+    "out_tokens": 427,
+    "wall_s": 8.1350418709917
+   },
+   {
+    "i": 199,
+    "ok": true,
+    "gold": 7500.0,
+    "pred": 7500.0,
+    "finish": "stop",
+    "out_tokens": 381,
+    "wall_s": 7.074563779984601
+   }
+  ]
+ },
+ "needles": {
+  "n": 24,
+  "found": 24,
+  "items": [
+   {
+    "size": 32768,
+    "depth": 5,
+    "k": 0,
+    "ok": true,
+    "code": "9321697",
+    "prompt_tokens": 27137,
+    "wall_s": 20.856705809943378,
+    "reply": "9321697"
+   },
+   {
+    "size": 32768,
+    "depth": 5,
+    "k": 1,
+    "ok": true,
+    "code": "9856300",
+    "prompt_tokens": 27094,
+    "wall_s": 20.937856934964657,
+    "reply": "9856300"
+   },
+   {
+    "size": 32768,
+    "depth": 5,
+    "k": 2,
+    "ok": true,
+    "code": "7008023",
+    "prompt_tokens": 27096,
+    "wall_s": 20.961290871957317,
+    "reply": "7008023"
+   },
+   {
+    "size": 32768,
+    "depth": 5,
+    "k": 3,
+    "ok": true,
+    "code": "4951882",
+    "prompt_tokens": 27082,
+    "wall_s": 20.961812902940437,
+    "reply": "4951882"
+   },
+   {
+    "size": 32768,
+    "depth": 5,
+    "k": 4,
+    "ok": true,
+    "code": "0647024",
+    "prompt_tokens": 26999,
+    "wall_s": 20.890360957942903,
+    "reply": "0647024"
+   },
+   {
+    "size": 32768,
+    "depth": 50,
+    "k": 0,
+    "ok": true,
+    "code": "3640171",
+    "prompt_tokens": 27137,
+    "wall_s": 20.88910923001822,
+    "reply": "3640171"
+   },
+   {
+    "size": 32768,
+    "depth": 50,
+    "k": 1,
+    "ok": true,
+    "code": "8328913",
+    "prompt_tokens": 27103,
+    "wall_s": 20.940546381054446,
+    "reply": "8328913"
+   },
+   {
+    "size": 32768,
+    "depth": 50,
+    "k": 2,
+    "ok": true,
+    "code": "7428833",
+    "prompt_tokens": 27105,
+    "wall_s": 20.942220332100987,
+    "reply": "7428833"
+   },
+   {
+    "size": 32768,
+    "depth": 50,
+    "k": 3,
+    "ok": true,
+    "code": "4779109",
+    "prompt_tokens": 27118,
+    "wall_s": 20.976485944003798,
+    "reply": "4779109"
+   },
+   {
+    "size": 32768,
+    "depth": 50,
+    "k": 4,
+    "ok": true,
+    "code": "7038810",
+    "prompt_tokens": 27086,
+    "wall_s": 20.975554423988797,
+    "reply": "7038810"
+   },
+   {
+    "size": 32768,
+    "depth": 95,
+    "k": 0,
+    "ok": true,
+    "code": "1463109",
+    "prompt_tokens": 27105,
+    "wall_s": 20.893837386975065,
+    "reply": "1463109"
+   },
+   {
+    "size": 32768,
+    "depth": 95,
+    "k": 1,
+    "ok": true,
+    "code": "5788311",
+    "prompt_tokens": 27100,
+    "wall_s": 20.894337881938554,
+    "reply": "5788311"
+   },
+   {
+    "size": 32768,
+    "depth": 95,
+    "k": 2,
+    "ok": true,
+    "code": "4636813",
+    "prompt_tokens": 27110,
+    "wall_s": 20.971528072026558,
+    "reply": "4636813"
+   },
+   {
+    "size": 32768,
+    "depth": 95,
+    "k": 3,
+    "ok": true,
+    "code": "5328949",
+    "prompt_tokens": 27129,
+    "wall_s": 20.967425466980785,
+    "reply": "5328949"
+   },
+   {
+    "size": 32768,
+    "depth": 95,
+    "k": 4,
+    "ok": true,
+    "code": "5632150",
+    "prompt_tokens": 27029,
+    "wall_s": 21.72888107295148,
+    "reply": "5632150"
+   },
+   {
+    "size": 98304,
+    "depth": 5,
+    "k": 0,
+    "ok": true,
+    "code": "0160257",
+    "prompt_tokens": 81248,
+    "wall_s": 66.49387894000392,
+    "reply": "0160257"
+   },
+   {
+    "size": 98304,
+    "depth": 5,
+    "k": 1,
+    "ok": true,
+    "code": "5719179",
+    "prompt_tokens": 81136,
+    "wall_s": 67.85668153490406,
+    "reply": "5719179"
+   },
+   {
+    "size": 98304,
+    "depth": 5,
+    "k": 2,
+    "ok": true,
+    "code": "4518883",
+    "prompt_tokens": 81163,
+    "wall_s": 66.22453985910397,
+    "reply": "4518883"
+   },
+   {
+    "size": 98304,
+    "depth": 50,
+    "k": 0,
+    "ok": true,
+    "code": "6289202",
+    "prompt_tokens": 81149,
+    "wall_s": 65.84446109994315,
+    "reply": "6289202"
+   },
+   {
+    "size": 98304,
+    "depth": 50,
+    "k": 1,
+    "ok": true,
+    "code": "7715567",
+    "prompt_tokens": 81179,
+    "wall_s": 65.57255531603005,
+    "reply": "7715567"
+   },
+   {
+    "size": 98304,
+    "depth": 50,
+    "k": 2,
+    "ok": true,
+    "code": "7790560",
+    "prompt_tokens": 81290,
+    "wall_s": 65.62265002098866,
+    "reply": "7790560"
+   },
+   {
+    "size": 98304,
+    "depth": 95,
+    "k": 0,
+    "ok": true,
+    "code": "1342495",
+    "prompt_tokens": 81146,
+    "wall_s": 65.6118210949935,
+    "reply": "1342495"
+   },
+   {
+    "size": 98304,
+    "depth": 95,
+    "k": 1,
+    "ok": true,
+    "code": "1224827",
+    "prompt_tokens": 81163,
+    "wall_s": 65.55406470503658,
+    "reply": "1224827"
+   },
+   {
+    "size": 98304,
+    "depth": 95,
+    "k": 2,
+    "ok": true,
+    "code": "8302810",
+    "prompt_tokens": 81234,
+    "wall_s": 47.88245066301897,
+    "reply": "8302810"
+   }
+  ]
+ }
+}

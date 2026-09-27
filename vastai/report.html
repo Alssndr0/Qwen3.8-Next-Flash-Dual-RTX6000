@@ -1,0 +1,330 @@
+<title>RTX PRO 6000 vs DGX Spark</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f6f6f3; --surface:#ffffff; --surface-2:#eeeeea; --line:#dcdcd6; --line-soft:#ebebe6;
+  --ink:#151513; --ink-2:#4f4f4a; --ink-3:#7d7d76;
+  --vast:#2a78d6; --spark:#eb6834; --s3:#1baf7a; --s4:#eda100;
+  --vast-wash:rgba(42,120,214,.10); --spark-wash:rgba(235,104,52,.10);
+  --good:#0ca30c; --warn:#fab219; --crit:#d03b3b;
+  --band-good:rgba(12,163,12,.08); --band-warn:rgba(250,178,25,.10); --band-crit:rgba(208,59,59,.07);
+  --radius:6px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#161615; --surface:#1e1e1c; --surface-2:#262624; --line:#3a3a36; --line-soft:#2c2c29;
+    --ink:#f2f2ee; --ink-2:#c3c2b7; --ink-3:#8f8f86;
+    --vast:#3987e5; --spark:#d95926; --s3:#199e70; --s4:#c98500;
+    --vast-wash:rgba(57,135,229,.16); --spark-wash:rgba(217,89,38,.16);
+    --band-good:rgba(12,163,12,.14); --band-warn:rgba(250,178,25,.12); --band-crit:rgba(208,59,59,.12);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#161615; --surface:#1e1e1c; --surface-2:#262624; --line:#3a3a36; --line-soft:#2c2c29;
+  --ink:#f2f2ee; --ink-2:#c3c2b7; --ink-3:#8f8f86;
+  --vast:#3987e5; --spark:#d95926; --s3:#199e70; --s4:#c98500;
+  --vast-wash:rgba(57,135,229,.16); --spark-wash:rgba(217,89,38,.16);
+  --band-good:rgba(12,163,12,.14); --band-warn:rgba(250,178,25,.12); --band-crit:rgba(208,59,59,.12);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 "IBM Plex Sans",system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding-block:32px 64px;padding-inline:20px}
+h1,h2,h3{font-family:Manrope,"IBM Plex Sans",system-ui,sans-serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,4.2vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+h2{font-size:22px;font-weight:700;letter-spacing:-.01em;margin-top:56px;margin-bottom:6px}
+h3{font-size:15px;font-weight:700;margin-bottom:6px}
+p{max-width:68ch;margin:0 0 12px}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.lede{font-size:17px;color:var(--ink-2);max-width:66ch;margin-top:14px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;color:var(--ink-3);margin-top:18px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:28px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.tile .l{font-size:13px;color:var(--ink-2)}
+.tile .v{font-family:Manrope,sans-serif;font-size:36px;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-top:4px}
+.tile .d{font-size:13px;color:var(--ink-3);margin-top:6px}
+.tile .d b{color:var(--ink-2);font-weight:600}
+.sub{color:var(--ink-2);font-size:14px;margin-bottom:16px;max-width:72ch}
+figure{margin:18px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 12px}
+figure header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:baseline;margin-bottom:8px}
+figure header h3{margin:0}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.key{width:18px;height:0;border-top:2px solid;display:inline-block;border-radius:2px}
+.key.dash{border-top-style:dashed}
+.key.dot{width:9px;height:9px;border:0;border-radius:50%}
+.key.box{width:12px;height:12px;border:0;border-radius:2px}
+.chart{width:100%;height:auto;display:block}
+.chart text{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;fill:var(--ink-2)}
+.chart .lbl{font-family:"IBM Plex Sans",sans-serif;font-size:12px;fill:var(--ink)}
+.chart .grid{stroke:var(--line-soft);stroke-width:1}
+.chart .axis{stroke:var(--line);stroke-width:1}
+.chart .band-l{font-family:"IBM Plex Mono",monospace;font-size:10.5px;fill:var(--ink-3)}
+figcaption{font-size:13px;color:var(--ink-3);margin-top:8px;max-width:80ch}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font:12px/1.45 "IBM Plex Mono",monospace;padding:7px 9px;border-radius:4px;opacity:0;transition:opacity .08s;z-index:10;white-space:nowrap}
+.tbl-toggle{font:12px "IBM Plex Mono",monospace;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:3px 8px;cursor:pointer}
+.tbl-toggle:focus-visible{outline:2px solid var(--vast);outline-offset:2px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+.tscroll{overflow-x:auto;margin-top:12px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+th,td{padding:8px 12px;text-align:right;border-bottom:1px solid var(--line-soft);white-space:nowrap}
+th{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:12px;color:var(--ink-3);text-align:right;background:var(--surface-2)}
+th:first-child,td:first-child{text-align:left}
+tr:last-child td{border-bottom:0}
+td.k{color:var(--ink-2)}
+.pill{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;padding:1px 7px;border-radius:10px;border:1px solid var(--line);color:var(--ink-2);background:var(--surface-2)}
+.pill.good{border-color:var(--good);color:var(--good)}
+.pill.warn{border-color:var(--warn);color:#8a5d00}
+:root[data-theme="dark"] .pill.warn{color:var(--warn)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pill.warn{color:var(--warn)}}
+.pill.crit{border-color:var(--crit);color:var(--crit)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.callout{border-left:3px solid var(--vast);background:var(--vast-wash);padding:12px 16px;border-radius:0 var(--radius) var(--radius) 0;margin:16px 0;max-width:76ch}
+.callout.spark{border-color:var(--spark);background:var(--spark-wash)}
+ul{padding-left:20px;max-width:76ch}li{margin-bottom:6px}
+code{font-family:"IBM Plex Mono",monospace;font-size:.92em;background:var(--surface-2);padding:1px 5px;border-radius:3px}
+.hidden-table{display:none}.show-table .hidden-table{display:block}.show-table .chart-wrap{display:none}
+.timeline{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13.5px;font-variant-numeric:tabular-nums;max-width:76ch}
+.timeline .t{font-family:"IBM Plex Mono",monospace;color:var(--ink-3)}
+.foot{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);max-width:80ch}
+@media (prefers-reduced-motion: reduce){.tip{transition:none}}
+</style>
+
+<div class="wrap">
+<div class="eyebrow">Serving benchmark · 20 September 2026</div>
+<h1>Two RTX PRO 6000 against the DGX Spark pair, serving coding agents</h1>
+<p class="lede">One 88-minute rental on Vast.ai answered the question we could not answer on paper: can a pair of RTX PRO 6000 Blackwell cards serve Qwen3.8-Flash-Next to a team of engineers running coding agents, and how many of them, compared with the two DGX Sparks we run today.</p>
+<div class="meta">
+  <span>model nvidia/Qwen3.8-Flash-Next-NVFP4 · 125B MoE, 6B active</span>
+  <span>vLLM 0.29.1rc1 nightly · CUDA 13.0</span>
+  <span>workload: agentic coding session, 65k-token prompts</span>
+  <span>spend $4.74</span>
+</div>
+
+<div class="tiles">
+  <div class="tile"><div class="l">Per-user decode at two users</div><div class="v">138 <span style="font-size:16px;font-weight:500;color:var(--ink-3)">tok/s</span></div><div class="d"><b>2.9×</b> the Spark pair's 47 tok/s at the same load</div></div>
+  <div class="tile"><div class="l">Seats at today's Spark experience</div><div class="v">24</div><div class="d">concurrent sessions at <b>≥45 tok/s</b>, TTFT p95 ≤5 s. Spark holds that for 2.</div></div>
+  <div class="tile"><div class="l">Aggregate decode ceiling</div><div class="v">730 <span style="font-size:16px;font-weight:500;color:var(--ink-3)">tok/s</span></div><div class="d">saturates between 32 and 48 sessions; Spark saturates near <b>134</b></div></div>
+  <div class="tile"><div class="l">Engine restart, kill to ready</div><div class="v">2:40–3:35</div><div class="d">against roughly <b>12 min</b> for a production boot on the Spark pair</div></div>
+</div>
+
+<h2>What was compared</h2>
+<p class="sub">Same model family, same load generator, same 65k-token agentic workload. The checkpoints differ: the Spark pair serves a custom hybrid quantisation through the Marlin W4A16 kernel because GB10 has no usable FP4 path in vLLM; the RTX box serves NVIDIA's stock NVFP4 checkpoint through FlashInfer's CUTLASS W4A4 kernel, which vLLM picked automatically for SM120.</p>
+<div class="tscroll"><table>
+<tr><th></th><th>2× RTX PRO 6000 (Vast.ai)</th><th>2× DGX Spark (production)</th></tr>
+<tr><td class="k">GPU</td><td>RTX PRO 6000 Blackwell Server Edition, 96 GB GDDR7 each, SM120</td><td>GB10, 128 GB unified LPDDR5X each, SM121</td></tr>
+<tr><td class="k">Memory bandwidth per GPU</td><td>~1.4 TB/s</td><td>~273 GB/s</td></tr>
+<tr><td class="k">Interconnect</td><td>PCIe gen5 x16, one host, no NVLink</td><td>two hosts over ConnectX, Ray head + worker</td></tr>
+<tr><td class="k">Checkpoint</td><td>nvidia/Qwen3.8-Flash-Next-NVFP4, 124 GiB, TP=2</td><td>myllmbox hibrid48 (custom), TP across 2 nodes</td></tr>
+<tr><td class="k">MoE kernel</td><td>FLASHINFER_CUTLASS NVFP4, W4A4</td><td>Marlin, W4A16</td></tr>
+<tr><td class="k">Speculative decoding</td><td>MTP k=3, 2.6–2.8 tokens/step</td><td>MTP k=3, 2.5 tokens/step</td></tr>
+<tr><td class="k">KV cache</td><td>39–45 GiB per GPU, 2.6–3.5M tokens</td><td>28 GB</td></tr>
+<tr><td class="k">Power at load (both GPUs)</td><td>peak 529 W per card at c=12, ~170 W single stream</td><td>~55 W per box</td></tr>
+<tr><td class="k">Price</td><td>$3.18/h all-in on Vast; ~$8.5k per card to buy</td><td>owned; ~$4k per box</td></tr>
+</table></div>
+
+<h2>Per-user decode speed as users pile on</h2>
+<p class="sub">The number an engineer feels: tokens per second on their own stream while others share the box. Bands mark what the Spark pair delivers at two and three users today, which is the bar for "good enough".</p>
+<figure id="f1"><header><h3>Decode tok/s per session vs concurrent sessions</h3><div class="legend"><span><i class="key" style="border-color:var(--vast)"></i>RTX PRO 6000 ×2, agentic</span><span><i class="key dot" style="background:var(--spark)"></i>Spark ×2, agentic</span><span><i class="key dash" style="border-color:var(--spark)"></i>Spark ×2, code workload</span></div></header>
+<div class="chart-wrap"><svg class="chart" id="c1" viewBox="0 0 960 400" role="img" aria-label="Per-session decode throughput against concurrency"></svg></div>
+<div class="hidden-table" id="t1"></div>
+<figcaption>RTX curve: c≤12 measured from the laptop (valid, under the client's 18-request pool), c≥16 measured on the box. The Spark code-workload sweep uses 18k prompts and reads about 16% optimistic against agentic, per the bench notes. Hover any point for the full row. <button class="tbl-toggle" data-for="f1">table</button></figcaption></figure>
+
+<h2>Time to first token</h2>
+<p class="sub">p50 is the typical turn, p95 the one an engineer notices. On the RTX box TTFT stays near one second up to 24 sessions and the tail is what degrades; the Spark pair's tail is worse at two users than the RTX box at 24.</p>
+<figure id="f2"><header><h3>TTFT p50 and p95 vs concurrent sessions, seconds</h3><div class="legend"><span><i class="key" style="border-color:var(--vast)"></i>RTX p50</span><span><i class="key dash" style="border-color:var(--vast)"></i>RTX p95</span><span><i class="key dot" style="background:var(--spark)"></i>Spark p50</span><span><i class="key dot" style="background:var(--surface);border:2px solid var(--spark);width:7px;height:7px"></i>Spark p95</span></div></header>
+<div class="chart-wrap"><svg class="chart" id="c2" viewBox="0 0 960 380" role="img" aria-label="Time to first token against concurrency"></svg></div>
+<div class="hidden-table" id="t2"></div>
+<figcaption>Warm prefix cache in both cases (94–96% hit), matching production's 94%. A cold 64k prompt costs 10 s on the RTX box and 31 s on Spark. <button class="tbl-toggle" data-for="f2">table</button></figcaption></figure>
+
+<h2>Total throughput and the capacity ceiling</h2>
+<div class="two">
+<figure id="f3"><header><h3>Aggregate decode tok/s</h3><div class="legend"><span><i class="key box" style="background:var(--vast)"></i>RTX ×2</span><span><i class="key box" style="background:var(--spark)"></i>Spark ×2 (code)</span></div></header>
+<div class="chart-wrap"><svg class="chart" id="c3" viewBox="0 0 470 340" role="img" aria-label="Aggregate throughput against concurrency"></svg></div>
+<div class="hidden-table" id="t3"></div>
+<figcaption>The RTX box is still adding throughput at 32 and flat by 48; Spark is flat by 10. <button class="tbl-toggle" data-for="f3">table</button></figcaption></figure>
+<figure id="f4"><header><h3>Seats at each quality bar</h3><div class="legend"><span><i class="key box" style="background:var(--vast)"></i>RTX ×2</span><span><i class="key box" style="background:var(--spark)"></i>Spark ×2</span></div></header>
+<div class="chart-wrap"><svg class="chart" id="c4" viewBox="0 0 470 340" role="img" aria-label="Concurrent sessions supported at each quality threshold"></svg></div>
+<div class="hidden-table" id="t4"></div>
+<figcaption>Highest measured concurrency at which per-session decode stays above the bar. Spark values from its agentic reference at c=2 and 3 and code sweep beyond. <button class="tbl-toggle" data-for="f4">table</button></figcaption></figure>
+</div>
+
+<div class="callout"><b>Reading the ceiling.</b> Holding the experience engineers get from Spark today at two users, 45 tok/s and a five-second p95, the RTX pair carries 24 sessions. At the three-user Spark experience, 35 tok/s, it carries 32. Beyond 32 the box is compute-bound: aggregate stops growing, queueing appears at 48, and per-session decode drops to 25 tok/s. Memory is not the limit at any of these levels: KV usage peaked at 27%.</div>
+
+<h2>Tuning arms</h2>
+<p class="sub">Five configurations were measured on the box at 12, 24 and 32 sessions. Speculative decoding earns its keep below saturation and stops mattering at it; a larger prefill budget does the opposite.</p>
+<figure id="f5"><header><h3>Per-session decode tok/s by configuration</h3><div class="legend"><span><i class="key box" style="background:var(--vast)"></i>MTP k=3, 16k batch (baseline)</span><span><i class="key box" style="background:var(--spark)"></i>MTP k=2</span><span><i class="key box" style="background:var(--s3)"></i>no MTP</span><span><i class="key box" style="background:var(--s4)"></i>MTP k=3, 32k batch</span></div></header>
+<div class="chart-wrap"><svg class="chart" id="c5" viewBox="0 0 960 360" role="img" aria-label="Decode throughput by tuning configuration at three concurrency levels"></svg></div>
+<div class="hidden-table" id="t5"></div>
+<figcaption>Bars carry TTFT p95 on hover. <button class="tbl-toggle" data-for="f5">table</button></figcaption></figure>
+
+<div class="tscroll"><table>
+<tr><th>Arm</th><th>Outcome</th><th>Verdict</th></tr>
+<tr><td class="k">MTP k=3 vs k=2</td><td>k=2 is 4–9% slower at every level; third draft position still accepts 37%</td><td><span class="pill good">keep k=3</span></td></tr>
+<tr><td class="k">No speculative decoding</td><td>−31% decode at 12, −17% at 24, tie at 32; TTFT p95 25–56% better everywhere</td><td><span class="pill good">keep MTP for ≤24 seats</span></td></tr>
+<tr><td class="k">32k prefill budget</td><td>−20% at 12, −8% at 24, <b>+13%</b> at 32; TTFT tail 18–78% longer</td><td><span class="pill warn">only if running at the edge</span></td></tr>
+<tr><td class="k">262k context</td><td>fits: 2.40M KV tokens, nine simultaneous full-length requests</td><td><span class="pill good">enable</span></td></tr>
+<tr><td class="k">b12x SM120 kernels</td><td>rejects MTP's FP8 draft experts; without MTP, illegal memory access in the profiling pass</td><td><span class="pill crit">not usable in this build</span></td></tr>
+<tr><td class="k">max-num-seqs 12 → 48</td><td>no cost at c=12; needed above it; adds 45 s to boot for the extra CUDA graphs</td><td><span class="pill good">48</span></td></tr>
+</table></div>
+
+<h2>Operations: how the day went</h2>
+<div class="two">
+<div>
+<h3>Timeline, UTC</h3>
+<div class="timeline">
+<span class="t">19:15:13</span><span>instance created on Vast.ai (Bulgaria, offer 48905148)</span>
+<span class="t">19:17:29</span><span>image pulled, container running, model download starts</span>
+<span class="t">19:22:59</span><span>124 GiB downloaded, 5.5 min at ~3 Gb/s</span>
+<span class="t">19:26:11</span><span>first API up: <b>11 minutes</b> from create to first token</span>
+<span class="t">19:27–19:36</span><span>two restarts to add MTP and the tool-call parser</span>
+<span class="t">19:37–20:03</span><span>four concurrency sweeps, one client bug found and fixed</span>
+<span class="t">20:04–20:17</span><span>two failed b12x boots, 13 min lost</span>
+<span class="t">20:21–20:43</span><span>three tuning arms</span>
+<span class="t">20:43:27</span><span>instance destroyed; no volumes or endpoints left</span>
+</div>
+</div>
+<div>
+<h3>Restart cost per configuration change</h3>
+<figure style="margin-top:8px"><div class="chart-wrap"><svg class="chart" id="c6" viewBox="0 0 470 250" role="img" aria-label="Engine restart time per boot"></svg></div></figure>
+<p style="font-size:13px;color:var(--ink-3);margin-top:8px">Kill-to-ready for each successful boot. Weight load is 50–65 s; the rest is torch.compile and CUDA-graph capture. The Spark pair's production boot is about 12 minutes, so an A/B that costs one afternoon there costs one coffee here.</p>
+</div>
+</div>
+
+<div class="callout spark"><b>The Spark pair's real advantage</b> is standing cost and power: it is owned, idles at 10 W per box and peaks near 55 W. The RTX pair drew up to 529 W per card under load. For a small team the Spark's per-user numbers are workable at two or three sessions; the RTX pair is the answer when the question is "how many engineers".</div>
+
+<h2>Cost</h2>
+<div class="tscroll"><table>
+<tr><th>Item</th><th>Vast.ai session</th><th>Ongoing, 8 h/day, 22 days</th></tr>
+<tr><td class="k">GPU + 300 GB disk</td><td>$3.18/h × 88 min = $4.66</td><td>~$560/month rented, or ~$17k once for two cards</td></tr>
+<tr><td class="k">Model download</td><td>$0.18 (1.37 $/TB on this host; up to $40/TB on others)</td><td>once per instance</td></tr>
+<tr><td class="k">Parked disk with model cached</td><td>—</td><td>$0.13/GB-month ≈ $40/month</td></tr>
+<tr><td class="k">Total spent today</td><td><b>$4.74</b> (credit 9.97 → 5.23)</td><td></td></tr>
+</table></div>
+
+<h2>Method and caveats</h2>
+<ul>
+<li><b>Workload.</b> <code>bench/loadgen.py --workload agentic</code>: one turn of a multi-turn tool-calling coding session, ~65k-token prompt, ~2–4k uncached tokens per turn, natural stops, server-default sampling (temperature 1.0, top-p 0.95). Three sequential turns per session, one rep per level. The Spark agentic reference is the same harness with three reps.</li>
+<li><b>Checkpoint difference.</b> Spark serves a custom hybrid quantisation; the RTX box serves NVIDIA's stock NVFP4. Acceptance rates match to within a point, which argues the models behave alike, but this is a platform comparison, not a kernel-for-kernel one.</li>
+<li><b>Client bug, found and fixed.</b> The load generator's thread pool silently capped in-flight requests at min(32, cores+4): 18 from the laptop, 32 on the box. Levels above the cap were rerun after the fix; the plotted RTX curve uses only valid runs. Spark runs never exceeded c=12, below the cap.</li>
+<li><b>Warm cache.</b> All plotted levels ran with the shared 60k prefix cached, the same 94% hit rate production sees. Cold-start behaviour was measured once: eight simultaneous cold 64k prompts gave a 32 s p95 TTFT on the RTX box.</li>
+<li><b>Single rep.</b> RTX levels are one rep each; Spark's rep-to-rep spread on this workload is ~7%. Differences under 10% between RTX arms should be read as ties.</li>
+<li><b>Provenance.</b> Image <code>vllm/vllm-openai:nightly-d05da62e</code>, driver 595.84, every serve line, boot log, GPU sample and raw loadgen JSON is in the repository under <code>vastai/</code>.</li>
+</ul>
+
+<div class="foot">Prepared from runs on Vast.ai instance 51798033 (destroyed 20:43 UTC) and the Spark bench archive (lpt1024 boot, 16–19 September). Raw data: vastai/report-data.json, vastai/RESULTS.md, vastai/EXPERIMENT-LOG.md.</div>
+</div>
+<div class="tip" id="tip"></div>
+
+<script>
+const D = {
+ vast:[{c:1,tps:190.1,agg:125,p50:0.68,p95:0.73,prefill:7285},{c:2,tps:138.3,agg:211,p50:0.86,p95:1.73,prefill:7790},{c:4,tps:104.4,agg:268,p50:1.15,p95:2.05,prefill:4897},{c:6,tps:91.9,agg:332,p50:1.02,p95:2.53,prefill:4052},{c:8,tps:87.1,agg:468,p50:0.94,p95:2.47,prefill:4746},{c:12,tps:70.5,agg:517,p50:0.96,p95:3.10,prefill:4129},{c:16,tps:62.8,agg:430,p50:0.66,p95:3.69,prefill:3308},{c:24,tps:45.6,agg:654,p50:0.85,p95:4.97,prefill:2627},{c:32,tps:34.3,agg:727,p50:1.17,p95:5.64,prefill:2224},{c:48,tps:25.2,agg:730,p50:1.07,p95:9.44,prefill:1897}],
+ sparkA:[{c:2,tps:47.4,p50:2.12,p95:5.95,agg:null},{c:3,tps:36.1,p50:2.47,p95:4.46,agg:null}],
+ sparkC:[{c:1,tps:72.4,p50:1.89,p95:1.89,agg:50},{c:5,tps:42.1,p50:7.31,p95:7.31,agg:104},{c:6,tps:39.8,p50:8.56,p95:8.56,agg:112},{c:10,tps:30.0,p50:13.1,p95:14.3,agg:129},{c:12,tps:25.4,p50:13.99,p95:16.97,agg:134}],
+ arms:{'MTP k=3, 16k batch':{12:[74.4,2.92],24:[45.6,4.97],32:[34.3,5.64]},'MTP k=2':{12:[68.0,3.04],24:[43.9,4.71],32:[32.3,12.2]},'no MTP':{12:[51.7,1.27],24:[37.9,3.30],32:[32.9,4.24]},'MTP k=3, 32k batch':{12:[59.7,5.19],24:[42.1,6.00],32:[38.8,6.65]}},
+ boots:[['boot 1, no MTP',186],['boot 2, MTP k=3',183],['boot 3, + tool parser',192],['seqs 48',215],['MTP k=2',170],['no MTP',159],['32k batch, 262k ctx',167]]
+};
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const tip = document.getElementById('tip');
+function showTip(e, html){ tip.innerHTML=html; tip.style.opacity=1; const x=e.clientX+14, y=e.clientY+14; tip.style.left=Math.min(x, innerWidth-tip.offsetWidth-8)+'px'; tip.style.top=Math.min(y, innerHeight-tip.offsetHeight-8)+'px'; }
+function hideTip(){ tip.style.opacity=0; }
+const svgNS='http://www.w3.org/2000/svg';
+function el(n, a, parent){ const e=document.createElementNS(svgNS,n); for(const k in a) e.setAttribute(k,a[k]); if(parent) parent.appendChild(e); return e; }
+function txt(parent, x, y, s, a={}){ const t=el('text',{x,y,...a},parent); t.textContent=s; return t; }
+function niceTicks(max, n){ const raw=max/n, p=Math.pow(10,Math.floor(Math.log10(raw))), f=raw/p, step=(f<1.5?1:f<3?2:f<7?5:10)*p; const t=[]; for(let v=0; v<=max+1e-9; v+=step) t.push(+v.toFixed(6)); return t; }
+function lineChart(id, series, opts){
+  const svg=document.getElementById(id); const W=+svg.viewBox.baseVal.width, H=+svg.viewBox.baseVal.height;
+  const m={t:34,r:opts.rightMargin||16,b:44,l:52}; const iw=W-m.l-m.r, ih=H-m.t-m.b;
+  const xs=opts.xTicks; const xmax=Math.max(...xs), xmin=0;
+  const ymax=opts.ymax; const X=v=>m.l+ (v-xmin)/(xmax-xmin)*iw, Y=v=>m.t+ih-(v/ymax)*ih;
+  const g=el('g',{},svg);
+  if(opts.bands) for(const b of opts.bands){ el('rect',{x:m.l,y:Y(b.hi),width:iw,height:Y(b.lo)-Y(b.hi),fill:b.fill},g); txt(g, m.l+6, Y(b.hi)+12, b.label,{class:'band-l'}); }
+  for(const t of niceTicks(ymax, 5)){ el('line',{x1:m.l,x2:m.l+iw,y1:Y(t),y2:Y(t),class:'grid'},g); txt(g,m.l-8,Y(t)+4,t.toLocaleString(),{'text-anchor':'end'}); }
+  el('line',{x1:m.l,x2:m.l+iw,y1:Y(0),y2:Y(0),class:'axis'},g);
+  for(const x of xs){ txt(g,X(x),m.t+ih+18,x,{'text-anchor':'middle'}); }
+  txt(g, m.l+iw/2, H-6, opts.xLabel,{'text-anchor':'middle',class:'lbl'});
+  txt(g, m.l, 14, opts.yLabel,{class:'lbl'});
+  const surf=css('--surface')||'#fff';
+  for(const s of series){
+    const pts=s.data.map(d=>[X(d.x),Y(d.y),d]);
+    if(s.line){ const p=el('path',{d:pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' '),fill:'none',stroke:s.color,'stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},g); if(s.dash) p.setAttribute('stroke-dasharray','6 5'); }
+    for(const [x,y,d] of pts){
+      if(s.hollow){ el('circle',{cx:x,cy:y,r:4.5,fill:surf,stroke:s.color,'stroke-width':2},g); }
+      else { el('circle',{cx:x,cy:y,r:6,fill:surf},g); el('circle',{cx:x,cy:y,r:4,fill:s.color},g); }
+      const hit=el('circle',{cx:x,cy:y,r:14,fill:'transparent',style:'cursor:crosshair'},g);
+      hit.addEventListener('mousemove',e=>showTip(e, s.tip(d))); hit.addEventListener('mouseleave',hideTip);
+    }
+    if(s.endLabel){ const last=pts[pts.length-1]; txt(g,last[0]+(s.endDx||8),last[1]+(s.endDy||4),s.endLabel,{class:'lbl'}); }
+  }
+}
+// Chart 1: per-user decode
+lineChart('c1',[
+ {data:D.sparkC.map(d=>({x:d.c,y:d.tps,d})),color:css('--spark'),line:true,dash:true,tip:d=>`Spark ×2 · code · c=${d.d.c}<br>${d.d.tps.toFixed(1)} tok/s per session<br>TTFT p50 ${d.d.p50} s`,endLabel:'Spark, code',endDx:8,endDy:12},
+ {data:D.sparkA.map(d=>({x:d.c,y:d.tps,d})),color:css('--spark'),line:false,tip:d=>`Spark ×2 · agentic · c=${d.d.c}<br>${d.d.tps.toFixed(1)} tok/s per session<br>TTFT p50 ${d.d.p50} s · p95 ${d.d.p95} s`},
+ {data:D.vast.map(d=>({x:d.c,y:d.tps,d})),color:css('--vast'),line:true,tip:d=>`RTX PRO 6000 ×2 · c=${d.d.c}<br>${d.d.tps.toFixed(1)} tok/s per session<br>TTFT p50 ${d.d.p50} s · p95 ${d.d.p95} s<br>aggregate ${d.d.agg} tok/s`,endLabel:'RTX PRO 6000 ×2',endDx:-122,endDy:-12}
+],{xTicks:[0,4,8,12,16,20,24,28,32,36,40,44,48],ymax:200,xLabel:'concurrent coding sessions',yLabel:'tok/s per session',
+ bands:[{lo:45,hi:50,fill:css('--band-good'),label:'Spark experience at 2 users, ≥45 tok/s'},{lo:35,hi:39,fill:css('--band-warn'),label:'Spark at 3 users, ≥35 tok/s'}]});
+// Chart 2: TTFT
+lineChart('c2',[
+ {data:D.vast.map(d=>({x:d.c,y:d.p95,d})),color:css('--vast'),line:true,dash:true,tip:d=>`RTX ×2 · c=${d.d.c}<br>TTFT p95 ${d.d.p95} s · p50 ${d.d.p50} s`,endLabel:'RTX p95',endDx:8},
+ {data:D.vast.map(d=>({x:d.c,y:d.p50,d})),color:css('--vast'),line:true,tip:d=>`RTX ×2 · c=${d.d.c}<br>TTFT p50 ${d.d.p50} s · p95 ${d.d.p95} s`,endLabel:'RTX p50',endDx:8},
+ {data:D.sparkA.map(d=>({x:d.c,y:d.p95,d})),color:css('--spark'),line:false,hollow:true,tip:d=>`Spark ×2 · agentic · c=${d.d.c}<br>TTFT p95 ${d.d.p95} s`},
+ {data:D.sparkA.map(d=>({x:d.c,y:d.p50,d})),color:css('--spark'),line:false,tip:d=>`Spark ×2 · agentic · c=${d.d.c}<br>TTFT p50 ${d.d.p50} s`}
+],{xTicks:[0,4,8,12,16,20,24,28,32,36,40,44,48],ymax:10,xLabel:'concurrent coding sessions',yLabel:'seconds',rightMargin:72});
+function barChart(id, groups, opts){
+  const svg=document.getElementById(id); const W=+svg.viewBox.baseVal.width, H=+svg.viewBox.baseVal.height;
+  const m={t:34,r:12,b:44,l:52}; const iw=W-m.l-m.r, ih=H-m.t-m.b; const ymax=opts.ymax; const Y=v=>m.t+ih-(v/ymax)*ih;
+  const g=el('g',{},svg); const n=groups.length, gw=iw/n;
+  for(const t of niceTicks(ymax,5)){ el('line',{x1:m.l,x2:m.l+iw,y1:Y(t),y2:Y(t),class:'grid'},g); txt(g,m.l-8,Y(t)+4,t.toLocaleString(),{'text-anchor':'end'}); }
+  el('line',{x1:m.l,x2:m.l+iw,y1:Y(0),y2:Y(0),class:'axis'},g);
+  txt(g, m.l, 14, opts.yLabel,{class:'lbl'}); if(opts.xLabel) txt(g, m.l+iw/2, H-6, opts.xLabel,{'text-anchor':'middle',class:'lbl'});
+  groups.forEach((grp,i)=>{
+    const k=grp.bars.length, bw=Math.min(24,(gw-16)/k-2), total=k*bw+(k-1)*2, x0=m.l+i*gw+(gw-total)/2;
+    txt(g, m.l+i*gw+gw/2, m.t+ih+18, grp.label,{'text-anchor':'middle'});
+    grp.bars.forEach((b,j)=>{
+      const x=x0+j*(bw+2), y=Y(b.v), h=Y(0)-y, r=Math.min(4,h);
+      const p=el('path',{d:`M${x} ${Y(0)} V${y+r} a${r} ${r} 0 0 1 ${r} -${r} h${bw-2*r} a${r} ${r} 0 0 1 ${r} ${r} V${Y(0)} Z`,fill:b.color},g);
+      if(b.label!==undefined) txt(g, x+bw/2, y-5, b.label,{'text-anchor':'middle'});
+      p.addEventListener('mousemove',e=>showTip(e,b.tip)); p.addEventListener('mouseleave',hideTip);
+    });
+  });
+}
+// Chart 3: aggregate
+barChart('c3',[
+ {label:'c=2',bars:[{v:211,color:css('--vast'),tip:'RTX ×2 · c=2 · 211 tok/s aggregate'},{v:0,color:css('--spark'),tip:'Spark ×2 agentic c=2: aggregate not recorded'}]},
+ {label:'c=6',bars:[{v:332,color:css('--vast'),tip:'RTX ×2 · c=6 · 332 tok/s'},{v:112,color:css('--spark'),tip:'Spark ×2 · code · c=6 · 112 tok/s'}]},
+ {label:'c=12',bars:[{v:517,color:css('--vast'),tip:'RTX ×2 · c=12 · 517 tok/s'},{v:134,color:css('--spark'),tip:'Spark ×2 · code · c=12 · 134 tok/s'}]},
+ {label:'c=24',bars:[{v:654,color:css('--vast'),tip:'RTX ×2 · c=24 · 654 tok/s'}]},
+ {label:'c=32',bars:[{v:727,color:css('--vast'),tip:'RTX ×2 · c=32 · 727 tok/s'}]},
+ {label:'c=48',bars:[{v:730,color:css('--vast'),label:'730',tip:'RTX ×2 · c=48 · 730 tok/s, queueing begins'}]}
+],{ymax:800,yLabel:'tok/s, all sessions'});
+// Chart 4: seats
+barChart('c4',[
+ {label:'≥45 tok/s',bars:[{v:24,color:css('--vast'),label:'24',tip:'RTX ×2: 24 sessions at 45.6 tok/s'},{v:2,color:css('--spark'),label:'2',tip:'Spark ×2: 2 sessions at 47 tok/s'}]},
+ {label:'≥35 tok/s',bars:[{v:32,color:css('--vast'),label:'32',tip:'RTX ×2: 32 sessions at 34.3 tok/s (borderline)'},{v:3,color:css('--spark'),label:'3',tip:'Spark ×2: 3 sessions at 36 tok/s'}]},
+ {label:'≥25 tok/s',bars:[{v:48,color:css('--vast'),label:'48',tip:'RTX ×2: 48 sessions at 25.2 tok/s, TTFT p95 9.4 s'},{v:12,color:css('--spark'),label:'12',tip:'Spark ×2: 12 sessions at 25.4 tok/s (code workload), TTFT p50 14 s'}]}
+],{ymax:50,yLabel:'concurrent sessions',xLabel:'per-session decode floor'});
+// Chart 5: arms
+const armNames=Object.keys(D.arms), armCols=[css('--vast'),css('--spark'),css('--s3'),css('--s4')];
+barChart('c5',[12,24,32].map(c=>({label:'c='+c,bars:armNames.map((n,i)=>({v:D.arms[n][c][0],color:armCols[i],label:D.arms[n][c][0].toFixed(0),tip:`${n} · c=${c}<br>${D.arms[n][c][0].toFixed(1)} tok/s per session<br>TTFT p95 ${D.arms[n][c][1]} s`}))})),{ymax:80,yLabel:'tok/s per session',xLabel:'concurrent coding sessions'});
+// Chart 6: boots (horizontal)
+(function(){
+  const svg=document.getElementById('c6'); const W=470,H=250, m={t:10,r:60,b:26,l:150}; const iw=W-m.l-m.r, ih=H-m.t-m.b;
+  const max=240; const X=v=>m.l+v/max*iw; const g=el('g',{},svg); const bh=Math.min(22, ih/D.boots.length-6);
+  for(const t of [0,60,120,180,240]){ el('line',{x1:X(t),x2:X(t),y1:m.t,y2:m.t+ih,class:'grid'},g); txt(g,X(t),H-8,t+' s',{'text-anchor':'middle'}); }
+  D.boots.forEach((b,i)=>{ const y=m.t+i*(ih/D.boots.length)+(ih/D.boots.length-bh)/2; const w=X(b[1])-X(0), r=4;
+    el('path',{d:`M${X(0)} ${y} H${X(0)+w-r} a${r} ${r} 0 0 1 ${r} ${r} V${y+bh-r} a${r} ${r} 0 0 1 -${r} ${r} H${X(0)} Z`,fill:css('--vast')},g);
+    txt(g, m.l-8, y+bh/2+4, b[0],{'text-anchor':'end',class:'lbl'}); txt(g, X(b[1])+6, y+bh/2+4, Math.floor(b[1]/60)+':'+String(b[1]%60).padStart(2,'0'));
+  });
+})();
+// tables
+function table(id, head, rows){ const d=document.getElementById(id); d.innerHTML='<div class="tscroll"><table><tr>'+head.map(h=>'<th>'+h+'</th>').join('')+'</tr>'+rows.map(r=>'<tr>'+r.map((c,i)=>'<td'+(i?'':' class="k"')+'>'+c+'</td>').join('')+'</tr>').join('')+'</table></div>'; }
+table('t1',['series','c','tok/s per session','TTFT p50 s','TTFT p95 s'],[...D.vast.map(d=>['RTX ×2 agentic',d.c,d.tps.toFixed(1),d.p50,d.p95]),...D.sparkA.map(d=>['Spark ×2 agentic',d.c,d.tps.toFixed(1),d.p50,d.p95]),...D.sparkC.map(d=>['Spark ×2 code',d.c,d.tps.toFixed(1),d.p50,d.p95])]);
+table('t2',['series','c','TTFT p50 s','TTFT p95 s'],[...D.vast.map(d=>['RTX ×2',d.c,d.p50,d.p95]),...D.sparkA.map(d=>['Spark ×2 agentic',d.c,d.p50,d.p95])]);
+table('t3',['series','c','aggregate tok/s'],[...D.vast.map(d=>['RTX ×2',d.c,d.agg]),...D.sparkC.map(d=>['Spark ×2 code',d.c,d.agg])]);
+table('t4',['floor','RTX ×2 sessions','Spark ×2 sessions'],[['≥45 tok/s',24,2],['≥35 tok/s',32,3],['≥25 tok/s',48,12]]);
+table('t5',['config','c=12 tok/s · p95','c=24','c=32'],armNames.map(n=>[n,...[12,24,32].map(c=>D.arms[n][c][0].toFixed(1)+' · '+D.arms[n][c][1]+' s')]));
+document.querySelectorAll('.tbl-toggle').forEach(b=>b.addEventListener('click',()=>{ const f=document.getElementById(b.dataset.for); f.classList.toggle('show-table'); b.textContent=f.classList.contains('show-table')?'chart':'table'; }));
+</script>
