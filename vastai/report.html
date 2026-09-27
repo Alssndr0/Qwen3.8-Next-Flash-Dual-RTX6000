@@ -95,12 +95,11 @@ code{font-family:"IBM Plex Mono",monospace;font-size:.92em;background:var(--surf
 <div class="wrap">
 <div class="eyebrow">Serving benchmark · 20 September 2026</div>
 <h1>Two RTX PRO 6000 against the DGX Spark pair, serving coding agents</h1>
-<p class="lede">One 88-minute rental on Vast.ai answered the question we could not answer on paper: can a pair of RTX PRO 6000 Blackwell cards serve Qwen3.8-Flash-Next to a team of engineers running coding agents, and how many of them, compared with the two DGX Sparks we run today.</p>
+<p class="lede">One 88-minute session on Vast.ai answered the question we could not answer on paper: can a pair of RTX PRO 6000 Blackwell cards serve Qwen3.8-Flash-Next to a team of engineers running coding agents, and how many of them, compared with the two DGX Sparks we run today.</p>
 <div class="meta">
   <span>model nvidia/Qwen3.8-Flash-Next-NVFP4 · 125B MoE, 6B active</span>
   <span>vLLM 0.29.1rc1 nightly · CUDA 13.0</span>
   <span>workload: agentic coding session, 65k-token prompts</span>
-  <span>spend $4.74</span>
 </div>
 
 <div class="tiles">
@@ -122,7 +121,6 @@ code{font-family:"IBM Plex Mono",monospace;font-size:.92em;background:var(--surf
 <tr><td class="k">Speculative decoding</td><td>MTP k=3, 2.6–2.8 tokens/step</td><td>MTP k=3, 2.5 tokens/step</td></tr>
 <tr><td class="k">KV cache</td><td>39–45 GiB per GPU, 2.6–3.5M tokens</td><td>28 GB</td></tr>
 <tr><td class="k">Power at load (both GPUs)</td><td>peak 529 W per card at c=12, ~170 W single stream</td><td>~55 W per box</td></tr>
-<tr><td class="k">Price</td><td>$3.18/h all-in on Vast; ~$8.5k per card to buy</td><td>owned; ~$4k per box</td></tr>
 </table></div>
 
 <h2>Per-user decode speed as users pile on</h2>
@@ -193,16 +191,7 @@ code{font-family:"IBM Plex Mono",monospace;font-size:.92em;background:var(--surf
 </div>
 </div>
 
-<div class="callout spark"><b>The Spark pair's real advantage</b> is standing cost and power: it is owned, idles at 10 W per box and peaks near 55 W. The RTX pair drew up to 529 W per card under load. For a small team the Spark's per-user numbers are workable at two or three sessions; the RTX pair is the answer when the question is "how many engineers".</div>
-
-<h2>Cost</h2>
-<div class="tscroll"><table>
-<tr><th>Item</th><th>Vast.ai session</th><th>Ongoing, 8 h/day, 22 days</th></tr>
-<tr><td class="k">GPU + 300 GB disk</td><td>$3.18/h × 88 min = $4.66</td><td>~$560/month rented, or ~$17k once for two cards</td></tr>
-<tr><td class="k">Model download</td><td>$0.18 (1.37 $/TB on this host; up to $40/TB on others)</td><td>once per instance</td></tr>
-<tr><td class="k">Parked disk with model cached</td><td>—</td><td>$0.13/GB-month ≈ $40/month</td></tr>
-<tr><td class="k">Total spent today</td><td><b>$4.74</b> (credit 9.97 → 5.23)</td><td></td></tr>
-</table></div>
+<div class="callout spark"><b>The Spark pair's real advantage</b> is power: it idles at 10 W per box and peaks near 55 W. The RTX pair drew up to 529 W per card under load. For a small team the Spark's per-user numbers are workable at two or three sessions; the RTX pair is the answer when the question is "how many engineers".</div>
 
 <h2>Method and caveats</h2>
 <ul>
